@@ -1,10 +1,9 @@
-.casestudieswrapper {
+/* .casestudieswrapper {
   display: flex;
   justify-content: center;
 }
 
 .casestudiesinnerwrapper {
-  /* mobile first */
   max-width: 800px;
   display: grid;
   grid-template-columns: 1fr;
@@ -19,11 +18,10 @@
 }
 .bgrcolor2 {
   background-color: #fcf6f2;
-}
-@media (min-width: 500px) {
+} */
+/* @media (min-width: 500px) {
   .casestudiesinnerwrapper {
     grid-template-columns: 1fr 1fr;
-    /*  padding: 20px 20px 0 20px; */
   }
   .casestudy1title {
     grid-column: 2 / 3;
@@ -32,3 +30,4 @@
     grid-column: 1 / 2;
   }
 }
+ */

@@ -21,11 +21,6 @@ function transformlines() {
 }
 
 
-/* HERE TO STOP SUBMIT BUTTON REFRESH ON CLICK (IN ABOUTUS PAGE)*/
-const submit1 = document.querySelector("form");
-   submit1.addEventListener("submit", function(event) {
-     event.preventDefault();
-}, true);
 
 /* ON WINDOW RESIZE, CLOSE HAMBURGER MENU IF STILL OPEN */
 

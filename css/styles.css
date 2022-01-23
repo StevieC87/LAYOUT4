@@ -958,7 +958,7 @@ footer {
     line-height: 1.8rem;
   }
   h2 {
-      font-size: 1.3em;
+      font-size: 1.5em;
   }
   h3 {
     /* font-size: 28px; */
@@ -976,6 +976,9 @@ footer {
 @media (max-width: 510px) {
   .featurescustomerwrapper {
     padding-bottom: 10px;
+}
+.quotewrapper {
+  padding: 40px 0 40px 0;
 }
 }
 /* ABOUT US MEDIA QUERIES */

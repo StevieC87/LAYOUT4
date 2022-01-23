@@ -1,0 +1,23 @@
+.casestudieswrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.casestudiesinnerwrapper {
+  /* mobile first */
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 336px) {
+  .casestudiesinnerwrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .casestudy1title {
+    grid-column: 2 / 3;
+  }
+  .casestudy1img {
+    grid-column: 1 / 2;
+  }
+}

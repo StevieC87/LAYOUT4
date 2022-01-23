@@ -1,0 +1,83 @@
+.pricingcard {
+  border: 1px solid black;
+  border-radius: 5px;
+  min-height: 300px;
+  min-width: 300px;
+  font-size: 0.8rem;
+  /*  background-color: #fbfbfa; */
+}
+.cardtitle {
+  text-align: center;
+  color: var(--myblue);
+  padding: 20px 0 0 0;
+  font-size: 1rem;
+  font-family: Roboto-Bold;
+}
+
+.price {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: PoppinsLight;
+}
+.miniprice {
+  font-size: 1rem;
+}
+.pricelistdiv {
+  padding: 10px 20px 0px 0px;
+  height: 170px;
+  margin-top: 0px;
+}
+.pricingcard1 {
+}
+.pricingcard2 {
+}
+
+.pricelist {
+  list-style-type: none;
+}
+.pricelist li {
+  padding-left: 10px;
+}
+li:before {
+}
+
+.elementx::before {
+  color: orangered;
+  content: '\f00d'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.elementY::before {
+  color: green;
+  content: '\f00c'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.btnprice {
+  width: 122px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.pricingouterwrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-color: #f6f7fe;
+}
+.pricinginnerwrapper {
+  max-width: 1000px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+}
+@media (min-width: 676px) {
+  .pricinginnerwrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}

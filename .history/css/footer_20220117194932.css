@@ -1,0 +1,80 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                    FOOTER
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+footer {
+  background-color: var(--myblue);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+/* DEFAULT FOR SMALL SCREEN - MOBILE FIRST */
+.footerwrapper {
+  /* this is the inner div that serves as a grid with equal columns as container */
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.2rem;
+}
+/* DEFAULT FOR SMALL SCREEN - MOBILE FIRST */
+.footergriditem1 {
+  grid-row: 1 / 2;
+  /* grid-column: 1 / 2; */
+  grid-column: 1 / -1;
+}
+/* DEFAULT FOR SMALL SCREEN - MOBILE FIRST */
+.footergriditem2 {
+  /* grid-column: 2 / 3; */
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  padding-left: 10px;
+  justify-self: start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  /*  justify-self: self-end; */
+  /* padding: 20px 0 0 40px; */
+}
+.footergriditem2:first-child {
+  margin: 10px 0 10px 0;
+}
+.footergriditem3 {
+  grid-row: 4 / 5;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  padding-bottom: 10px;
+}
+.bottomlogo {
+  padding: 0px 0 0px 10px;
+}
+.bottomphrase {
+  padding-left: 10px;
+  display: block;
+  text-align: left;
+  font-size: 12px;
+}
+.footerlinkstitle {
+  font-size: 15px;
+}
+
+@media (min-width: 336px) {
+}
+@media (min-width: 450px) {
+  .footerwrapper {
+    grid-template-columns: 226px 200px 1fr 0.2fr 0.2fr 0.2fr;
+  }
+  .footergriditem1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .footergriditem2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    padding-left: 0px;
+    justify-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

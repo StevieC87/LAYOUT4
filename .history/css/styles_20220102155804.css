@@ -1,0 +1,237 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Root
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+:root {
+  /*  --myblue: #5da3df; */
+  --myblue: #3e79bc;
+  --myblueh1: #569ad7;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto;
+  /*  line-height: 1rem; */
+  margin: auto;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* -------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PoppinsBold;
+  color: var(--myblueh1);
+  /* #5da3df */
+  padding: 10px 0 10px 0;
+  margin: 0px;
+}
+h1 {
+  font-size: 38px;
+  line-height: 2.8rem;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+
+.fronth1 {
+  padding-top: 0px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Content sectioning
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.containernew {
+  width: 100%;
+}
+MEDIA QUERIES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* to switch to hamburger menu */
+@media (min-width: 677px) {
+  .hamburger-menu {
+    visibility: hidden;
+  }
+  .section2divrow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .section1innerwrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (max-width: 676px) {
+  /* HIDE NAV LI WHEN SMALL SCREEN */
+  .navlist {
+    visibility: hidden;
+  }
+  .hamburger-menu {
+    visibility: visible;
+  }
+
+  /* ADVANCED SCHEDULING DIV - flip order: image last */
+  .section2imgleft1 {
+    grid-row: 2;
+  }
+  .section2textright1 {
+    grid-row: 1;
+  }
+  /* FINANCIAL MANAGEMENT DIV - flip order: image last */
+  .section2imgleft3 {
+    grid-row: 2;
+  }
+  .section2textleft3 {
+    grid-row: 1;
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+UTILITY CLASSES 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.centertext {
+  text-align: center;
+}
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*   width: 50%; */
+}
+.centerhorizvert {
+  align-self: center;
+  justify-self: center;
+}
+/* visible/invis from screen readers & visually */
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.whitetext {
+  color: white;
+}
+.smallfont {
+  font-size: 0.6rem;
+}
+.ulnostyle {
+  list-style: none;
+  line-height: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+.anostyle > li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+HAMBURGER MENU 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.hamburger-menu {
+  width: 30px;
+  height: 30px;
+  padding-top: 7px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.line {
+  width: inherit;
+  height: 3px;
+  background-color: var(--myblue);
+  border-radius: 2px;
+  transition-property: transform;
+  transition-duration: 500ms;
+
+  /*   transform-origin: right;
+  transition: transform 0.5s; */
+}
+
+.line.openline:nth-child(1) {
+  transform: translate(0px, 10px) rotate(45deg);
+  /*  transform-origin: top; */
+}
+.line.openline:nth-child(2) {
+  opacity: 0;
+}
+.line.openline:nth-child(3) {
+  transform: translate(0px, -10px) rotate(-45deg);
+
+  /*   transform-origin: top; */
+}
+
+.menuhidden {
+  height: 100vh;
+  width: 200px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  transition: ease 0.2s;
+}
+
+.visibleright {
+  right: 0px;
+  /*   transition: ease 4s; */
+}
+/* --------- SLIDEMENU ---------- */
+.slidemenu ul {
+  list-style: none;
+  padding-top: 45px;
+  padding-left: 0px;
+  width: 100%;
+  /*   float: right; */
+}
+.slidemenu ul li {
+}
+.slidemenu ul li a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  margin: 0px 5px 0px 5px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5rem;
+  color: var(--myblue);
+}
+.slidemenu ul li a:hover {
+  background-color: #fbfbfa;
+  border-radius: 15px;
+  /* opacity: 0.5; */
+}
+.activeSidebarLi {
+  background-color: #fbfbfa;
+  border-radius: 15px;
+}
+/* END SLIDEMENU */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+INDIVIDUAL ELEMENTS
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

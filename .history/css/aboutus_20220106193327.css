@@ -1,0 +1,159 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ABOUT US
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.headerwrapper {
+  width: 100%;
+  display: grid;
+  padding: 40px 0 40px 0;
+}
+.headertitle {
+  grid-template-columns: 1fr;
+  align-self: center;
+  justify-self: center;
+}
+
+.headertextunder {
+  /* max-width: 80%;  */
+  max-width: 800px;
+  grid-template-columns: 1fr;
+  align-self: center;
+  justify-self: center;
+  font-size: 1rem;
+  padding-top: 30px;
+}
+.meettheteamwrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-color: #f6f7fe;
+  /*   padding-bottom: 50px; */
+}
+.meettheteamh2 {
+  /* padding-top: 40px; */
+  text-align: center;
+  /*  color: purple; */
+  color: var(--myblueh1);
+  /* color: #7f55ff; */
+  width: 100%;
+}
+.meettheteamh2 > h2 {
+  color: inherit;
+}
+.meetteamprofiles {
+  max-width: 1000px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.contactuswrapper {
+  padding: 80px 0 80px 0;
+  background-color: #f9f9f2;
+}
+.contactusinnerwrapper {
+}
+
+.aboutusformgrid {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px 0px 20px;
+  border: 1px solid blue;
+}
+.aboutusformgrid2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 0px 20px;
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+.textareadiv2 {
+  grid-column: 1/-1;
+  grid-row: 2 / 4;
+}
+/* textarea {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: 1px solid var(--myblue);
+} */
+.textareadiv2 > textarea {
+  width: 100%;
+  /*  max-width: 300px; */
+  border-radius: 5px;
+  border: 1px solid var(--myblue);
+}
+
+.centerbtngrid {
+  grid-column: 1/-1;
+  justify-self: end;
+}
+input,
+label {
+  display: block;
+  width: 100%;
+  /*   max-width: 300px; */
+}
+input {
+  border-radius: 5px;
+  border: 1px solid var(--myblue);
+  padding: 10px;
+}
+/* e.maildiv > input {
+  margin-lkef: 40px;
+} */
+/* .yournamediv > input:nth-child(2) {
+  margin-left: 10px;
+} */
+label {
+  padding-bottom: 5px;
+  padding-top: 20px;
+  color: var(--myblue);
+}
+@media (min-width: 380px) {
+  /*  .meetteamprofiles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .meettheteamprofile1 {
+    justify-self: center;
+    align-self: center;
+  }
+  .meettheteamprofile2 {
+  } */
+  .aboutusformgrid2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 850px) {
+  .meetteamprofiles {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+  .meettheteamprofile {
+    justify-self: center;
+    align-self: center;
+  }
+}
+.meettheteamprofile {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 100%;
+}
+
+.meetTeamTrofileTitle {
+  grid-row: 1 / 2;
+}
+.meetTeamTrofileTitle > h3 {
+  font-family: Roboto;
+}
+.imageprofile {
+  grid-row: 2 / 4;
+}
+.profiletext {
+  grid-row: 5 / 7;
+  max-width: 500px;
+}

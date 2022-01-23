@@ -1,0 +1,23 @@
+.featuresgrid {
+  /* display: grid;
+  grid-template-columns: 1fr; */
+  display: grid;
+  justify-content: center;
+}
+@media (min-width: 325px) {
+  .featuresgrid {
+    /*     grid-template-columns: 1fr 1fr; */
+    /*   justify-self: center; */
+  }
+}
+
+.featuresh1 {
+  /*  max-width: 600px; */
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: grid;
+  justify-content: center;
+}
+
+.featurestext {
+}

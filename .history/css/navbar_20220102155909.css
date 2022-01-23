@@ -1,0 +1,134 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                          NAVBAR  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.navwrapper {
+  display: flex;
+  justify-content: center;
+}
+nav {
+  background-color: white;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logodiv {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+#navbar ul {
+  list-style: none;
+  margin-right: 15px;
+  /*   float: right; */
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  margin: 0 14px 0 20px;
+  /* padding: 0 20px 0 10px; */
+  text-align: center;
+  text-decoration: none;
+  color: var(--myblue);
+  /*  color: black; */
+
+  font-size: 15px;
+  /*  border-bottom: 1px solid transparent; */
+
+  line-height: 21px;
+}
+#navbar ul li a:hover {
+  /*  text-decoration: underline; */
+  /*  border-bottom: 1px solid var(--myblue); */
+  color: #9370db;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+HAMBURGER MENU 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.hamburger-menu {
+  width: 30px;
+  height: 30px;
+  padding-top: 7px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.line {
+  width: inherit;
+  height: 3px;
+  background-color: var(--myblue);
+  border-radius: 2px;
+  transition-property: transform;
+  transition-duration: 500ms;
+
+  /*   transform-origin: right;
+  transition: transform 0.5s; */
+}
+
+.line.openline:nth-child(1) {
+  transform: translate(0px, 10px) rotate(45deg);
+  /*  transform-origin: top; */
+}
+.line.openline:nth-child(2) {
+  opacity: 0;
+}
+.line.openline:nth-child(3) {
+  transform: translate(0px, -10px) rotate(-45deg);
+
+  /*   transform-origin: top; */
+}
+
+.menuhidden {
+  height: 100vh;
+  width: 200px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  transition: ease 0.2s;
+}
+
+.visibleright {
+  right: 0px;
+  /*   transition: ease 4s; */
+}
+/* --------- SLIDEMENU ---------- */
+.slidemenu ul {
+  list-style: none;
+  padding-top: 45px;
+  padding-left: 0px;
+  width: 100%;
+  /*   float: right; */
+}
+.slidemenu ul li {
+}
+.slidemenu ul li a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  margin: 0px 5px 0px 5px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5rem;
+  color: var(--myblue);
+}
+.slidemenu ul li a:hover {
+  background-color: #fbfbfa;
+  border-radius: 15px;
+  /* opacity: 0.5; */
+}
+.activeSidebarLi {
+  background-color: #fbfbfa;
+  border-radius: 15px;
+}
+/* END SLIDEMENU */

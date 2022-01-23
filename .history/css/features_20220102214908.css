@@ -1,0 +1,6 @@
+.featuresgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.featuresh1 {
+}

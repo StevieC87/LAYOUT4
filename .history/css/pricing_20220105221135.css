@@ -1,0 +1,133 @@
+/* .headerwrapper {
+  background-color: var(--myblue);
+  color: white;
+} */
+
+.pricingcard {
+  border: 1px solid var(--myblue);
+  border-radius: 5px;
+  min-height: 300px;
+  min-width: 300px;
+  font-size: 0.8rem;
+  /*  background-color: #fbfbfa; */
+}
+.cardtitle {
+  text-align: center;
+  color: var(--myblue);
+  padding: 20px 0 10px 0;
+  font-size: 0.9rem;
+  font-family: PoppinsBold;
+  font-weight: bold;
+}
+
+.price {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: PoppinsLight;
+}
+.miniprice {
+  font-size: 1rem;
+}
+.pricelistdiv {
+  padding: 10px 20px 0px 10px;
+  height: 170px;
+}
+.pricingcard1 {
+}
+.pricingcard2 {
+}
+
+.pricelist {
+  list-style-type: none;
+  padding-top: 0px;
+  margin-block-start: 0em;
+}
+.pricelist li {
+  padding-left: 10px;
+}
+li:before {
+}
+
+.elementx::before {
+  color: orangered;
+  content: '\f00d'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.elementY::before {
+  color: green;
+  content: '\f00c'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.btnprice {
+  width: 148px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.pricingouterwrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-color: #f6f7fe;
+}
+.pricinginnerwrapper {
+  max-width: 1000px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+  padding: 100px;
+}
+@media (min-width: 676px) {
+  .pricinginnerwrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imagegallerywrapper {
+  width: 100%;
+  background-color: honeydew;
+  display: grid;
+  justify-content: center;
+}
+
+.imagegalleryinnerwrapper {
+  width: 800px;
+  grid-template-columns: 1fr;
+  display: grid;
+  justify-content: center;
+  /*  align-self: center;
+  justify-self: center; */
+}
+
+.imagegallery {
+  align-self: center;
+  justify-self: center;
+}
+.centerGRIDself {
+  align-self: center;
+  justify-self: center;
+}
+.reviewsdiv {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 4px 0 var(--myblue);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  /*   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 8px 0 var(--myblue);
+}

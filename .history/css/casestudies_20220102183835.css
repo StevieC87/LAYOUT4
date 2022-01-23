@@ -1,0 +1,33 @@
+.casestudieswrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.casestudiesinnerwrapper {
+  /* mobile first */
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.casestudy2 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.bgrcolor1 {
+  background-color: #f6f7fe;
+}
+.bgrcolor2 {
+  background-color: #fcf6f2;
+}
+@media (min-width: 336px) {
+  .casestudiesinnerwrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .casestudy1title {
+    grid-column: 2 / 3;
+  }
+  .casestudy1img {
+    grid-column: 1 / 2;
+  }
+}

@@ -1,0 +1,15 @@
+.featuresgrid {
+  /* display: grid;
+  grid-template-columns: 1fr; */
+  display: grid;
+  justify-content: center;
+}
+@media (min-width: 325px) {
+  .featuresgrid {
+    /*     grid-template-columns: 1fr 1fr; */
+  }
+}
+
+.featuresh1 {
+  max-width: 600px;
+}

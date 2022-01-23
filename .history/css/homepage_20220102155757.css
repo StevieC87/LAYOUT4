@@ -1,0 +1,63 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                  SECTION1
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.section1wrapper {
+  width: 100%;
+  background-color: FFF;
+  display: flex;
+  justify-content: center;
+  /*  */
+}
+.section1innerwrapper {
+  width: 1200px;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                      SECTION2
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.section2divrow {
+  display: grid;
+  grid-column: 1 / -1;
+  /*  grid-template-columns: 1fr 1fr; */
+}
+.section2wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.section2innerwrapper {
+  width: 1200px;
+}
+.frontfeatures1 {
+  background-color: #f9f9f2;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+.frontfeatures2 {
+  background-color: #fcf6f2;
+  margin-bottom: 60px;
+}
+.frontfeatures3 {
+  background-color: #f1faf9;
+  margin-bottom: 10px;
+}
+
+.section2txt {
+  padding: 0 20px 0 20px;
+}
+/* ---------------------- */
+.allfeatures {
+  text-align: Center;
+  /* background-color: #fbfbfa; */
+  background-color: #fff;
+}
+.quotesection {
+  background-color: FFF;
+  grid-area: quotesection;
+  display: grid;
+  grid-column: 1 / -1;
+}

@@ -1,0 +1,62 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Root
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+:root {
+  /*  --myblue: #5da3df; */
+  --myblue: #3e79bc;
+  --myblueh1: #569ad7;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Roboto;
+  /*  line-height: 1rem; */
+  margin: auto;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: PoppinsBold;
+  color: var(--myblueh1);
+  /* #5da3df */
+  padding: 10px 0 10px 0;
+  margin: 0px;
+}
+h1 {
+  font-size: 38px;
+  line-height: 2.8rem;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+
+.fronth1 {
+  padding-top: 0px;
+}
+
+.containernew {
+  width: 100%;
+}

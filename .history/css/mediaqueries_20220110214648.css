@@ -1,0 +1,44 @@
+/* to switch to hamburger menu */
+@media (min-width: 677px) {
+  .hamburger-menu {
+    visibility: hidden;
+  }
+  .section2divrow {
+    grid-template-columns: 1fr 2fr;
+  }
+  .section1innerwrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+  .section2textright1 {
+    grid-row: 1;
+  }
+}
+@media (max-width: 676px) {
+  /* HIDE NAV LI WHEN SMALL SCREEN */
+  nav {
+    width: 1200px;
+  }
+
+  .navlist {
+    visibility: hidden;
+    display: none;
+  }
+  .hamburger-menu {
+    visibility: visible;
+  }
+
+  /* ADVANCED SCHEDULING DIV - flip order: image last */
+  .section2imgleft1 {
+    grid-row: 2;
+  }
+  .section2textright1 {
+    grid-row: 1;
+  }
+  /* FINANCIAL MANAGEMENT DIV - flip order: image last */
+  .section2imgleft3 {
+    grid-row: 2;
+  }
+  .section2textleft3 {
+    grid-row: 1;
+  }
+}

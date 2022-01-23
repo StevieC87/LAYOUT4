@@ -1,0 +1,14 @@
+.featuresgrid {
+  /* display: grid;
+  grid-template-columns: 1fr; */
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 325px) {
+  .featuresgrid {
+    /*     grid-template-columns: 1fr 1fr; */
+  }
+}
+
+.featuresh1 {
+}

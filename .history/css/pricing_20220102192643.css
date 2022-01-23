@@ -1,0 +1,22 @@
+.pricingcard {
+  border: 1px solid black;
+  border-radius: 5px;
+  min-height: 300px;
+  min-width: 300px;
+}
+.cardtitle {
+  text-align: center;
+  color: var(--myblue);
+  padding: 20px;
+  font-size: 1rem;
+  font-family: Roboto-Bold;
+}
+
+.price {
+  text-align: center;
+  font-size: 2rem;
+}
+.pricingcard1 {
+}
+.pricingcard2 {
+}

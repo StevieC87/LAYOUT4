@@ -1,0 +1,5 @@
+.casestudieswrapper {
+  /* mobile first */
+  display: grid;
+  grid-column: 1fr;
+}

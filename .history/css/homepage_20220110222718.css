@@ -1,0 +1,139 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                  SECTION1
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.sectionwrapperFW {
+  padding: 40px 0px 0px 0px;
+}
+.section1wrapper {
+  width: 100%;
+  background-color: FFF;
+  display: flex;
+  justify-content: center;
+  /*  */
+}
+.section1innerwrapper {
+  max-width: 1200px;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                      SECTION2
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.section2divrow {
+  display: grid;
+  grid-column: 1 / -1;
+  padding: 20px;
+}
+.home-features-grid-1 {
+  display: grid;
+  grid-column: 1 / -1;
+  padding: 20px;
+}
+.section2divrow2 {
+  display: grid;
+  grid-column: 1 / -1;
+  padding: 20px;
+  /*  grid-template-columns: 1fr 1fr; */
+}
+.section2wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section2innerwrapper {
+  max-width: 1200px;
+}
+.home-features-innerwrapper {
+  max-width: 1200px;
+}
+
+.frontfeatures1 {
+  background-color: #f9f9f2;
+  margin-bottom: 60px;
+}
+.tabletimg {
+  max-width: 350px;
+  padding: 20px;
+}
+.frontfeatures2 {
+  background-color: #fcf6f2;
+  margin-bottom: 60px;
+}
+.frontfeatures3 {
+  background-color: #f1faf9;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+
+.section2txt {
+  padding: 0 20px 0 20px;
+}
+/* ---------------------- */
+.allfeatures {
+  text-align: Center;
+  padding-top: 30px;
+  grid-column: 1 / -1;
+}
+.quotesection {
+  background-color: FFF;
+  grid-area: quotesection;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.home-features-1-titlediv {
+  grid-column: 1 / -1;
+  order: 1;
+  align-self: center;
+}
+.home-features-1-textdiv {
+  grid-column: 1 / -1;
+  order: 3;
+}
+.home-features-1-imgdiv {
+  grid-column: 1 / -1;
+  order: 2;
+}
+
+.home-features-2-titlediv {
+  grid-column: 1 / -1;
+  order: 1;
+  align-self: center;
+}
+.home-features-2-textdiv {
+  grid-column: 1 / -1;
+  order: 3;
+}
+.home-features-2-imgdiv {
+  grid-column: 1 / -1;
+  order: 2;
+}
+
+@media (min-width: 677px) {
+  /* -------HOMEPAGE FEATURES GRID - 1: SCHEDULING */
+  .home-features-1-titlediv {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    /* order: 1;  */
+  }
+  .home-features-1-textdiv {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    order: 1;
+  }
+  .home-features-1-imgdiv {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    /*  order: 2;  */
+  }
+  /* ------HOMEPAGE FEATURES GRID - 2: CUSTOMER MANAGEMENT */
+  .home-features-2-titlediv {
+  }
+  .home-features-2-textdiv {
+  }
+  .home-features-2-imgdiv {
+  }
+}

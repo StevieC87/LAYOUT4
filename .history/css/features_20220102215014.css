@@ -1,0 +1,12 @@
+.featuresgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 325px) {
+  .featuresgrid {
+    /*     grid-template-columns: 1fr 1fr; */
+  }
+}
+
+.featuresh1 {
+}

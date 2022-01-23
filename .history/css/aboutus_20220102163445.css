@@ -1,0 +1,78 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ABOUT US
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.ourstorywrapper {
+  width: 100%;
+  display: grid;
+  padding: 40px 0 40px 0;
+}
+
+.ourstoryh1 {
+  grid-template-columns: 1fr;
+  align-self: center;
+  justify-self: center;
+  padding-bottom: 30px;
+}
+
+.ourstoryp {
+  /* max-width: 80%;  */
+  max-width: 800px;
+  grid-template-columns: 1fr;
+  align-self: center;
+  justify-self: center;
+  font-size: 1rem;
+}
+.meettheteamwrapper {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-color: #f1faf9;
+}
+.meettheteamh1 {
+  text-align: Center;
+  color: purple;
+  width: 100%;
+}
+.meettheteamh1 > h1 {
+  color: inherit;
+}
+.meetteamprofiles {
+  max-width: 1000px;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contactuswrapper {
+  background-color: #f9f9f2;
+}
+.contactusinnerwrapper {
+}
+
+.aboutusformgrid {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.textareadiv {
+}
+textarea {
+  width: 100%;
+  max-width: 300px;
+}
+input,
+label {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+}
+@media (min-width: 336px) {
+  .meetteamprofiles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .meettheteamprofile1 {
+    justify-self: center;
+    align-self: center;
+  }
+  .meettheteamprofile2 {
+  }
+}

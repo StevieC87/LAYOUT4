@@ -1,0 +1,72 @@
+.btn {
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--myblue);
+  /*   background-color: var(--myblue); */
+  background-color: WHITE;
+  /* color: white; */
+  color: var(--myblue);
+  font-weight: bold;
+  cursor: pointer;
+  transition-property: background-color, color, border;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+}
+
+.submit {
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  width: 100px;
+  background-color: var(--myblue);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition-property: background-color, color, border;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+}
+.af:hover {
+  background-color: var(--myblue);
+  color: white;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+UTILITY CLASSES 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.centertext {
+  text-align: center;
+}
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*   width: 50%; */
+}
+.centerhorizvert {
+  align-self: center;
+  justify-self: center;
+}
+/* visible/invis from screen readers & visually */
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.whitetext {
+  color: white;
+}
+.smallfont {
+  font-size: 0.6rem;
+}
+.ulnostyle {
+  list-style: none;
+  line-height: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+.anostyle > li a {
+  text-decoration: none;
+  color: white;
+}

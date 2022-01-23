@@ -1,0 +1,47 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                          NAVBAR  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.navwrapper {
+  display: flex;
+  justify-content: center;
+}
+nav {
+  background-color: white;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logodiv {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+#navbar ul {
+  list-style: none;
+  margin-right: 15px;
+  /*   float: right; */
+}
+
+#navbar ul li {
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  margin: 0 14px 0 20px;
+  /* padding: 0 20px 0 10px; */
+  text-align: center;
+  text-decoration: none;
+  color: var(--myblue);
+  /*  color: black; */
+
+  font-size: 15px;
+  /*  border-bottom: 1px solid transparent; */
+
+  line-height: 21px;
+}
+#navbar ul li a:hover {
+  /*  text-decoration: underline; */
+  /*  border-bottom: 1px solid var(--myblue); */
+  color: #9370db;
+}

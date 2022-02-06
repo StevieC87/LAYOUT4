@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+    margin: 0;
+    }
+
+    .container {
+    height: 500vh;
+    width: 100%;
+    position: relative;
+    }
+
+    .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    }
+
+    /* .color-1 {
+    background-color: #dbe8c1;
+    opacity: 1;
+    }
+
+    .color-2 {
+    background-color: #ffb2b2;
+    opacity: 0;
+    } */
+</style>
+</head>
+<body id="body" onscroll="onscrollFunction()">
+    <div class="container" id="container">
+        <div id="scroller" class="color-1 background"></div>
+        <div class="color-2 background"></div>
+      </div>
+    <script>
+
+        function onscrollFunction() { 
+            //window.scrollTo(500, 0);
+            //alert('window.pageXOffset= '+window.pageXOffset + '\nwindow.pageYOffset='+ window.pageYOffset);
+            let scroller = window.scrollY;
+            let height = window.innerHeight;
+            let changer = scroller / height;
+            let opacity1 = document.getElementById('body').style.opacity = changer;
+            console.log(opacity1);
+            var el= document.getElementById('body');
+            if(window.scrollY  >= 500){   
+            el.style.backgroundColor='turquoise';
+            }
+            if(window.scrollY  < 500){   
+            el.style.backgroundColor='pink';
+            }
+            console.log(window.scrollY, 'scrollY' );
+            document.querySelector('#body').css
+           
+
+            }
+    
+/* const [red, green, blue] = [0, 200, 0];
+const hasGradient = document.querySelector('.has-gradient');
+
+window.addEventListener('scroll', () => {
+  let y = 1 - (window.scrollY || window.pageYOffset) / 150;
+  y = y < 1 ? 1 : y
+  const [r, g, b] = [red/y, green/y, blue/y].map(Math.round);
+  hasGradient.style.background = `linear-gradient(rgb(${r}, ${g}, ${b}), rgb(255,0,0))`;
+  console.log(`linear-gradient(rgb(${r}, ${g}, ${b}), rgb(255,0,0))`)
+}); */
+      /*   document.querySelector(document).scroll(function(){
+        var scroller = document.querySelector(this).scrollTop,
+            height = document.querySelector(document).height() - document.querySelector(window).height(),
+            changer = scroller / height;
+        document.querySelector('.color-2').css({
+            'opacity': ''+changer+''
+        });
+        console.log(changer)
+        }) */
+    </script>
+    
+</body>
+</html>

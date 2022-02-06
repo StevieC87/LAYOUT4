@@ -9,6 +9,7 @@ body {
   font-size: 18px;
   font-family: Roboto;
   margin: auto;
+  background: #F6EFE8; 
 }
 
 *,
@@ -619,7 +620,7 @@ UTILITY CLASSES
   justify-content: center;
 }
 nav {
-  background-color: #569ad7;
+ /*  background-color: #569ad7; */
   width: 1200px;
   display: flex;
   justify-content: space-between;

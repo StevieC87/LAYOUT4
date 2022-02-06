@@ -1,10 +1,12 @@
 const hamburgerbutton = document.querySelector('#hamburger-menu');
+
+if (hamburgerbutton) {
 hamburgerbutton.addEventListener('click', function () {
   //  vis();
   slide();
   transformlines();
 });
-
+}
 function slide() {
   const slideme = document.querySelector('#menuhidden');
   const slidemeclasses = slideme.classList;

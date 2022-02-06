@@ -619,7 +619,7 @@ UTILITY CLASSES
   justify-content: center;
 }
 nav {
-  background-color: white;
+  background-color: #569ad7;
   width: 1200px;
   display: flex;
   justify-content: space-between;

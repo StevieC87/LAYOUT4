@@ -49,7 +49,6 @@ h6 {
   color: var(--myblack);
   padding: 10px 0 10px 0;
   margin: 0px;
-  
 }
 h1 {
   font-size: 38px;
@@ -310,7 +309,9 @@ h6 {
   width: 100%;
   display: grid;
   justify-content: center;
-  background-color: #f6f7fe;
+ /*  background-color: #f6f7fe; */
+/*  background-color: var(--mybackgroundBeige2); */
+background-color: #fff;
 }
 .meettheteamh2 {
   text-align: center;
@@ -329,7 +330,8 @@ h6 {
 }
 .contactuswrapper {
   padding: 80px 0 80px 0;
-  background-color: #f9f9f2;
+  /* background-color: #f9f9f2; */
+  background-color: var(--mybackgroundBeige1);
 }
 .aboutusformgrid2 {
   max-width: 800px;
@@ -497,7 +499,9 @@ label {
   width: 100%;
   display: grid;
   justify-content: center;
-  background-color: #f6f7fe;
+  /* background-color: #f6f7fe; */
+  background-color: #fff;
+  padding-top: 150px;
 }
 .pricinginnerwrapper {
   max-width: 1000px;
@@ -505,6 +509,7 @@ label {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
+  margin-top: 30px;
 }
 
 .imagegallerywrapper {
@@ -547,7 +552,36 @@ label {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 UTILITY CLASSES 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/* skew THE HEADER  */
+ .skew-c{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--mybackgroundBeige2) 50%);
+}
+.skew-c-white{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, white 49%, var(--mybackgroundBeige1) 50%);
+}
+.skew-cc{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, var(--mybackgroundBeige2) 50%);
+}
+.skew-cc-white{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, white 50%);
+  
+}
 /* ANGLED CSS */
 .skew-cc-Footer{
   width:100%;
@@ -572,14 +606,15 @@ UTILITY CLASSES
   height:50px;
   position:absolute;
   left:0px;
-  background: linear-gradient(to left top, #4A154B  49%, var(--mybackgroundBeige2) 50%);
+  background: linear-gradient(to left top, var(--mybackgroundBeige1)  49%, var(--mybackgroundBeige2) 50%);
 }
 .skew-c-QuoteWrap2{
   width:100%;
   height:50px;
   position:absolute;
   left:0px;
-  background: linear-gradient(to left top, white 49%, #4A154B 50%);
+  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--myblue) 50%);
+  /* background: linear-gradient(to left top, white 49%, #4A154B 50%); */
   /* var(--mybackgroundBeige1) */
 }
 .skew-cc-QuoteWrap{
@@ -611,10 +646,12 @@ UTILITY CLASSES
 }
 .btnfill {
   background-color: var(--myblue);
-  /* border: 1px solid ; */
+  border: 1px solid white;
   border-radius: 5px;
   color: white;
-  /*  color: var(--myblue); */
+  padding: 10px;
+  font-size: 0.8rem;
+  /*  font-weight: bold */
   font-family: PoppinsBold;
 }
 .white {
@@ -694,7 +731,7 @@ UTILITY CLASSES
 }
 .anostyle > li a {
   text-decoration: none;
-  /* color: white; */
+  color: white;
 }
 
 .responsiveimg {
@@ -707,13 +744,18 @@ UTILITY CLASSES
 }
 
 .quotewrapper {
-  padding: 80px 0 80px 0;
+  padding: 40px 0 80px 0;
    background-color: var(--mybackgroundBeige1);
 }
 .quotewrapper > div {
   margin-top: 20px;
 }
-
+.quotewrapper > h3 {
+  padding: 40px 0 80px 0;
+}
+.quotetext{
+  padding-bottom: 80px;
+}
 
 
 

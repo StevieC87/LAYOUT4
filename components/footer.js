@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
     <footer id="footer">
     <div class="footerwrapper">
       <div class="footergriditem1">
-        <img class="bottomlogo" src="images/logo-transparent.png" alt="logo" />
+        <img class="bottomlogo" src="images/logobeige.png" alt="logo" />
         <span class="whitetext bottomphrase">Dog Walking Software for Professionals</span>
       </div>
 

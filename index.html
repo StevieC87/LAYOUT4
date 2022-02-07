@@ -10,6 +10,7 @@
 <!--   <script type="text/javascript" src="js/scripts.js" defer></script> -->
   <script type="text/javascript" src="components/navbar.js" defer></script>
   <script type="text/javascript" src="components/footer.js" defer></script>
+  <script type="text/javascript" src="components/quotes.js" ></script>
   <style>
 
   /*   body {} */
@@ -105,24 +106,27 @@
           <!--  <div class="allfeatures"><button class="btn btnfill btnXL">All Features</button></div> -->
           <!-- <div class="allfeatures"> -->
           <div class="home-features-button">
-            <button onclick="window.location.href='features.html';" class="btn btnoutline btnXL white">All
+            <button onclick="window.location.href='features.html';" class="btn btnfill  btnXL">All
               Features</button>
           </div>
         </div>
-        <!-- allfeaturesbtn2 -->
+        <!-- allfeaturesbtn2  btnoutline-->
       </div>
     </section>
     <!------------------ QUOTE SECTION --------------------->
+   
+
     <div class="skew-c-QuoteWrap"></div>
-    <section class="quotewrapper ">
-      <div>
-        <h3 class="centertext">Take your business to the next level!</h3>
-      </div>
-    </section>
+    <quotes-component>
+      <h3 class="centertext quotetext" slot="slot1">Take your business to the next level!</h3>
+    </quotes-component>
     <div class="skew-c-QuoteWrap2"></div>
+   
     <!------------------ FOOTER --------------------->
   <!--   <div class="skew-cc-Footer"></div> -->
-    <footer-component></footer-component>
+    <footer-component>
+      
+    </footer-component>
   </div>
   <!-- end container -->
 
@@ -139,6 +143,7 @@
       </ul>
     </div>
   </div>
+  
 </body>
 <script>
 

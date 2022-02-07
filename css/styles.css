@@ -1,6 +1,9 @@
 :root {
   --myblue: #3e79bc;
   --myblueh1: #569ad7;
+  --mybackgroundBeige1: #F6EFE8;
+  --mybackgroundBeige2: #F9F9F2;
+  --mybackgroundBeige3deep: #FFEDDB;
 }
 
 html,
@@ -9,14 +12,14 @@ body {
   font-size: 18px;
   font-family: Roboto;
   margin: auto;
-  background: #FFEDDB;
+  background: var(--mybackgroundBeige1);
    
 }
 .body2 {
-  background: #FFEDDB;
+  background: var(--mybackgroundBeige1);
 }
 .body3 {
-  background: #FFEDDB;
+  background: var(--mybackgroundBeige1);
   /* F6EFE8 E3BEC6  E7FBBE  FFEDDB*/
 }
 
@@ -69,7 +72,7 @@ h6 {
       .section1outerwrapper {
         display: grid;
         justify-content: center;
-        height: 100vh;
+        /* height: 100vh; */
       }
       .featuresnew {
         display: grid;

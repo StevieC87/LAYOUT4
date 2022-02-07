@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-
+ <script type="text/javascript" src="components/navbar.js" defer></script>
 </head>
 
 <body>
@@ -20,27 +20,7 @@
   <div class="containernew">
     <!------------------ NAVBAR  --------------------->
     <div class="navwrapper">
-      <!------------------ NAVBAR --------------------->
-      <nav id="navbar" class="paddingspecial">
-        <!--  <div class="paddingspecial"> -->
-        <div id="logo" class="logodiv">
-          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
-        </div>
-        <div id="hamburger-menu" class="hamburger-menu">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
-        </div>
-        <div class="navlist">
-          <ul tabindex="-1">
-            <li><a class="current" href="features.html">Features</a></li>
-            <li><a href="about-us.html">About</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <!-- </div> -->
-      </nav>
+      <nav-bar></nav-bar>
     </div>
     <!------------------ FEATURES: HEADER  --------------------->
     <section class="featuresgrid sectionwrapper">
@@ -262,5 +242,9 @@
     </div>
   </div>
 </body>
-
+<script>
+  let it = document.querySelector('body');
+  it.className = "body3";
+F4F7FF
+</script>
 </html>

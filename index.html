@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <!-- IN FRONT PAGE MAKE BACKGROUND COLOR - OTHERWISE LEAVE WHITE DEFAULT -->
 
 
   <div class="containernew">
@@ -23,15 +24,17 @@
     <!------------------ SECTION1 HEADER --------------------->
     <section class="section1outerwrapper sectionwrapper">
       <div class="featuresnew">
-        <h1 class="featurestitlenew">Dog Walking Business Software</h1>
+        <div class="newfrontpageheader">
+          <h1 class="featurestitlenew">Dog Walking Business Software</h1>
+          <div class="featurestextnew">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ullam, vel nobis sapiente placeat, voluptas unde, iure libero eos doloribus quasi eligendi impedit quisquam quo repellendus illum amet? Nobis, deserunt. Consequatur ullam iure non eos voluptates error eaque, enim facilis?q
+          </div>
+        </div>
+        
         <div class="featuresimgnew">
           <img class="imgfill" src="images/laptop.png" alt="Screenshot of app on laptop">
         </div>
-        <div class="featurestextnew">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi similique consequatur iure ullam esse
-          soluta repellat sequi ipsum cupiditate earum tempora qui, maiores enim, laboriosam voluptatibus eveniet magni
-          voluptates dolore reprehenderit cumque temporibus. Eveniet corrupti optio est laborum? Ex, officia.
-        </div>
+       
       </div>
     </section>
     <!------------------  SECTION 2 FEATURES  ----------->
@@ -39,6 +42,7 @@
     <section class="section2wrapper sectionwrapperFW">
       <div class="section2innerwrapper">
         <!-- FEATURES SECTION 1  : SCHEDULING SECTION -->
+        <div style="width: 100%;">
         <div class="home-features-grid-1 frontfeatures1">
           <!-- img div -->
           <div class="centerhorizvert  home-features-1-imgdiv">
@@ -55,7 +59,9 @@
               Alias, soluta. Ea nemo quam non nihil! </p>
           </div>
         </div>
+      </div><!--  background-color: #f9f9f2; -->
         <!-- FEATURES SECTION 2  : CUSTOMER MNGMENT SECTION -->
+        <div style="width: 100%;">
         <div class="home-features-grid-2 frontfeatures2">
           <!-- img div -->
           <div class="home-features-2-imgdiv centerhorizvert">
@@ -74,6 +80,7 @@
 
 
         </div>
+      </div>
         <!-- FEATURES SECTION 3  : FINANCIAL MNGMENT SECTION -->
         <div class="home-features-grid-1 frontfeatures3">
           <!-- img div -->
@@ -146,6 +153,10 @@
   </div>
 </body>
 <script>
+
+  //change background on this page only
+  let it = document.querySelector('body');
+  it.className = "body2";
 
   /* let nava = document.querySelector('.navwrapper'); */
  /*  console.log(nava); */

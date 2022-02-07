@@ -10,6 +10,8 @@
   <script type="text/javascript" src="js/scripts.js" defer></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script type="text/javascript" src="components/navbar.js" defer></script>
+    <script type="text/javascript" src="components/footer.js" defer></script>
 
 
   <style></style>
@@ -21,26 +23,7 @@
   <div class="containernew">
     <div class="navwrapper">
       <!------------------ NAVBAR --------------------->
-      <nav id="navbar" class="paddingspecial">
-        <!--  <div class="paddingspecial"> -->
-        <div id="logo" class="logodiv">
-          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
-        </div>
-        <div id="hamburger-menu" class="hamburger-menu">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
-        </div>
-        <div class="navlist">
-          <ul tabindex="-1">
-            <li><a class="current" href="features.html">Features</a></li>
-            <li><a href="about-us.html">About</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <!-- </div> -->
-      </nav>
+      <nav-bar></nav-bar>
     </div>
     <!-----------------HEADER--------------------->
 
@@ -130,27 +113,9 @@
   </div>
 </section>
     <!------------------ FOOTER --------------------->
-    <footer id="footer">
-      <div class="footerwrapper">
-        <div class="footergriditem1">
-          <img class="bottomlogo" src="images/logoblue.png" alt="logo" />
-          <span class="whitetext bottomphrase">Dog Walking Software for Professionals</span>
-        </div>
-
-        <div class="footergriditem2">
-          <div><b class="whitetext footerlinkstitle">Site Links</b></div>
-          <ul class="whitetext ulnostyle anostyle" style="font-size: 12px">
-            <li><a href="index.html">Home</a> </li>
-            <li><a href="features.html">Features</a> </li>
-            <li><a href="about-us.html">About us</a> </li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="footergriditem3 whitetext smallfont">Copyright © 2022 WalkiesPro. All rights reserved.</div>
-      </div>
-
-    </footer>
+    <footer-component>
+     
+    </footer-component>
   </div>
   <!-- end container -->
 

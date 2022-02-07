@@ -36,8 +36,3 @@ connectedCallback() {
 }
 }
 customElements.define('nav-bar', Navbar);
-/* const nav = `
-
-`;
-
-document.body.appendChild(template.content); */

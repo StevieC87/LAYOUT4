@@ -658,7 +658,8 @@ UTILITY CLASSES
 }
 nav {
  /*  background-color: #569ad7; */
-  width: 1200px;
+  /* width: 1200px; */
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -849,6 +850,11 @@ footer {
   font-size: 15px;
 }
 
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+                   MEDIA QUERIES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* footer related media queries */
 @media (min-width: 336px) {
 }
 @media (min-width: 450px) {
@@ -872,11 +878,22 @@ footer {
     grid-row: 2/ 3;    
   }
 }
+/* CASE STUDIES MEDIA QUERIES  */
+
+@media (min-width: 500px) {
+  .casestudiesinnerwrapper {
+    grid-template-columns: 1fr 1fr;
+    /*  padding: 20px 20px 0 20px; */
+  }
+  .casestudy1title {
+    grid-column: 2 / 3;
+  }
+  .casestudy1img {
+    grid-column: 1 / 2;
+  }
+}
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-                   MEDIA QUERIES
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* to switch to hamburger menu */
 @media (min-width: 677px) {
   .hamburger-menu {
@@ -935,7 +952,7 @@ footer {
 @media (max-width: 676px) {
   /* HIDE NAV LI WHEN SMALL SCREEN */
   nav {
-    /* width: 1200px; */
+   
     width: 100%;
   }
  .navwrapper {
@@ -1006,23 +1023,18 @@ footer {
     /* font-size: 28px; */
     font-size: 1.2em;
   }
-}
-
 /* media queries for FEATURES PAGE */
-@media (max-width: 510px) {
   .features_grid_container {
     grid-template-columns: 1fr;
   }
-}
-/* BREAKPOINTS */
-@media (max-width: 510px) {
   .featurescustomerwrapper {
     padding-bottom: 10px;
 }
-.quotewrapper {
-  padding: 40px 0 40px 0;
+  .quotewrapper {
+    padding: 40px 0 40px 0;
+  }
 }
-}
+
 /* ABOUT US MEDIA QUERIES */
 @media (max-width: 600px) {
   .aboutusformgrid2 {
@@ -1058,21 +1070,14 @@ footer {
     justify-self: center;
     align-self: center;
   }
+  nav {
+    min-width: 850px;
+  }
 }
-
-/* CASE STUDIES MEDIA QUERIES  */
-
-@media (min-width: 500px) {
-  .casestudiesinnerwrapper {
-    grid-template-columns: 1fr 1fr;
-    /*  padding: 20px 20px 0 20px; */
-  }
-  .casestudy1title {
-    grid-column: 2 / 3;
-  }
-  .casestudy1img {
-    grid-column: 1 / 2;
-  }
+@media (min-width: 1200px) {
+  nav {
+     min-width: 1200px;
+   }
 }
 
 

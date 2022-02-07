@@ -4,6 +4,14 @@
   --mybackgroundBeige1: #F6EFE8;
   --mybackgroundBeige2: #F9F9F2;
   --mybackgroundBeige3deep: #FFEDDB;
+  --secondarycolor1: #00C9AF;
+  --primaryTextColor: #569ad7;
+  --primaryTextColor2: #00C9AF;
+  --secondary2: #3e79bc;
+  --mypurple: #4A154B;
+  --mypurple2: #842585;
+  --myblack: #383838;
+  /* --secondary2: #8A2BE2; */
 }
 
 html,
@@ -13,6 +21,7 @@ body {
   font-family: Roboto;
   margin: auto;
   background: var(--mybackgroundBeige1);
+  scroll-behavior: smooth;
    
 }
 .body2 {
@@ -36,9 +45,11 @@ h4,
 h5,
 h6 {
   font-family: PoppinsBold;
-  color: var(--myblueh1);
+ /*  color: var(--myblueh1); */
+  color: var(--myblack);
   padding: 10px 0 10px 0;
   margin: 0px;
+  
 }
 h1 {
   font-size: 38px;
@@ -49,6 +60,7 @@ h2 {
 }
 h3 {
   font-size: 28px;
+  color: var(--myblue);
 }
 h4 {
   font-size: 26px;
@@ -233,7 +245,7 @@ h6 {
       }
       .featurescustomerwrapper {
         width: 100%;
-        background-color: FFF;
+        background-color: var(--mybackgroundBeige2);
         display: grid;
         justify-content: center;
         grid-template-columns: 1fr 2fr 1fr;
@@ -244,6 +256,11 @@ h6 {
       .h3titlecenter {
         justify-self: center;
         padding: 0px 0 10px 0;
+        z-index: 100;
+      }
+      .h3titlecenter1 {
+        padding-top: 60px;
+        padding-bottom: 30px;
       }
       .featurescustomerinnerwrapper {
         max-width: 800px;
@@ -531,6 +548,49 @@ label {
 UTILITY CLASSES 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+/* ANGLED CSS */
+.skew-cc-Footer{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, #4A154B 50%), linear-gradient(-50deg, var(--mybackgroundBeige1) 16px, #000 0);
+}
+
+/*-------------------------*/
+/* SKEW COUNTER CLOCKWISE  */
+/*-------------------------*/
+.skew-c-Footer{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--myblue) 50%);
+}
+.skew-c-QuoteWrap{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to left top, #4A154B  49%, var(--mybackgroundBeige2) 50%);
+}
+.skew-c-QuoteWrap2{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to left top, white 49%, #4A154B 50%);
+  /* var(--mybackgroundBeige1) */
+}
+.skew-cc-QuoteWrap{
+  width:100%;
+  height:50px;
+  position:absolute;
+  left:0px;
+  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, #4A154B 50%), linear-gradient(-50deg, var(--mybackgroundBeige1) 16px, #000 0);
+}
+
+/* END OF ANGLED CSS */
 
 .btn {
   cursor: pointer;
@@ -591,6 +651,9 @@ UTILITY CLASSES
 .sectionwrapper {
   padding: 40px 20px 40px 20px;
 }
+.sectionwrapperfeatures1 {
+  height: 250px;
+}
 
 
 .centertext {
@@ -631,7 +694,7 @@ UTILITY CLASSES
 }
 .anostyle > li a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
 }
 
 .responsiveimg {
@@ -645,7 +708,10 @@ UTILITY CLASSES
 
 .quotewrapper {
   padding: 80px 0 80px 0;
- /*  background-color: #f9f9f2; */
+   background-color: var(--mybackgroundBeige1);
+}
+.quotewrapper > div {
+  margin-top: 20px;
 }
 
 
@@ -662,7 +728,8 @@ UTILITY CLASSES
 nav {
  /*  background-color: #569ad7; */
   /* width: 1200px; */
-  width: 100%;
+ /*  width: 100%; */
+  width: 100vw;
   display: flex;
   justify-content: space-between;
 }
@@ -687,7 +754,7 @@ nav {
   /* padding: 0 20px 0 10px; */
   text-align: center;
   text-decoration: none;
-  color: var(--myblue);
+  color: var(--myblack);
   /*  color: black; */
   font-family: 'PoppinsBold';
   font-size: 15px;
@@ -796,10 +863,13 @@ HAMBURGER MENU
 
 footer {
   background-color: var(--myblue);
+ /*  background-color: #4A154B; */
+
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 80px;
+ 
 }
 /* DEFAULT FOR SMALL SCREEN - MOBILE FIRST */
 .footerwrapper {
@@ -954,10 +1024,7 @@ footer {
 }
 @media (max-width: 676px) {
   /* HIDE NAV LI WHEN SMALL SCREEN */
-  nav {
-   
-    width: 100%;
-  }
+  
  .navwrapper {
   align-content:space-between;
   justify-content:space-between
@@ -1073,13 +1140,17 @@ footer {
     justify-self: center;
     align-self: center;
   }
-  nav {
-    min-width: 850px;
-  }
+  
 }
+/* @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  nav {
+    min-width: 1000px;
+  }
+} */
+
 @media (min-width: 1200px) {
   nav {
-     min-width: 1200px;
+     width: 1200px;
    }
 }
 

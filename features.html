@@ -13,6 +13,35 @@
 
  <script type="text/javascript" src="components/navbar.js" defer></script>
  <script type="text/javascript" src="components/footer.js" defer></script>
+
+ <style>
+   	.skew-cc{
+	  width:100%;
+	  height:50px;
+	  position:absolute;
+	  left:0px;
+	  background: linear-gradient(to right bottom, #823A9C 49%, var(--mybackgroundBeige1) 50%),    linear-gradient(-50deg, var(--mybackgroundBeige1) 16px, #000 0);
+	}
+  .skew-cc::before{
+    height:50px;
+    content: '';
+  }
+	
+	/*-------------------------*/
+	/* SKEW COUNTER CLOCKWISE  */
+	/*-------------------------*/
+	.skew-c{
+	  width:100%;
+	  height:50px;
+	  position:absolute;
+	  left:0px;
+	  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--mybackgroundBeige2) 50%);
+	}
+  .skew-c::before{
+    height:50px;
+    content: '';
+  }
+ </style>
 </head>
 
 <body>
@@ -24,7 +53,7 @@
       <nav-bar></nav-bar>
     </div>
     <!------------------ FEATURES: HEADER  --------------------->
-    <section class="featuresgrid sectionwrapper">
+    <section class="featuresgrid sectionwrapper sectionwrapperfeatures1">
       <div class="hello"></div>
       <div class="featuresh1">
         <h1 style="">All the tools you need to succeed</h1>
@@ -34,10 +63,12 @@
         perspiciatis odit atque nisi.
       </div>
     </section>
+    <div class="skew-c"></div>
+    
     <!------------------ FEATURES: 1 Scheduling --------------------->
     <section class="featurescustomerwrapper">
       <div class="featurescustomerinnerwrapper">
-        <div class="h3titlecenter">
+        <div class="h3titlecenter h3titlecenter1">
           <h3>Scheduling</h3>
         </div>
         <div class="features_grid_container">
@@ -196,6 +227,8 @@
     <!------------------ 'all features' BUTTON --------------------->
 
     <!------------------ QUOTE SECTION --------------------->
+       
+  <!--   <div class="skew-c-QuoteWrap"></div>  -->
     <section class="quotewrapper">
       <div>
         <h3 class="centertext">
@@ -204,7 +237,10 @@
         </h3>
       </div>
     </section>
+    
     <!------------------ FOOTER --------------------->
+    <div class="skew-c-Footer"></div>
+    
     <footer-component>
      
     </footer-component>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .slideshow-container {
+            max-width: 500px;
+            max-height: 400px;
+            position: relative;
+            margin: auto;
+            border: 1px solid gray;
+            }
+        .mySlides {
+           
+        }
+        .imgclass {
+            max-height: 300px;
+            width: 100%;
+            object-fit: fill;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+    <div class="slideshow-container">
+        <div class="mySlides">
+           
+            <img id="imgimg" src="" class="imgclass" >
+            <div class="numbertext">number of img</div>
+            <!-- <div class="text">Caption Text</div> 
+            style="width:100%"
+        -->
+          </div>
+        
+
+
+    </div>
+
+    <script>
+   /*  window.onload="myFunctionbb()";
+           
+           */
+        const myImages = [
+            "https://picsum.photos/id/1003/200/300",
+            "https://picsum.photos/id/1012/200/300",
+            "https://picsum.photos/id/1011/200/300",
+            "https://picsum.photos/id/102/200/300"
+        ];
+        //simple way
+        let first_img = myImages[0];
+        let second_img = myImages[1];
+        let third_img = myImages[2];
+        let fourth_Img = myImages[3];
+        
+        let current_img = first_img;
+        let counter = 0;
+
+        function loop(current_img) {
+
+        }
+
+        const imgspace = document.querySelector('#imgimg');
+        imgspace.setAttribute("src", first_img);
+        /* document.write(first_img); */
+         
+       
+       
+        let buttonLeft = document.querySelector('#left');
+        let buttonRight = document.querySelector('#right');
+        buttonRight.addEventListener('click', function(event)
+        {
+             //   alert(counter);
+                 if (counter <= 3) {
+                    counter++;
+                    
+                }
+                else if (counter > 3) {
+                    counter = 1;
+                };
+             let shownext = myImages.at(counter);
+             imgspace.setAttribute("src", shownext);
+        })
+       console.log(counter);
+
+    </script>
+</body>
+</html>

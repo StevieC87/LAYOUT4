@@ -452,11 +452,16 @@ label {
   background-color: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-
 }
 .pricingcard:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.pricingcard:hover button{
+  
+  transform: scale(1.02,1.02);
+  transform: perspective(100%);
+  backface-visibility: hidden;
+ /*  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }
 .cardtitle {
   text-align: center;
@@ -689,7 +694,10 @@ UTILITY CLASSES
   background-color: #5293DD;
   font-family: PoppinsBold;
   font-size: 0.7rem;
-  
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.btnshadow:hover {
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  */
 }
 .white {
   background-color: white;
@@ -926,7 +934,8 @@ background-color: var(--myblue);
   text-align: center;
   text-decoration: none;
   line-height: 1.5rem;
-  color: var(--myblueh1);
+  /* color: var(--myblueh1); */
+  color: var(--mybackgroundBeige3deep);
   font-family: PoppinsBold;
 }
 .slidemenu ul li a:hover {
@@ -935,7 +944,8 @@ background-color: var(--myblue);
   /* opacity: 0.5; */
 }
 .activeSidebarLi {
-  background-color: #fbfbfa;
+  background-color: var(--mybackgroundBeige3deep);
+  color: var(--myblueh1) !important; 
   border-radius: 15px;
 }
 /* END SLIDEMENU */

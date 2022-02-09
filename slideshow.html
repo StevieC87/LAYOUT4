@@ -17,6 +17,7 @@
         .mySlides {
            
         }
+       
         .imgclass {
             max-height: 300px;
             width: 100%;
@@ -49,19 +50,19 @@
     <button id="right">Right</button>
     <div class="slideshow-container">
         <div class="mySlides">
-           
-            <img id="imgimg" src="" class="imgclass" >
-            <div class="numbertext">number of img</div>
+            <img id="imgimg" style="opacity: 1;" src="" class="imgclass" >
+          </div>
+          <!--   <div class="numbertext">number of img</div> -->
             <!-- <div class="text">Caption Text</div> 
             style="width:100%"
         -->
-          </div>
-        
 
 
     </div>
-
+    <div id="hello">123</div>
     <script>
+
+       
    /*  window.onload="myFunctionbb()";
            
            */
@@ -71,7 +72,12 @@
             "https://picsum.photos/id/1011/200/300",
             "https://picsum.photos/id/102/200/300"
         ];
-        
+
+        let stringa = 'hello';
+      /*   let mytext  = '<p>hello</p>'; */
+      
+
+
         let numberofImages = myImages.length;
         let maxCounterValue = numberofImages - 1;
         //create values for if else 
@@ -82,36 +88,128 @@
  
         //Put first image
         let counter = 0;
-        let ImgArrayIndex = myImages.at(counter);
+       /*  let ImgArrayIndex = myImages.at(counter); */
+        let ImgArrayIndex = myImages[counter];
+        let mycount = 0; //for fade
         const imgspace = document.querySelector('#imgimg');
         imgspace.setAttribute("src", ImgArrayIndex);
         console.log(counter);
 
+
+            //HERE TESTIGN FADING STUFF
+            var element = document.querySelector(".imgimg");
+            var duration = 500; /* fade duration in millisecsond */
+            var hidtime = 100; /* time to stay hidden */
+            var showtime = 500; /* time to stay visible */
+            var running = 0 /* Used to check if fade is running */
+            var iEcount = 1 /* Element Counter */
+            var iTotalE = numberofImages;
+            mycount = 1;
+
+
         let buttonLeft = document.querySelector('#left');
         let buttonRight = document.querySelector('#right');
-         //RIGHT CLICK EVENT HANDLER
+         
+        
+        //RIGHT CLICK EVENT HANDLER
+
         buttonRight.addEventListener('click', function(event)
         {
+          
+            StartFade();
                  if (counter < maxCounterValue) {
                     counter++;
+                    console.log(counter, 'counter11');
                     
                 }
                 else if (counter >= maxCounterValue) {
                     counter = 0;
+                    console.log(counter, 'counter11');
                 };
                 let imgdiv = document.querySelector('.mySlides');
-               /**/
-              /*  imgdiv.classList.remove('fade');  */
-                imgdiv.classList.toggle('fade'); 
-             let shownext = myImages.at(counter);
-             
-             imgspace.setAttribute("src", shownext);
-
-             console.log(counter);
             
+          /*  let shownext = myImages.at(counter); */
+           let shownext = myImages[counter];  
+           /* function quick() {
+                imgspace.setAttribute("src", shownext);
+              
+            }    */      
+           /* const slowimageswitch_forfade = setTimeout("quick()", 500); */
+           const slowimageswitch_forfade =   setTimeout(() => imgspace.setAttribute("src", shownext), 500);
+          
+           mycount = 1;
+           console.log(mycount, 'mycount after click');
         })
         //LEFT CLICK  EVENT HANDLER
       
+            /* my try  */
+
+        /*     function fadeInOut() {
+                
+                
+            }
+ */
+
+
+             
+                function SetOpa(Opa) {
+                    var element = document.querySelector(".mySlides");
+                   /*  element.style.display = 'none'; */
+                    element.style.opacity = Opa;
+                    element.style.MozOpacity = Opa;
+                    element.style.KhtmlOpacity = Opa;
+                    element.style.filter = 'alpha(opacity=' + (Opa * 100) + ');';
+                }
+                function StartFade() {
+                    console.log(mycount, 'mycount');
+                   /*  if (mycount != 0) { return; } */
+
+                    /* if (running != 1 && mycount == 1) { */
+                        /* if (mycount == 0) { */
+                   /*  running = 1; */
+                  /*   mycount = 1; */
+                    fadeOut()
+                   /*  } */
+                    }
+                    let fade_in_time = '';  
+                    let callFadeout =  '';
+                    let callFadein = '';
+                function fadeOut() {
+                    for (i = 0; i <= 1; i += 0.01) {
+                        fade_in_time =  setTimeout("SetOpa(" + (1 - i) +")", i * duration);
+                    }
+                    
+                    callFadein = setTimeout("FadeIn()", (duration + hidtime));
+                    }
+                function FadeIn() {
+                   
+                    for (i = 0; i <= 1; i += 0.01) {
+                       
+                        callFadeout = setTimeout("SetOpa(" + i +")", i * duration);
+                    }
+                    mycount = 0;
+                    clearInterval(fade_in_time);
+                    clearInterval(callFadeout);
+                    clearInterval(callFadein);
+                    
+       
+     
+                    console.log(mycount, 'after fadein');
+                  /*   if (iEcount == iTotalE) {
+                        iEcount = 1 */
+                      
+                        
+                      /*   clearInterval */
+                       /*  document.getElementById("slice" + iEcount).style.display = "block";
+                        document.getElementById("slice" + iTotalE).style.display = "none"; */
+                   /*  } else { */
+                       /*  document.getElementById("slice" + (iEcount + 1)).style.display = "block";
+                        document.getElementById("slice" + iEcount).style.display = "none"; */
+                    /*     iEcount = iEcount+1
+                    } */
+                 /*    setTimeout("fadeOut()", (duration + showtime)); */
+                    }
+                    /* END OF FADING STUFF */
     </script>
 </body>
 </html>

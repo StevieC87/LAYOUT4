@@ -847,13 +847,16 @@ nav {
   font-family: 'PoppinsBold';
   font-size: 15px;
   /*  border-bottom: 1px solid transparent; */
-
   line-height: 21px;
+  transition-property: color;
+  transition-duration: 300ms;
 }
 #navbar ul li a:hover {
   /*  text-decoration: underline; */
   /*  border-bottom: 1px solid var(--myblue); */
-  color: #9370db;
+ /*  color: #9370db; */
+  color: var(--myblue);
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -880,7 +883,7 @@ HAMBURGER MENU
  /*  background-color: var(--myblue); */
  background-color: #383838;
   border-radius: 2px;
-  transition-property: transform;
+  transition-property: transform, opacity;
   transition-duration: 500ms;
 
   /*   transform-origin: right;
@@ -902,7 +905,10 @@ HAMBURGER MENU
 
 .menuhidden {
   height: 100vh;
+ /*  height: 350px; */
   width: 200px;
+/*   border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
  /*  background-color: white; */
 /*  background-color: var(--mybackgroundBeige2); */
 /* #13016A */
@@ -910,7 +916,7 @@ background-color: var(--myblue);
   position: fixed;
   top: 0;
   right: -200px;
-  transition: ease 0.2s;
+  transition: ease 0.5s;
 }
 
 .visibleright {
@@ -939,7 +945,7 @@ background-color: var(--myblue);
   font-family: PoppinsBold;
 }
 .slidemenu ul li a:hover {
-  background-color: #fbfbfa;
+/*   background-color:; */
   border-radius: 15px;
   /* opacity: 0.5; */
 }

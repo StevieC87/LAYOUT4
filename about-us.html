@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WalkiesPro Dog Walking Software</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css" />
 
   <script type="text/javascript" src="components/navbar.js" defer></script>
   <script type="text/javascript" src="components/footer.js" defer></script>
+  <script type="text/javascript" src="components/sidemenu.js  " defer></script>
   <script type="text/javascript" src="js/scripts.js" defer></script>
 </head>
 
@@ -95,18 +97,8 @@
   <!-- end container -->
 
   <!------------------ SIDE MENU --------------------->
-  <div id="menuhidden" class="menuhidden hiddenright">
-    <div class="slidemenu">
-      <ul tabindex="-1" aria-hidden="true">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="features.html">Features</a></li>
-        <li><a class="activeSidebarLi" href="about-us.html">About</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <!--    <hr /> -->
-      </ul>
-    </div>
-  </div>
+  <side-menu></side-menu>
+
 
   <script>
     /* HERE TO STOP SUBMIT BUTTON REFRESH ON CLICK (IN ABOUTUS PAGE)*/

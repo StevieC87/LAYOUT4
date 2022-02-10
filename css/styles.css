@@ -808,6 +808,10 @@ UTILITY CLASSES
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
                           NAVBAR  
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+nav-bar {
+  width: 100%;
+}
 .navwrapper {
   display: flex;
   justify-content: center;
@@ -817,7 +821,9 @@ nav {
  /*  background-color: #569ad7; */
   /* width: 1200px; */
  /*  width: 100%; */
+
   width: 100vw;
+  max-width:100%;
   display: flex;
   justify-content: space-between;
 }
@@ -883,8 +889,9 @@ HAMBURGER MENU
  /*  background-color: var(--myblue); */
  background-color: #383838;
   border-radius: 2px;
-  transition-property: transform, opacity;
-  transition-duration: 500ms;
+ /*  transition-property: transform, opacity;
+  transition-duration: 500ms; */
+  transition: transform 500ms, opacity 200ms;
 
   /*   transform-origin: right;
   transition: transform 0.5s; */
@@ -1250,7 +1257,7 @@ footer {
 
 @media (min-width: 1200px) {
   nav {
-     width: 1200px;
+     width: 1150px;
    }
 }
 

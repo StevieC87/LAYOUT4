@@ -35,9 +35,9 @@
             /* Fading animation */
             .fade {
             -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
+            -webkit-animation-duration: 2s;
             animation-name: fade;
-            animation-duration: 1.5s;
+            animation-duration: 2s;
             }
 
             @-webkit-keyframes fade {
@@ -56,13 +56,7 @@
     <button id="left">Left</button>
     <button id="right">Right</button>
     <div class="slideshow-container">
-      
-      <!--   <div class="mySlides">
-            <img id="imgimg" style="opacity: 1;" src="https://picsum.photos/id/1003/200/300" class="imgclass" >
-          </div> -->
-       
     </div>
-    <div id="hello">123</div>
     <script>
         const myImages = [
             "https://picsum.photos/id/1003/200/300",
@@ -73,174 +67,67 @@
         let counter = 0;
         let numberofImages = myImages.length;
         let maxCounterValue = numberofImages - 1;
-        //first try dynamic
-
-       /*  let slideDynamic  = `
-        <div class="mySlides slide${counter}" id="img${counter}" class="">
-        <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
-              
-        </div>
-        `; */
-       
-      /*   document.querySelector('.slideshow-container').innerHTML = slideDynamic; */
-      /*   console.log(slideDynamic, 'slideDynamic '); */
-       
-        //TRY OUTPUT EACH DIV IN THE BEGINNING - then do it display none
+      
         let parentdiv = document.querySelector('.slideshow-container');
 
-       /*  console.log(parentdiv, 'parentdiv'); */
+       /* HERE MAKE INITIALLY LOOP TO PRELOAD THE IMAGES AND PLACE THEM  */
         myImages.forEach((element, index) => {
             console.log(index,'index');
-            /* console.log({ element }); */
-
-            let newimg = document.createElement('div');
-           
-           /*  let slideDynamic  = ` */
+            const newimg = document.createElement('div');
+           let visibility;
+           /* here only display the first one initially, others: hidden */
+            if(index === 0) {
+                visibility = 'display: block;';
+            }
+            else {
+                visibility = 'display: none';
+            }
             newimg.innerHTML = `
                 <div class="mySlides slide${index}" id="img${index}" class="">
-                <img id="imgimg" class="fade imgclass" src="${myImages[index]}" class="imgclass" >
+                <img id="imgimg" class="fade imgclass" src="${myImages[index]}" 
+                style="${visibility}" class="imgclass" >
+                      
+                </div>
+                `;               
+            parentdiv.appendChild(newimg);
+            });
+        let ImgArrayIndex = myImages[counter];    
+        const imgspace = document.querySelector('#imgimg');
+        let buttonLeft = document.querySelector('#left');
+       
+        
+    //RIGHT CLICK EVENT HANDLER
+    let buttonRight = document.querySelector('#right');
+    buttonRight.addEventListener('click', function(event)
+    {
+            //CURRENT IMAGE DIV MAKE DISAPPEAR
+            let imgcounter = `img${counter}`;
+            let currentDiv = document.getElementById(imgcounter);
+            currentDiv.style.display = 'none';  
+            //not used let imgdiv = document.querySelector('.mySlides');
+            if (counter < maxCounterValue) {
+                    counter++;   
+            }
+            else if (counter >= maxCounterValue) {
+                counter = 0;
+            };
+            let imgcounternew = `img${counter}`;
+            console.log(imgcounternew, 'imgcounternew');
+
+            let slideDynamicNew  = `
+                <div class="mySlides slide${counter}" id="img${counter}" class="">
+                <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
                       
                 </div>
                 `;
-         /*    console.log(slideDynamic); */
-                
-           
-                parentdiv.appendChild(newimg);
-           /*  numCallbackRuns++; */
-            });
+            /*   let nextdiv = document.getElementById(imgcounter); */
+            document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
+        /*    nextdiv.style.display = 'block'; */
 
-
-        let stringa = 'hello';
-     //create values for if else 
-        console.log(maxCounterValue, 'maxCounterValue');
-        
-       /*  var element = document.getElementById("myDIV");
-        element.classList.add("mystyle"); */
- 
-        //Put first image
-        
-       /*  let ImgArrayIndex = myImages.at(counter); */
-        let ImgArrayIndex = myImages[counter];
-        let mycount = 0; //for fade
-        const imgspace = document.querySelector('#imgimg');
-       /*  imgspace.setAttribute("src", ImgArrayIndex); */
-        console.log(counter);
-
-
-            //HERE TESTIGN FADING STUFF
-            var element = document.querySelector(".imgimg");
-            var duration = 500; /* fade duration in millisecsond */
-            var hidtime = 100; /* time to stay hidden */
-            var showtime = 500; /* time to stay visible */
-            var running = 0 /* Used to check if fade is running */
-            var iEcount = 1 /* Element Counter */
-            var iTotalE = numberofImages;
-            mycount = 1;
-
-
-        let buttonLeft = document.querySelector('#left');
-        let buttonRight = document.querySelector('#right');
-         
-        
-        //RIGHT CLICK EVENT HANDLER
-
-        buttonRight.addEventListener('click', function(event)
-        {
-         
-           /*  NEW STUFF */
-             /* let currentDiv = document.querySelector(`img${counter}`); */
-           /*   let currentDiv = document.querySelector(`#img${counter}`); */
-          /*  let currentDiv = document.querySelector('.MySlides'); */
-    /*       let currentDiv = document.getElementById('imgimg'); */
-
-
-
-    //CURRENT IMAGE DIV
-    let imgcounter = `img${counter}`;
-    console.log(imgcounter, 'imgcounter');
-    let currentDiv = document.getElementById(imgcounter);
-    currentDiv.style.display = 'none';  
-    /* 
-    console.log(currentDiv);
-    let cdiv= currentDiv.getAttribute('id');
-    console.log(`img${counter}`);
-    console.log(cdiv, 'cdiv'); 
-    let shownext = myImages[counter];
-    */
-    
-    let imgdiv = document.querySelector('.mySlides');
-      
-
-       /* StartFade(); */
-            if (counter < maxCounterValue) {
-                    counter++;
-                    console.log(counter, 'counter11');
-                    
-                }
-            else if (counter >= maxCounterValue) {
-                    counter = 0;
-                    console.log(counter, 'counter11');
-                };
-           mycount = 1;
-           
-          /*  const slowimageswitch_forfade = setTimeout(() => imgspace.setAttribute("src", shownext), 500); */
-          let imgcounternew = `img${counter}`;
-          console.log(imgcounternew, 'imgcounternew');
-
-          let slideDynamicNew  = `
-            <div class="mySlides slide${counter}" id="img${counter}" class="">
-            <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
-                  
-            </div>
-            `;
-        /*   let nextdiv = document.getElementById(imgcounter); */
-          document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
-       /*    nextdiv.style.display = 'block'; */
-
-           
-           console.log(mycount, 'mycount after click');
         })
       
-             
-              /*   function SetOpa(Opa) {
-                    var element = document.querySelector(".mySlides");
-                 
-                    element.style.opacity = Opa;
-                    element.style.MozOpacity = Opa;
-                    element.style.KhtmlOpacity = Opa;
-                    element.style.filter = 'alpha(opacity=' + (Opa * 100) + ');';
-                }
-                function StartFade() {
-                    console.log(mycount, 'mycount');
-                    fadeOut()
-                }
-                let fade_in_time = '';  
-                let callFadeout =  '';
-                let callFadein = '';
-                function fadeOut() {
-                    for (i = 0; i <= 1; i += 0.01) {
-                        fade_in_time =  setTimeout("SetOpa(" + (1 - i) +")", i * duration);
-                    }
-                    
-                    callFadein = setTimeout("FadeIn()", (duration + hidtime));
-                    }
-                function FadeIn() {
-                   
-                    for (i = 0; i <= 1; i += 0.01) {
-                       
-                        callFadeout = setTimeout("SetOpa(" + i +")", i * duration);
-                    }
-                    mycount = 0;
-                    clearInterval(fade_in_time);
-                    clearInterval(callFadeout);
-                    clearInterval(callFadein);
-                    
-       
-     
-                    console.log(mycount, 'after fadein');
-                
-                    }
-               */
+                /*  const slowimageswitch_forfade = setTimeout(() => imgspace.setAttribute("src", shownext), 500); */
+            
     </script>
 </body>
 </html>

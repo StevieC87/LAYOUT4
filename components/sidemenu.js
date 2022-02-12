@@ -12,7 +12,7 @@ class SideMenu extends HTMLElement {
         <li><a href="index.html">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="about-us.html">About</a></li>
-        <li><a class="activeSidebarLi" href="case-studies.html">Case Studies</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
         <li><a href="pricing.html">Pricing</a></li>
       </ul>
     </div>
@@ -22,3 +22,4 @@ class SideMenu extends HTMLElement {
   }
   }
   customElements.define('side-menu', SideMenu);
+  //class="activeSidebarLi" 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slideshow3CSS.css">
+    <title>Document</title>
+
+    <!-- HERE I TRY WITH ALL IMAGES PRELOADED AND JUST HIDDEN -->
+    <style>
+      
+    </style>
+</head>
+<body>
+    
+    <div class="slideshow-container">
+        <div id="buttondiv">
+            <button id="left">Left</button>
+            <button id="right">Right</button>
+        </div>
+    </div>
+    <script>
+        const myImages = [
+            "https://picsum.photos/id/1003/200/300",
+            "https://picsum.photos/id/1012/200/300",
+            "https://picsum.photos/id/1011/200/300",
+            "https://picsum.photos/id/1022/200/300"
+        ];
+        let counter = 0;
+        let numberofImages = myImages.length;
+        let maxCounterValue = numberofImages - 1;
+      
+        let parentdiv = document.querySelector('.slideshow-container');
+
+       /* HERE MAKE INITIALLY LOOP TO PRELOAD THE IMAGES AND PLACE THEM  */
+        myImages.forEach((element, index) => {
+            console.log(index,'index');
+            const newimg = document.createElement('div');
+           let visibility;
+           /* here only display the first one initially, others: hidden */
+            if(index === 0) {
+                visibility = 'display: block;';
+            }
+            else {
+                visibility = 'display: none';
+            }
+            newimg.innerHTML = `
+                <div class="mySlides slide${index}" id="img${index}" class="">
+                <img id="imgimg" class="fade imgclass" src="${myImages[index]}" 
+                style="${visibility}" class="imgclass" >
+                      
+                </div>
+                `;               
+            parentdiv.appendChild(newimg);
+            });
+        let ImgArrayIndex = myImages[counter];    
+        const imgspace = document.querySelector('#imgimg');
+        let buttonLeft = document.querySelector('#left');
+       
+        
+    //RIGHT CLICK EVENT HANDLER
+    let buttonRight = document.querySelector('#right');
+    buttonRight.addEventListener('click', function(event)
+    {
+            //CURRENT IMAGE DIV MAKE DISAPPEAR
+            let imgcounter = `img${counter}`;
+            let currentDiv = document.getElementById(imgcounter);
+            currentDiv.style.display = 'none';  
+            //not used let imgdiv = document.querySelector('.mySlides');
+            if (counter < maxCounterValue) {
+                    counter++;   
+            }
+            else if (counter >= maxCounterValue) {
+                counter = 0;
+            };
+            let imgcounternew = `img${counter}`;
+            console.log(imgcounternew, 'imgcounternew');
+
+            let slideDynamicNew  = `
+                <div class="mySlides slide${counter}" id="img${counter}" class="">
+                <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
+                      
+                </div>
+                `;
+            /*   let nextdiv = document.getElementById(imgcounter); */
+            document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
+        /*    nextdiv.style.display = 'block'; */
+
+        })
+      
+                /*  const slowimageswitch_forfade = setTimeout(() => imgspace.setAttribute("src", shownext), 500); */
+            
+    </script>
+</body>
+</html>

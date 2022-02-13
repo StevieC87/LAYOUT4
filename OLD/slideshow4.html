@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- HERE I TRY WITH ALL IMAGES PRELOADED AND JUST HIDDEN -->
+    <style>
+         :root {
+            --imgwidthpx: 500px;
+            --imgheightpx: 400px;
+         }
+         body {
+             z-index: 0;
+         }
+        .slideshow-container {
+            max-width: 500px;
+            max-height: 400px;
+            height: 400px;
+            position: relative;
+          /*   margin: auto; */
+            border: 1px solid gray;
+            }
+        .mySlides {
+           
+        }
+        [name=imgimg] {
+            transition: right 3s ease;
+        }
+       
+        .imgclass {
+            max-height: 300px;
+            width: 100%;
+            object-fit: fill;
+
+        }
+        .imgimg {
+          /*   position: absolute;
+            left: 0;
+            top: 0; */
+
+        }
+    
+        .slideleft {
+            position: relative;
+            right: 0;
+           /*  display: block; */
+            top: 0;
+            
+        }
+        .slideright {
+            position: absolute;
+            right: -500px;
+            top: 0px;
+            /* display: block; */
+            z-index: 14;
+           /*  visibility: hidden; */
+           transition: right 3s ease;
+           transition: visibility 3s ease;
+          
+        }
+        .slidetoleft {
+           
+            transition: right 3s ease;
+            transition: visibility 3s ease;
+            right: 0px;
+        }
+
+        .divclass {
+           z-index: 1;
+           height: 400px;
+           width: 500px;
+          
+       }
+
+       .container {
+            position: relative;  
+            z-index: 10;
+           width: 100%;
+           
+       }
+      .none {
+      /*   display: none; */
+      }
+      .block {
+          display: block;
+      }
+    </style>
+</head>
+<body>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+    <div class="container">
+    <div class="slideshow-container">
+        <div class="mySlides">
+        </div>
+    </div>
+    <p>11</p>
+    <p>11</p>
+    <p>11</p>
+    <p>11</p>
+    <p>11</p>
+    <p>11</p>
+</div>
+    <script>
+        const myImages = [
+            "https://picsum.photos/id/1003/200/300",
+            "https://picsum.photos/id/1012/200/300",
+            "https://picsum.photos/id/1011/200/300",
+            "https://picsum.photos/id/1022/200/300"
+        ];
+        let counter = 0;
+        let numberofImages = myImages.length;
+        let maxCounterValue = numberofImages - 1;
+        
+       
+
+        
+        let parentdiv1 = document.querySelector('.slideshow-container');
+        let parentdiv = document.querySelector('.mySlides');
+    
+
+        //LOOP OVER ARRAY OF IMAGES 
+        myImages.forEach((element, index) => {
+            console.log(index,'index');
+           // const newimg = document.createElement('div');
+           let visibility;
+           /* visibility = 'display: none' */
+           let classof;
+           const newimg = document.createElement('div');
+           console.log('take', index);
+           classof = `fade imgclass`; 
+            // here only display the first one initially, others: hidden //
+            if(index === 0) {
+                
+                classof = `fade imgclass slide${index} slidenext imgimg slideleft`; 
+               // console.log(classof,'classoff');
+               newimg.classList.add('divclass');
+                /* newimg.classList.add('none'); */
+             
+            }
+           else {
+               // visibility = 'display: none';
+             //  visibility = 'display: none; z-index: -1'; 
+               classof = `imgclass slide${index} slidenext imgimg  fade2`;  
+               newimg.classList.add('slideright');
+               newimg.classList.add('divclass');
+               /* newimg.style.display = 'none'; */
+               /* newimg.classList.add('none'); */
+               //console.log(classof,'classof');
+            
+            }  
+         
+            //EACH OF THE 4 PICTURES WILL BE PUT IN PLACE , 3 OUTSIDE 
+      /*       if (index === 1) {
+               
+                    //style="${visibility}" 
+            parentdiv.appendChild(newimg);
+
+            } */
+          /*   if (index === 2) {
+                newimg.innerHTML = `
+                    <img id="img${index}" name="imgimg" class="${classof}" src="${myImages[index]}" 
+                    </div>
+                    `;  
+                } */
+                 
+                    
+                   
+                    
+                    
+                    newimg.innerHTML = `
+                    <img id="img${index}" name="imgimg" class="${classof}" src="${myImages[index]}"  style="${visibility}" 
+                    </div>
+                    `;  
+                    //
+                    parentdiv.appendChild(newimg);
+
+         
+           
+         
+            
+            });
+        
+
+       /*  newimg.innerHTML = `
+            <div class="mySlides slide0" id="img0" class="">
+            <img id="imgimg" class="fade imgclass" src="${myImages[0]}" 
+            style="display: block" class="imgclass" >
+                  
+            </div>
+            `;    
+        parentdiv.appendChild(newimg); */
+
+        let ImgArrayIndex = myImages[counter];    
+        const imgspace = document.querySelector('#imgimg');
+        let buttonLeft = document.querySelector('#left');
+       
+        
+    //RIGHT CLICK EVENT HANDLER
+    let buttonRight = document.querySelector('#right');
+    buttonRight.addEventListener('click', function(event)
+    {
+           
+           //grab current image object
+           let imgcounter = `#img${counter}`; 
+           let imgcounter1 = `img${counter}`; 
+           //console.log(imgcounter);
+          let current_img = document.querySelector(imgcounter);
+          //hide current image - for now
+         // current_img.style.display = 'none';
+
+          // current_img.style.zIndex = -1;
+           
+            //not used let imgdiv = document.querySelector('.mySlides');
+
+            //counter is index and current photo shown
+            //if counter less than last index -> add to counter to show next image , next index
+            console.log('counter on click before raise it by one', counter);
+            if (counter < maxCounterValue) {
+                    counter++;   
+                    console.log('counter+1', counter);
+                    imgcounter1 = `img${counter}`; 
+                    console.log(imgcounter1, 'imgcounter');
+                    let nextdiv = document.getElementById(imgcounter1); //'img3'
+                 //   nextdiv.style.display = 'block';
+                   /*  nextdiv.style.right = '-200px'; */
+                    nextdiv.style.visibility = 'visible';
+                    
+                    let newa = document.querySelector('.slideright');
+                    newa.classList.add('slidetoleft');
+                    /* newa.classList.remove('none'); */
+                    /* newa.style.right = '-200px'; */
+                    
+                  /*   newa.style.display = 'block'; */
+                    
+                    console.log(nextdiv, 'nextdiv');
+                  //   nextdiv.ClassList.add('slide');
+
+
+            }
+            //or reset if last image
+            else if (counter >= maxCounterValue) {
+                counter = 0;
+            };
+   
+         //   let nextdiv = document.getElementById(imgcounter);
+           
+
+            
+           
+
+            console.log(imgcounter);
+         /*    console.log(nextdiv, 'nextdiv'); */
+                 /*  nextdiv.style.zIndex = '1';  */
+               //  nextdiv.style.display = 'block';
+           /*  let slideDynamicNew  = `
+                <div class="mySlides slide${counter}" id="img${counter}" class="">
+                <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
+                      
+                </div>
+                document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
+                `; */
+               
+                //let newimgimg = document.querySelector('[name = imgimg]');
+          //  console.log(newimgimg, 'newimgimg');
+         
+         //   boxOne.classList.add('horizTranslate');
+        })
+
+        //TO START ONPAGE LOAD 
+
+
+      
+                /*  const slowimageswitch_forfade = setTimeout(() => imgspace.setAttribute("src", shownext), 500); */
+            
+    </script>
+</body>
+</html>

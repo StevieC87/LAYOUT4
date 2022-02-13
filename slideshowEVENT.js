@@ -4,27 +4,21 @@ let buttonLeft = document.querySelector('#buttonleft');
 let buttonRight = document.querySelector('#buttonright');
 let resume = document.querySelector('#buttonresume');
 
-
+// EVENT LISTENER ON BUTTONS LEFT RIGHT
 let clickright = buttonRight.addEventListener('click', function(event)
     {
         nextslide(event);
     })
- 
 let clickleft = buttonLeft.addEventListener('click', function(event)
     {
         nextslide(event);
     })
 
-
-
-
 //CREATE AUTOMATIC SLIDER
 let autoslideInterval = setInterval(nextslide, 5000, 'autoslide');
 
-
-
+//FUNCTION SLIDE
 function nextslide(event) {
-    alert('yes');
   let eventtarget; 
   if(event !== 'autoslide') {
         eventtarget = event.target.id;
@@ -64,39 +58,22 @@ function nextslide(event) {
         `;
     document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
 
-    /*   let nextdiv = document.getElementById(imgcounter); */   
+   
 }
 
-//TEST HERE CONSTANT ARROW FUNCTION
- // const autoslideNew = setInterval(() => nextslide,200, 'autoslide' );
-/* 
-const hello = () => {
-    //asdf
-    console.log('hello');
-} */
-let bob = () => { console.log('bog') };
 let autoslideInterval2;
-//PAUSE AUTOMATIC SLIDER
 
-//RESUME SLIDER
-/* let clickresume = resume.addEventListener('click', function(event){
-    console.log('resume');
-   // hello();
-   autoslideInterval;
-}); */
+//RESUME SLIDER - EVENT LISTENER
 let clickresume = resume.addEventListener('click', function(){
     console.log('resume');
-   // hello();
-  // autoslideInterval = 1;
    autoslideInterval2 = setInterval(nextslide, 5000, 'autoslide');
    
 });
-let pauseEvent = pause.addEventListener('click', function(event) {
+//PAUSE AUTOMATIC SLIDER - EVENT LISTENER
+let pauseEvent = pause.addEventListener('click', function() {
     clearInterval(autoslideInterval);
     clearInterval(autoslideInterval2);
-   // autoslideInterval = false;
-    //console.log('clearinterval');
 });
-// const clickresume = resume.addEventListener('click', autoslideInterval);
-//not used let imgdiv = document.querySelector('.mySlides');
 
+
+ /*   let nextdiv = document.getElementById(imgcounter); */   

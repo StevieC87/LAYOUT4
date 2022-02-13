@@ -1,87 +1,102 @@
+/* UI BUTTONS */
 let pause = document.querySelector('#buttonpause');
-
-
 let buttonLeft = document.querySelector('#buttonleft');
 let buttonRight = document.querySelector('#buttonright');
+let resume = document.querySelector('#buttonresume');
 
-let eventlistright = buttonRight.addEventListener('click', function(event)
-{
-    //CURRENT IMAGE DIV MAKE DISAPPEAR
-    nextslide(event);
-})
-let eventlistleft = buttonLeft.addEventListener('click', function(event)
 
-{
-    nextslide(event);
-})
+let clickright = buttonRight.addEventListener('click', function(event)
+    {
+        nextslide(event);
+    })
+ 
+let clickleft = buttonLeft.addEventListener('click', function(event)
+    {
+        nextslide(event);
+    })
+
+
+
+
+//CREATE AUTOMATIC SLIDER
+let autoslideInterval = setInterval(nextslide, 5000, 'autoslide');
+
+
 
 function nextslide(event) {
-    let eventtarget; 
-  if(event == 'autoslide') 
-    {
-        // 
-        console.log(event);
-    
-    }
-    else if(event !== 'autoslide') {
+    alert('yes');
+  let eventtarget; 
+  if(event !== 'autoslide') {
         eventtarget = event.target.id;
     }
 
-   // console.log(event);
     let imgcounter = `img${counter}`;
+    //HIDE CURRENT SLIDE
     let currentDiv = document.getElementById(imgcounter);
     currentDiv.style.display = 'none';  
-    //not used let imgdiv = document.querySelector('.mySlides');
-    console.log(myImages.length, 'length myimages');
-    //if previous slide - if click left
+
+    //IF CLICK ON LEFT BUTTON / PREVIOUS SLIDE
     if(eventtarget === 'buttonleft') {
-        
-     //  let counter = (counter === 0) ? counter = 4 : counter--;
-       if(counter === 0)
-       {  counter = maxCounterValue;
-    console.log(counter, 'counter4');}
-       else {
+        //set counter - for which image to show next
+       if(counter === 0) //if first image, set counter to last image
+       {  
+           counter = lastImageIndex;
+        }
+       else { //otherwise show previous image
            counter--;
        }
-      //  counter--; 
-        console.log('buttonleft');
     }
-    //otherwise (so default interval, and when click right)
+    //IF CLICK RIGHT BUTTON
     else {
-        if (counter < maxCounterValue) {
-            counter++;   
+        if (counter < lastImageIndex) { 
+            counter++;  //show next image
         }
-        else if (counter >= maxCounterValue) {
-            counter = 0;
+        else if (counter >= lastImageIndex) {
+            counter = 0;  //if last image, show first image
         };
     }
-    let imgcounternew = `img${counter}`;
-    console.log(imgcounternew, 'imgcounternew');
-
+    //CREATE NEXT SLIDE IMAGE
+    let imgcounternew = `img${counter}`; //for image id, using counter
     let slideDynamicNew  = `
         <div class="mySlides slide${counter}" id="img${counter}" class="">
         <img id="imgimg" class="fade imgclass" src="${myImages[counter]}" class="imgclass" >
-              
         </div>
         `;
-    /*   let nextdiv = document.getElementById(imgcounter); */
     document.querySelector('.slideshow-container').innerHTML = slideDynamicNew;
-/*    nextdiv.style.display = 'block'; */
 
-
-    
+    /*   let nextdiv = document.getElementById(imgcounter); */   
 }
 
-const autoslideInterval = setInterval(nextslide, 5000, 'autoslide');
+//TEST HERE CONSTANT ARROW FUNCTION
+ // const autoslideNew = setInterval(() => nextslide,200, 'autoslide' );
+/* 
+const hello = () => {
+    //asdf
+    console.log('hello');
+} */
+let bob = () => { console.log('bog') };
+let autoslideInterval2;
+//PAUSE AUTOMATIC SLIDER
 
-let pauseEvent = pause.addEventListener('click', function(event) {
-    
-    clearInterval(autoslideInterval);
-    console.log('clearinterval');
-
+//RESUME SLIDER
+/* let clickresume = resume.addEventListener('click', function(event){
+    console.log('resume');
+   // hello();
+   autoslideInterval;
+}); */
+let clickresume = resume.addEventListener('click', function(){
+    console.log('resume');
+   // hello();
+  // autoslideInterval = 1;
+   autoslideInterval2 = setInterval(nextslide, 5000, 'autoslide');
+   
 });
-/* const handler = setInterval(alarm, 3000);
-      function snooze() {
-        clearInterval(handler);
-      } */
-/* export default eventlist; */
+let pauseEvent = pause.addEventListener('click', function(event) {
+    clearInterval(autoslideInterval);
+    clearInterval(autoslideInterval2);
+   // autoslideInterval = false;
+    //console.log('clearinterval');
+});
+// const clickresume = resume.addEventListener('click', autoslideInterval);
+//not used let imgdiv = document.querySelector('.mySlides');
+

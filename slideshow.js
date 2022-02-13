@@ -9,7 +9,7 @@ const myImages = [
 ];
 let counter = 0;
 let numberofImages = myImages.length;
-let maxCounterValue = numberofImages - 1;
+let lastImageIndex = numberofImages - 1;
 
 let parentdiv = document.querySelector('.slideshow-container');
 

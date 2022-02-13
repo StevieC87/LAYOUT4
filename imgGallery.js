@@ -2,15 +2,23 @@
 
 
 const myImages = [
-    "./images/dummy/1.jpg",
-    "./images/dummy/2.jpg",
-    "./images/dummy/3.jpg",
-    "./images/dummy/4.jpg",
-    "./images/dummy/5.jpg",
-    "./images/dummy/6.jpg",
-    "./images/dummy/7.jpg",
-    "./images/dummy/8.jpg"
+    "./images/dummy2/1.jpg",
+   /*  "./images/dummy/2.jpg", */
+    
+    "./images/dummy2/3.jpg",
+    "./images/dummy2/4.jpg",
+    "./images/dummy2/5.jpg",
+    "./images/dummy2/6.jpg",
+    "./images/dummy2/9.jpg",
+    "./images/dummy2/10.jpg",
+    "./images/dummy2/7.jpg",
+    "./images/dummy2/8.jpg",
+   
+
+    
 ];
+//"https://picsum.photos/id/237/300/200"
+// 'https://picsum.photos/id/237/300/200',
 let counter = 0;
 let numberofImages = myImages.length;
 let lastImageIndex = numberofImages - 1;
@@ -20,8 +28,22 @@ let parentdiv = document.querySelector('.gallery-container');
 
 /* HERE MAKE INITIALLY LOOP TO PRELOAD THE IMAGES AND PLACE THEM  */
 myImages.forEach((element, index) => {
+    
+    // GET ORIGINAL SIZE OF EACH PHOTO
+    var img = new Image();
+    img.onload = function() {
+    console.log(this.width + 'x' + this.height, 'width height '); ;
+    }
+    img.src = element;
+    
+    
+    
     console.log(index,'index');
-    const newimg = document.createElement('div');
+ //   const newimg = document.createElement('div');
+    //CREATE DIV TO APPEND TO PARENT
+    const onelessdiv = document.createElement('div');
+    onelessdiv.classList.add('thumb');
+    onelessdiv.setAttribute("id", `imgdiv${index}`);
    let visibility;
    /* here only display the first one initially, others: hidden */
     if(index === 0) {
@@ -30,14 +52,15 @@ myImages.forEach((element, index) => {
     else {
        // visibility = 'display: none';
     }
-    newimg.innerHTML = `
-        <div class="thumb" id="imgdiv${index}">
+    // <div class="thumb" id="imgdiv${index}">   </div>
+    onelessdiv.innerHTML = `
+       
         <img id="img${index}" class="imgclass" src="${myImages[index]}">
-        </div>
+     
         `;        
         //class="slide${index}"  
         // /style="${visibility}"     
-   parentdiv.appendChild(newimg);
+   parentdiv.appendChild(onelessdiv);
     });
 
 //let ImgArrayIndex = myImages[counter];    

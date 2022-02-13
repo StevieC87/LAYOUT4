@@ -130,7 +130,7 @@ function updateModal(photoindex) {
     let modal_content = document.querySelector('.modal-content');
     /* let parent2 = document.querySelector('.modal-photo');   */ 
     let thumbnailModalBig  = `
-    <div class="" id="">
+    <div>
     <img id="img${photoindex}" class="imagefull imgresponsive" src="${myImages[photoindex]}">
     </div>
     `;
@@ -142,14 +142,15 @@ function updateModal(photoindex) {
     let thumbnail_height = imgEl.clientHeight;
 
     if(thumbnail_width < thumbnail_height) {
-        img_set_width = '400px';
-        img_set_height = '250px';
-    }
-    else {
         img_set_width = '250px';
         img_set_height = '400px';
     }
-    modal_content.style.width = img_set_width;
+    else {
+       
+        img_set_width = '400px';
+        img_set_height = '250px';
+    }
+    modal_content.style.maxWidth = img_set_width;
     
     console.log(thumbnail_width);
     console.log(thumbnail_height);

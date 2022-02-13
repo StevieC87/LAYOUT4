@@ -1,14 +1,16 @@
 
 :root{
-    --width: 500px;
-    --height: 350px;
+   /*  --width: 500px;
+    --height: 350px; */
 }
 .gallery-container {
+    max-width: 900px;
     display: flex;
-    max-width: 500px;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    
 }
 .thumbcontainer {
   
@@ -16,15 +18,16 @@
     flex-wrap: wrap; */
 }
 .imgclass {
-    width: 100px;
+    max-height: 200px;
 }
 .thumb { 
-    width: 100px;
+   /*  */
+    
 }
-.active {
+/* .active {
     width: 400px;
     height: 300px;
-}
+} */
 
 /* 
 .slideshow-container {
@@ -97,10 +100,10 @@
       /* Modal Content/Box */
       .modal-content {
         background-color: #fefefe;
-        /* margin: 10% auto;  *//* 15% from the top and centered */
+         margin: 10% auto;  /* 15% from the top and centered */
         padding: 10px;
         border: 1px solid #888;
-        margin: 0 auto;
+       /*  margin: 0 auto; */
       }
       
       /* The Close Button */
@@ -119,13 +122,12 @@
       }
 
       .imagefull{
-           width: 100%;
+         /*   width: 100%;
           max-width: 500px;
-          max-height: 100vh;
+          max-height: 100vh; */
       }
-
       .imgresponsive {
-         width: 100%;
-		 height: auto;
-
+          width: 100%;
+          height: auto;
+          max-width: 98vh;
       }

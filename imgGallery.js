@@ -40,7 +40,8 @@ myImages.forEach((element, index) => {
     
     console.log(index,'index');
  //   const newimg = document.createElement('div');
-    //CREATE DIV TO APPEND TO PARENT
+   
+ //CREATE DIV TO APPEND TO PARENT
     const onelessdiv = document.createElement('div');
     onelessdiv.classList.add('thumb');
     onelessdiv.setAttribute("id", `imgdiv${index}`);

@@ -1,3 +1,6 @@
+
+/* was workign on THE CONTROLS/BUTTONS TRYING TO PUT THEM INSIDE MODAL */
+
 /* UI BUTTONS */
 let pause = document.querySelector('#buttonpause');
 let buttonLeft = document.querySelector('#buttonleft');
@@ -83,6 +86,7 @@ let pauseEvent = pause.addEventListener('click', function() {
  // Get the modal
 var modal = document.getElementById("modal");
 var modal2 = document.querySelector('.modal-content');
+let modalphoto = document.querySelector('.modal-photo');
 // let modal2 = document.querySelector('');
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");

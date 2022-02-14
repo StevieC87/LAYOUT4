@@ -5,84 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="imgGallery2.js" defer></script>
+    <link rel="stylesheet" href="imgGallery2.css">
     <title>Document</title>
     <style>
-        :root{
-            --width: 550px;
-            --height: 300px;
-        }
-       
-        .gallerycontainer {
-            max-width: var(--width);
-            max-height: var(--height);
-        }
-
-        .active {
-            width: var(--width);
-            height: var(--height);
-        }
-        .thumbcontainer {
-            width: auto;
-            display: flex;
-            height: 100px;
-          /*   flex-wrap: wrap; */
-            background-color: bisque;
-            z-index:20;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            gap: 5px;
-
-        }
-        /* .imgclass {
-            width: 100px;
-        } */
-        .thumb { 
-           
-        }
-        .thumb-portrait {
-            width: 75px;
-            height: 100px;
-        }
-        .thumb-landscape {
-            width: 200px;
-            height: 100px;
-        }
         
     </style>
 </head>
 <body>
     
     <div class="gallerycontainer">
-    <div class="slideshow">
-        <div class="fade mySlides" id="" class="">
-            <img id="imgimg" class="fade imgclass active" src="https://picsum.photos/id/1003/200/300" 
-            class="imgclass" >
+        <div class="mainphotodiv">
+            <!-- <img id="imgimg" class="fade imgclass mainphoto" src="https://picsum.photos/id/1003/200/300" 
+            class="imgclass" > -->
         </div>
-    </div>
-    <div class="thumbcontainer" id="thumb_container">
-            
-    
-        
-    </div>
-
+        <div class="thumbcontainer" id="thumb_container">
+            <!-- thumbnails go here -->    
+        </div>
+        <div id="UIcontrols">
+                <button id="buttonleft">Left</button>
+                <button id="buttonpause">pause</button>
+                <button id="buttonresume">Resume</button>
+                <button id="buttonright">Right</button>
+        </div>
     </div>
 
 </body>
 </html>
-
-   <!--  <div class="fade mySlides thumb" id="" class="">
-                <img id="imgimg" class="fade imgclass" src="https://picsum.photos/id/1003/200/300" 
-                class="imgclass" >
-            </div>
-            <div class="fade mySlides thumb" id="" class="">
-                <img id="imgimg" class="fade imgclass" src="https://picsum.photos/id/1012/200/300" 
-                class="imgclass" >
-            </div>
-            <div class="fade mySlides thumb" id="" class="">
-                <img id="imgimg" class="fade imgclass" src="https://picsum.photos/id/1011/200/300" 
-                class="imgclass" >
-            </div>
-            <div class="fade mySlides thumb" id="" class="">
-                <img id="imgimg" class="fade imgclass" src="https://picsum.photos/id/1022/200/300" 
-                class="imgclass" >
-            </div> -->

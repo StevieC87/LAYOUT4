@@ -37,41 +37,35 @@ myImages.forEach((element, index) => {
     }
     img.src = element;
     
-
+    
     
     console.log(index,'index');
-
-    //if landscape: give it max-width,
-
-        //but we want to get orientation -> so we can set each image a fixed width and height - so thye all match 
-
-
-        let img2 = document.createElement('img');
-        img2.id = `img${index}`;
-        img2.src = `${myImages[index]}`;
-        
-        let img_width = img2.naturalWidth;
-        let img_height = img2.naturalHeight
-        let orientation;
-        var orientation_cssclass;
-        if(img_width > img_height) {
-            orientation = 'landscape-thumb';
+ //   const newimg = document.createElement('div');
+   
+ //CREATE DIV TO APPEND TO PARENT
+    const onelessdiv = document.createElement('div');
+    onelessdiv.classList.add('thumb');
+    onelessdiv.setAttribute("id", `imgdiv${index}`);
+   let visibility;
+   /* here only display the first one initially, others: hidden */
+    if(index === 0) {
+        //visibility = 'display: block;';
+    }
+    else {
+       // visibility = 'display: none';
+    }
+    // <div class="thumb" id="imgdiv${index}">   </div>
+    onelessdiv.innerHTML = `
+       
+        <img id="img${index}" class="imgclass" src="${myImages[index]}">
      
-        // thumbwidth = '100px';
-        //so if orientation portrait
-        var orientation_cssclass = 'thumb-landscape';
-        }
-        else if (img_height > img_width) {
-            orientation = 'portrait-thumb';
-        // thumbheight = '100px';
-        thumbwidth = '100px';
-        var orientation_cssclass = 'thumb-portrait';
-        }
-
-
-        img2.className = `imgclass ${orientation}`;
-        parentdiv.appendChild(img2);
- 
+        `;        
+        //class="slide${index}"  
+        // /style="${visibility}"  
+        
+        
+        
+   parentdiv.appendChild(onelessdiv);
     });
 
 //let ImgArrayIndex = myImages[counter];    

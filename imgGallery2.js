@@ -38,7 +38,7 @@ function thumbnails(imgsarray) {
    //INITIAL LOAD - CREATE THUMBNAILS
     myImages.forEach((element, index) => {
         
-      /*   //CREATE DIV TO APPEND TO PARENT#
+        //CREATE DIV TO APPEND TO PARENT#
             const onelessdiv = document.createElement('div');
             onelessdiv.classList.add('thumb');
             onelessdiv.setAttribute("id", `imgdiv${index}`);
@@ -46,7 +46,7 @@ function thumbnails(imgsarray) {
         // here only display the first one ini ially, others: hidden 
             onelessdiv.innerHTML = `
                 <img id="img${index}" class="imgclass ${orientation_cssclass}" src="${myImages[index]}">
-                `;    */ 
+                `;    
                 //ALTERNARTIVE WE CAN DO HERE
             let img2 = document.createElement('img');
             img2.id = `img${index}`;
@@ -112,23 +112,95 @@ const pause = document.querySelector('#buttonpause');
 const buttonLeft = document.querySelector('#buttonleft');
 const buttonRight = document.querySelector('#buttonright');
 const resume = document.querySelector('#buttonresume');
+const parentdiv = document.querySelector('.thumbcontainer');
 
 // EVENT LISTENER ON BUTTONS LEFT RIGHT
 let clickright = buttonRight.addEventListener('click', function(event)
     {
-        nextslide(event);
+        buttonPressRL(event);
     })
 let clickleft = buttonLeft.addEventListener('click', function(event)
     {
-        nextslide(event);
+        buttonPressRL(event);
     })
-
+// THUMBNAIL PHOTO PRESS - EVENT LISTENER
+let thumbnail_click = parentdiv.addEventListener('click', function(event)
+{
+    thumbnailPress(event);
+})
 //CREATE AUTOMATIC SLIDER
-// let autoslideInterval = setInterval(nextslide, 5000, 'autoslide');
+// let autoslideInterval = setInterval(buttonPressRL, 5000, 'autoslide');
 
 //FUNCTION SLIDE DOESNT WORK - PAUSED TO WORK ON FIRST IMAGE
-function nextslide(event) {
+
+
+function thumbnailPress(event) {
+     //console.log(event.target.id);
+     let idclean = event.target.id.slice(3); 
+     //console.log(idclean, 'idclean');
    
+    changeSlide(idclean);
+}
+
+function changeSlide(newphotoindex) {
+   
+   
+    const parentdiv = document.querySelector('.mainphotodiv');
+     //HIDE CURRENT SLIDE
+    const currentDiv = document.querySelector('.mainphoto');
+    currentDiv.style.display = 'none';  
+ 
+    let img = document.createElement('img');
+    img.id = `img${newphotoindex}`;
+    img.src = `${myImages[newphotoindex]}`;
+    img.className = 'mainphoto';
+    //orientation related 
+    // let img_width = img.naturalWidth;
+    //let img_height = img.naturalHeight
+    // img.className = `${orientation_cssclass}`;
+         
+    //parentdiv.appendChild(img);
+    parentdiv.replaceChild(img, currentDiv);
+    console.log(img);
+    
+    //MAYBE INNER HTML IS MUCH BETTER HERE 
+
+
+
+
+   // let newimg = document.querySelector(`#img${newphotoindex}`);
+
+     //CREATE DIV TO APPEND TO PARENT#
+    /*  const onelessdiv = document.createElement('div');
+     onelessdiv.classList.add('thumb');
+     onelessdiv.setAttribute("id", `imgdiv${index}`);
+    // let visibility;
+    // here only display the first one ini ially, others: hidden 
+     onelessdiv.innerHTML = `
+         <img id="img${index}" class="imgclass ${orientation_cssclass}" src="${myImages[index]}">
+         `;     */
+         //ALTERNARTIVE WE CAN DO HERE
+    
+
+}
+
+function buttonPressRL(event) {
+    //get id of image clicked 
+    
+    //function get image id of thumbnail clicked
+    const get_image_id = () => {
+        let imageid = event.target.id;
+        return imageid;//
+    } 
+    get_image_id();
+   // console.log(get_image_id(), 'get_image_id()');
+
+     
+   parentdiv.addEventListener('click', clickOnThumb);
+     
+
+
+   console.log('clicked');
   let eventtarget; 
   if(event !== 'autoslide') {
         eventtarget = event.target.id;
@@ -177,7 +249,7 @@ let autoslideInterval2;
 //RESUME SLIDER - EVENT LISTENER
 let clickresume = resume.addEventListener('click', function(){
     console.log('resume');
-   autoslideInterval2 = setInterval(nextslide, 5000, 'autoslide');
+   autoslideInterval2 = setInterval(buttonPressRL, 5000, 'autoslide');
    
 });
 //PAUSE AUTOMATIC SLIDER - EVENT LISTENER

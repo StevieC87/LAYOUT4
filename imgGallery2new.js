@@ -92,8 +92,45 @@ const mainphotofirst = () => {
     let mainphoto = document.createElement('img');
     mainphoto.id = `img0`;
     mainphoto.src = myImages[0];
-    mainphoto.className = 'mainphoto';
-    let orientation;
+    
+    //let orientation;
+   /*  let mainphoto_width = mainphoto.naturalWidth;
+    let mainphoto_height = mainphoto.naturalHeight;
+    
+     //for class name - get orientation
+    if(mainphoto_width > mainphoto_height) {
+      //  orientation = 'landscape';
+        thumbheight = '100px';
+       // console.log(orientation);
+        
+        var landscapemainphoto = 'landscape-desktop';
+    }
+    else if (mainphoto_height > mainphoto_width) {
+        var landscapemainphoto = 'portrait-desktop';
+
+    } */
+
+    const getImgOrientReturnClass = (imgObject) => {
+        let mainphoto_width = imgObject.naturalWidth;
+        let mainphoto_height = imgObject.naturalHeight;
+        var landscapemainphoto;
+        //for class name - get orientation
+        if(mainphoto_width > mainphoto_height) {
+        //  orientation = 'landscape';
+            thumbheight = '100px';
+        // console.log(orientation);
+            var landscapemainphoto = 'landscape-desktop';
+            return landscapemainphoto;
+        }
+        else if (mainphoto_height > mainphoto_width) {
+            var landscapemainphoto = 'portrait-desktop';
+            return landscapemainphoto;
+    }
+    }
+   
+
+    mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)}`;
+    //mainphoto.className = `mainphoto ${landscapemainphoto} `;
     // img2.classList('mainphoto');
    //fade imgclass
     //let img_width = img2.naturalWidth;
@@ -101,15 +138,7 @@ const mainphotofirst = () => {
 
     //get image orientation
     
-    let mainphoto_width = mainphoto.naturalWidth;
-    let mainphoto_height = mainphoto.naturalHeight;
     
-     //for class name - get orientation
-    if(mainphoto_width > mainphoto_height) {
-        orientation = 'landscape';
-        thumbheight = '100px';
-        console.log(orientation);
-    }
 
     parentdiv.appendChild(mainphoto);
 }

@@ -89,15 +89,29 @@ thumbnails(myImages);
 const mainphotofirst = () => {
     let parentdiv = document.querySelector('.mainphotodiv');
     let firstphoto = myImages[0];
-    let img2 = document.createElement('img');
-    img2.id = `img0`;
-    img2.src = myImages[0];
-    img2.className = 'mainphoto';
+    let mainphoto = document.createElement('img');
+    mainphoto.id = `img0`;
+    mainphoto.src = myImages[0];
+    mainphoto.className = 'mainphoto';
+    let orientation;
     // img2.classList('mainphoto');
    //fade imgclass
     //let img_width = img2.naturalWidth;
     // let img_height = img2.naturalHeight
-    parentdiv.appendChild(img2);
+
+    //get image orientation
+    
+    let mainphoto_width = mainphoto.naturalWidth;
+    let mainphoto_height = mainphoto.naturalHeight;
+    
+     //for class name - get orientation
+    if(mainphoto_width > mainphoto_height) {
+        orientation = 'landscape';
+        thumbheight = '100px';
+        console.log(orientation);
+    }
+
+    parentdiv.appendChild(mainphoto);
 }
 mainphotofirst();
 //COULD MAYBE ALSO MAYBE MAKE FUNCTION - TO E.G. CREATE OBJECT, APPEND CHILD, BASED ON INDED NUMBER ONLY AS PARAMETER

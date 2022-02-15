@@ -84,72 +84,61 @@ function thumbnails(imgsarray) {
 
 thumbnails(myImages);
 
-//FIRST IMAGE DISPLAY - WORKS
-
-const mainphotofirst = () => {
-    let parentdiv = document.querySelector('.mainphotodiv');
-    let firstphoto = myImages[0];
-    let mainphoto = document.createElement('img');
-    mainphoto.id = `img0`;
-    mainphoto.src = myImages[0];
-    
-    //let orientation;
-   /*  let mainphoto_width = mainphoto.naturalWidth;
-    let mainphoto_height = mainphoto.naturalHeight;
-    
-     //for class name - get orientation
+//HELPER FUNCTIONS
+//here pass img object you are creating, return css class for orientation
+const getImgOrientReturnClass = (imgObject) => {
+    let mainphoto_width = imgObject.naturalWidth;
+    let mainphoto_height = imgObject.naturalHeight;
+    var landscapemainphoto;
+    //for class name - get orientation
     if(mainphoto_width > mainphoto_height) {
-      //  orientation = 'landscape';
+    //  orientation = 'landscape';
         thumbheight = '100px';
-       // console.log(orientation);
-        
+    // console.log(orientation);
         var landscapemainphoto = 'landscape-desktop';
+        return landscapemainphoto;
     }
     else if (mainphoto_height > mainphoto_width) {
         var landscapemainphoto = 'portrait-desktop';
-
-    } */
-
-    const getImgOrientReturnClass = (imgObject) => {
-        let mainphoto_width = imgObject.naturalWidth;
-        let mainphoto_height = imgObject.naturalHeight;
-        var landscapemainphoto;
-        //for class name - get orientation
-        if(mainphoto_width > mainphoto_height) {
-        //  orientation = 'landscape';
-            thumbheight = '100px';
-        // console.log(orientation);
-            var landscapemainphoto = 'landscape-desktop';
-            return landscapemainphoto;
-        }
-        else if (mainphoto_height > mainphoto_width) {
-            var landscapemainphoto = 'portrait-desktop';
-            return landscapemainphoto;
-    }
-    }
-   
-
-    mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)}`;
-    //mainphoto.className = `mainphoto ${landscapemainphoto} `;
-    // img2.classList('mainphoto');
-   //fade imgclass
-    //let img_width = img2.naturalWidth;
-    // let img_height = img2.naturalHeight
-
-    //get image orientation
-    
-    
-
-    parentdiv.appendChild(mainphoto);
+        return landscapemainphoto;
 }
-mainphotofirst();
-//COULD MAYBE ALSO MAYBE MAKE FUNCTION - TO E.G. CREATE OBJECT, APPEND CHILD, BASED ON INDED NUMBER ONLY AS PARAMETER
+}
+
+//first image
+
+
+const FirstSlide = () => {
+    let photoindex = 0;
+    let parentdiv = document.querySelector('#mainphotodiv');
+    
+    let mainphoto = document.createElement('img');
+    
+    mainphoto.id = `img0`;
+    mainphoto.src = myImages[0];
+    mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)}`;
+   parentdiv.appendChild(mainphoto);
+
+}
+
+FirstSlide();
+
+//here for clicks works
+const MainPhotoFunction = (photoindex) => {
+    let parentdiv = document.querySelector('#mainphotodiv');
+    const currentDiv = document.querySelector('.mainphoto');
+   // currentDiv.style.display = 'none';  
+    let mainphoto = document.createElement('img');
+    mainphoto.id = `img${photoindex}`;
+    mainphoto.src = myImages[photoindex];
+    mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)} fade`;
+    // parentdiv.appendChild(mainphoto);
+    parentdiv.replaceChild(mainphoto,currentDiv);
+}
+//MainPhotoFunction('0');
 
 
 
-
-
-//FOR CLICKS - NOT WORKING - PAUSED
+// -------------------FOR CLICKS - NOT WORKING - PAUSED------------------
 
 const pause = document.querySelector('#buttonpause');
 const buttonLeft = document.querySelector('#buttonleft');
@@ -188,7 +177,9 @@ function thumbnailPress(event) {
    
     //make sure click on image - not if click on margin by mistake
     if(event.target.nodeName == 'IMG')  {
-        changeSlide(idclean);
+        // changeSlide(idclean);
+        MainPhotoFunction(idclean);
+        
     }
 
     
@@ -235,6 +226,7 @@ function changeSlide(newphotoindex) {
     
 
 }
+
 
 function buttonPressRL(event) {
     //get id of image clicked 

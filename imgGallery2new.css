@@ -28,8 +28,8 @@ body {
    min-height: 400px; */
    height: 400px;
  /*   max-width: 700px; */
-   width: 600px;
-   justify-self: center;
+   width: 560px;
+   /* justify-self: center; */
 }
 
 .mainphoto {
@@ -41,9 +41,7 @@ body {
    /*  margin: auto; */
    
    /* width: auto; */
-   height: 400px;
-   width: auto;
-   
+  
    transition: all 2s;
   
 }
@@ -60,6 +58,7 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 5px;
+    width: 553px;
 
 }
 
@@ -80,3 +79,28 @@ body {
     height: 100px;
     
 }
+.landscape-desktop {
+    
+    height: 400px;
+    width: 560px;
+    object-fit: fill;
+}
+.portrait-desktop {
+
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+    }
+
+    @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+
+    @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }

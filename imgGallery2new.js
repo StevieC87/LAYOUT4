@@ -71,7 +71,7 @@ function thumbnails(imgsarray) {
             }
             console.log(orientation_cssclass);
 
-            img2.className = `${orientation_cssclass}`;
+            img2.className = `thumb ${orientation_cssclass}`;
           
            parentdiv.appendChild(img2);
 
@@ -114,6 +114,13 @@ const buttonRight = document.querySelector('#buttonright');
 const resume = document.querySelector('#buttonresume');
 const parentdiv = document.querySelector('.thumbcontainer');
 
+
+//  EVENT LISTENER - THUMBNAIL PHOTO PRESS
+let thumbnail_click = parentdiv.addEventListener('click', function(event)
+{
+    thumbnailPress(event);
+})
+
 // EVENT LISTENER ON BUTTONS LEFT RIGHT
 let clickright = buttonRight.addEventListener('click', function(event)
     {
@@ -123,11 +130,7 @@ let clickleft = buttonLeft.addEventListener('click', function(event)
     {
         buttonPressRL(event);
     })
-// THUMBNAIL PHOTO PRESS - EVENT LISTENER
-let thumbnail_click = parentdiv.addEventListener('click', function(event)
-{
-    thumbnailPress(event);
-})
+
 //CREATE AUTOMATIC SLIDER
 // let autoslideInterval = setInterval(buttonPressRL, 5000, 'autoslide');
 
@@ -136,19 +139,25 @@ let thumbnail_click = parentdiv.addEventListener('click', function(event)
 
 function thumbnailPress(event) {
      //console.log(event.target.id);
+     console.log(event, 'event');
      let idclean = event.target.id.slice(3); 
      //console.log(idclean, 'idclean');
    
-    changeSlide(idclean);
+    //make sure click on image - not if click on margin by mistake
+    if(event.target.nodeName == 'IMG')  {
+        changeSlide(idclean);
+    }
+
+    
 }
 
 function changeSlide(newphotoindex) {
    
-   
+   //console.log(newphotoindex, 'newphotoindex');
     const parentdiv = document.querySelector('.mainphotodiv');
      //HIDE CURRENT SLIDE
     const currentDiv = document.querySelector('.mainphoto');
-    currentDiv.style.display = 'none';  
+   // currentDiv.style.display = 'none';  
  
     let img = document.createElement('img');
     img.id = `img${newphotoindex}`;
@@ -160,7 +169,7 @@ function changeSlide(newphotoindex) {
     // img.className = `${orientation_cssclass}`;
          
     //parentdiv.appendChild(img);
-    parentdiv.replaceChild(img, );
+    parentdiv.replaceChild(img,currentDiv);
     console.log(img);
     
     //MAYBE INNER HTML IS MUCH BETTER HERE 

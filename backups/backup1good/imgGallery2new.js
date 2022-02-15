@@ -138,6 +138,8 @@ const MainPhotoFunction = (photoindex) => {
 
 
 
+// -------------------FOR CLICKS - NOT WORKING - PAUSED------------------
+
 const pause = document.querySelector('#buttonpause');
 const buttonLeft = document.querySelector('#buttonleft');
 const buttonRight = document.querySelector('#buttonright');
@@ -204,38 +206,26 @@ function changeSlide(newphotoindex) {
     parentdiv.replaceChild(img,currentDiv);
     console.log(img);
     
-   //MAYBE INNER HTML IS MUCH BETTER HERE 
+    //MAYBE INNER HTML IS MUCH BETTER HERE 
+
+
+
+
+   // let newimg = document.querySelector(`#img${newphotoindex}`);
+
+     //CREATE DIV TO APPEND TO PARENT#
+    /*  const onelessdiv = document.createElement('div');
+     onelessdiv.classList.add('thumb');
+     onelessdiv.setAttribute("id", `imgdiv${index}`);
+    // let visibility;
+    // here only display the first one ini ially, others: hidden 
+     onelessdiv.innerHTML = `
+         <img id="img${index}" class="imgclass ${orientation_cssclass}" src="${myImages[index]}">
+         `;     */
+         //ALTERNARTIVE WE CAN DO HERE
+    
+
 }
-function autoslide() {
-    //will be triggered by setInterval
-       let parentdiv = document.querySelector('#mainphotodiv');
-      const currentDiv = document.querySelector('.mainphoto');
-      //get current id from imgid
-      let current_photo_index = currentDiv.id.slice(3); 
-      let current_photo_index_int = current_photo_index*1;
-     // var new_photo_index = 0;
-      console.log(current_photo_index_int,'current index integer');
-      let totalimages = myImages.length;
-      let totalimagesAdjusted = totalimages - 1; //last index has -1 value from total array length
-      console.log(totalimagesAdjusted,'totalimagesAdjusted');
-    if (current_photo_index_int === totalimagesAdjusted) {
-       var new_photo_index = 0;
-       console.log(new_photo_index,'new_photo_index1');
-      }
-      else {
-       // new_photo_index++;
-        var new_photo_index = current_photo_index_int + 1; 
-        console.log(new_photo_index, 'new_photo_index2');
-      } 
-      let mainphoto = document.createElement('img');
-      mainphoto.id = `img${new_photo_index}`;
-      mainphoto.src = myImages[new_photo_index];
-      mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)} fade`;
-      // parentdiv.appendChild(mainphoto);
-      parentdiv.replaceChild(mainphoto,currentDiv);
-       
-     
-  }
 
 
 function buttonPressRL(event) {
@@ -298,8 +288,6 @@ function buttonPressRL(event) {
    
 }
 
-
-let autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
 let autoslideInterval2;
 
 //RESUME SLIDER - EVENT LISTENER
@@ -313,6 +301,3 @@ let pauseEvent = pause.addEventListener('click', function() {
     clearInterval(autoslideInterval);
     clearInterval(autoslideInterval2);
 });
-
-//CREATE AUTOMATIC SLIDER
-// let autoslideInterval = setInterval(nextslide, 5000, 'autoslide');

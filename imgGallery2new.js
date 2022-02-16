@@ -234,7 +234,15 @@ function autoslide() {
       // parentdiv.appendChild(mainphoto);
       parentdiv.replaceChild(mainphoto,currentDiv);
        
-     
+   
+
+     let nextimg_thumbnail = document.querySelector('.thumb');
+     //console.log(nextimg_thumbnail,'nextimg_thumbnail');
+     let positioninside = nextimg_thumbnail.offsetLeft;
+     console.log(positioninside, 'offsetleft');
+     let thumbG = document.querySelector('.thumbcontainer');
+     thumbG.scrollLeft = positioninside;
+          
   }
 
 

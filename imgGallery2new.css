@@ -59,6 +59,7 @@ body {
     overflow-y: hidden;
     gap: 5px;
     width: 560px;
+    position: relative;
 }
 .center-img {
     display: block;

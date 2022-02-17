@@ -16,7 +16,8 @@ const myImages = [
 
     
 ];
-
+const totalImages = myImages.length;
+const totalImagesIndex = totalImages -1;
 //INSERT ARRAY OF IMAGES THUMBNAIL IN THUMB CONTAINER GALLERY BELOW
 //1) FIRST DO LOOP
 
@@ -87,6 +88,7 @@ thumbnails(myImages);
 //HELPER FUNCTIONS
 //here pass img object you are creating, return css class for orientation
 const getImgOrientReturnClass = (imgObject) => {
+   
     let mainphoto_width = imgObject.naturalWidth;
     let mainphoto_height = imgObject.naturalHeight;
     var landscapemainphoto;
@@ -104,26 +106,7 @@ const getImgOrientReturnClass = (imgObject) => {
 }
 }
 
-//first image
-
-
-const FirstSlide = () => {
-    let photoindex = 0;
-    let parentdiv = document.querySelector('#mainphotodiv');
-    
-    let mainphoto = document.createElement('img');
-    
-    mainphoto.id = `img0`;
-    mainphoto.src = myImages[0];
-    mainphoto.className = `mainphoto ${getImgOrientReturnClass(mainphoto)}`;
-   parentdiv.appendChild(mainphoto);
-
-}
-
-FirstSlide();
-
-//here for clicks works
-const MainPhotoFunction = (photoindex) => {
+const Slider = (photoindex) => {
     let parentdiv = document.querySelector('#mainphotodiv');
     const currentDiv = document.querySelector('.mainphoto');
    // currentDiv.style.display = 'none';  
@@ -134,9 +117,7 @@ const MainPhotoFunction = (photoindex) => {
     // parentdiv.appendChild(mainphoto);
     parentdiv.replaceChild(mainphoto,currentDiv);
 }
-//MainPhotoFunction('0');
-
-
+Slider(0);
 
 const pause = document.querySelector('#buttonpause');
 const buttonLeft = document.querySelector('#buttonleft');
@@ -147,11 +128,10 @@ const parentdiv = document.querySelector('.thumbcontainer');
 
 //  EVENT LISTENER - THUMBNAIL PHOTO PRESS
 let thumbnail_click = parentdiv.addEventListener('click', function(event)
-{
-    thumbnailPress(event);
-})
-
-// EVENT LISTENER ON BUTTONS LEFT RIGHT
+    {
+        thumbnailPress(event);
+    })
+/* // EVENT LISTENER ON BUTTONS LEFT RIGHT
 let clickright = buttonRight.addEventListener('click', function(event)
     {
         buttonPressRL(event);
@@ -160,12 +140,149 @@ let clickleft = buttonLeft.addEventListener('click', function(event)
     {
         buttonPressRL(event);
     })
+ */
+const button_right_div = document.querySelector('#buttonrightdiv');
+let click_next = button_right_div.addEventListener('click', function(event)
+{
+    let currentphoto = document.querySelector('.mainphoto');
+    let currentphoto_id = currentphoto.id.slice(3);
+    console.log(currentphoto_id,'currentphoto_id');
 
-//CREATE AUTOMATIC SLIDER
-// let autoslideInterval = setInterval(buttonPressRL, 5000, 'autoslide');
+    if(currentphoto_id == totalImagesIndex) {
+        var nextimg = 0;
+    }
+    // else if(currentphoto_id < totalImagesIndex){
+    else{
+        var nextimg = ++currentphoto_id;
+    }
+    console.log(myImages.length, 'myImages length');
+    console.log(nextimg, 'nextimg');
+    
+    Slider(nextimg);
 
-//FUNCTION SLIDE DOESNT WORK - PAUSED TO WORK ON FIRST IMAGE
 
+});
+
+const button_left_div = document.querySelector('#buttonleftdiv');
+let click_back = button_left_div.addEventListener('click', function(event)
+{
+    let currentphoto = document.querySelector('.mainphoto');
+    let currentphoto_id = currentphoto.id.slice(3);
+    console.log(currentphoto_id,'currentphoto_id');
+
+    if(currentphoto_id == 0) {
+        var nextimg = totalImagesIndex;
+    }
+
+    else {
+        var nextimg = --currentphoto_id;
+    }
+    console.log(myImages.length, 'myImages length');
+    console.log(nextimg, 'nextimg');
+    
+    Slider(nextimg);
+
+});
+const pausebutton = document.querySelector('#pausediv');
+const playbutton = document.querySelector('#playdiv');
+const rangeslider = document.querySelector('#rangeSlider');
+let speed;
+//EVENT LISTENER - SLIDER RANGE - SLIDER SPEED
+let rangeevent = rangeslider.addEventListener('input', function(event)
+
+{
+    let rangespeed = event.target.value;
+    if(rangespeed == 1) {
+        speed = 6000;
+    }
+    else if  (rangespeed == 2) {
+        speed = 4000;
+    }
+    else if (rangespeed == 3) {
+        speed = 2000;
+    }
+    clearInterval(interval_id);
+    interval_id = null;
+    if(!interval_id) {
+        let classif = playbutton.getAttribute("class");
+       console.log(classif);
+
+       //if play is hiding , and pause is showing, slide is playing
+       if (classif == 'hide'){
+       // playbutton.classList.remove('hide');
+//pausebutton.classList.add('hide');
+       }
+       else if 
+       (classif !== 'hide'){
+            pausebutton.classList.remove('hide');
+            playbutton.classList.add('hide');
+           }
+    
+
+       /// 
+        interval_id = setInterval(autoslide, speed, 'autoslide');
+    }
+
+// alert(rangeslider.value) ;
+});
+
+
+//SET INTERVAL LOOP SLIDER AUTO
+//let autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
+
+
+let interval_id; 
+console.log(interval_id,'interval id');
+
+if(!interval_id) {
+    interval_id = setInterval(autoslide, 5000, 'autoslide');
+}
+//console.log(interval_id,'interval id');
+// var autoslideInterval;
+
+// autoslider();
+
+//PAUSE EVENT LISTENER 
+let pauseclick = pausebutton.addEventListener('click', function(event)
+{
+   // console.log(autoslideInterval, 'BEFORE');
+    clearInterval(interval_id);
+    interval_id = null;
+    playbutton.classList.toggle('hide');
+    pausebutton.classList.toggle('hide');
+    //playbutton.classList.add('show');
+    //pausebutton.classList.add('hide');
+
+   // clearInterval(autoslideInterval2);
+  //  console.log(autoslideInterval, 'AFTER');
+});
+//console.log(autoslideInterval, 'autoslideInterval');
+// var playclickcounter = 0;
+/* function isEven(n) {
+    return n % 2 == 0;
+ } */
+let playclick = playbutton.addEventListener('click', function (event)
+{
+    if(!interval_id) {
+        interval_id = setInterval(autoslide, 5000, 'autoslide');
+    }
+    console.log(interval_id,'interval id2');
+    playbutton.classList.toggle('hide');
+    pausebutton.classList.toggle('hide');
+    // alert('play');
+   /*  playclickcounter++;
+    console.log(isEven(playclickcounter));
+   
+    console.log(playclickcounter,'playclickcounter'); */
+    
+ //   clearInterval(autoslideInterval);
+    // autoslider();
+ 
+});
+
+function autoslider() {
+    var autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
+}
 
 function thumbnailPress(event) {
      //console.log(event.target.id);
@@ -176,35 +293,10 @@ function thumbnailPress(event) {
     //make sure click on image - not if click on margin by mistake
     if(event.target.nodeName == 'IMG')  {
         // changeSlide(idclean);
-        MainPhotoFunction(idclean);
-        
+        Slider(idclean);
     }
 
     
-}
-
-function changeSlide(newphotoindex) {
-   
-   //console.log(newphotoindex, 'newphotoindex');
-    const parentdiv = document.querySelector('.mainphotodiv');
-     //HIDE CURRENT SLIDE
-    const currentDiv = document.querySelector('.mainphoto');
-   // currentDiv.style.display = 'none';  
- 
-    let img = document.createElement('img');
-    img.id = `img${newphotoindex}`;
-    img.src = `${myImages[newphotoindex]}`;
-    img.className = 'mainphoto';
-    //orientation related 
-    // let img_width = img.naturalWidth;
-    //let img_height = img.naturalHeight
-    // img.className = `${orientation_cssclass}`;
-         
-    //parentdiv.appendChild(img);
-    parentdiv.replaceChild(img,currentDiv);
-    console.log(img);
-    
-   //MAYBE INNER HTML IS MUCH BETTER HERE 
 }
 function autoslide() {
     //will be triggered by setInterval
@@ -244,11 +336,8 @@ function autoslide() {
      thumbG.scrollLeft = positioninside;
           
   }
-
-
 function buttonPressRL(event) {
     //get id of image clicked 
-    
     //function get image id of thumbnail clicked
     const get_image_id = () => {
         let imageid = event.target.id;
@@ -307,20 +396,89 @@ function buttonPressRL(event) {
 }
 
 
-let autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
+
 let autoslideInterval2;
 
 //RESUME SLIDER - EVENT LISTENER
-let clickresume = resume.addEventListener('click', function(){
+/* let clickresume = resume.addEventListener('click', function(){
     console.log('resume');
    autoslideInterval2 = setInterval(buttonPressRL, 5000, 'autoslide');
    
-});
+}); */
 //PAUSE AUTOMATIC SLIDER - EVENT LISTENER
-let pauseEvent = pause.addEventListener('click', function() {
+/* let pauseEvent = pause.addEventListener('click', function() {
     clearInterval(autoslideInterval);
     clearInterval(autoslideInterval2);
-});
+}); */
 
 //CREATE AUTOMATIC SLIDER
 // let autoslideInterval = setInterval(nextslide, 5000, 'autoslide');
+
+//OLD STUFF
+/* function changeSlide(newphotoindex) {
+   
+    //console.log(newphotoindex, 'newphotoindex');
+     const parentdiv = document.querySelector('.mainphotodiv');
+      //HIDE CURRENT SLIDE
+     const currentDiv = document.querySelector('.mainphoto');
+    // currentDiv.style.display = 'none';  
+  
+     let img = document.createElement('img');
+     img.id = `img${newphotoindex}`;
+     img.src = `${myImages[newphotoindex]}`;
+     img.className = 'mainphoto';
+     //orientation related 
+     // let img_width = img.naturalWidth;
+     //let img_height = img.naturalHeight
+     // img.className = `${orientation_cssclass}`;
+          
+     //parentdiv.appendChild(img);
+     parentdiv.replaceChild(img,currentDiv);
+     console.log(img);
+     
+    //MAYBE INNER HTML IS MUCH BETTER HERE 
+ } */
+ /////////////////////////////////////////////////
+ 
+//first image
+
+
+/* const FirstSlide = () => {
+    let photoindex = 0;
+    let parentdiv = document.querySelector('#mainphotodiv');
+    
+    let mainphoto = document.createElement('img');
+    mainphoto.id = 'img0';
+    mainphoto.src = myImages[photoindex];
+
+    // console.log(mainphoto, 'mainphoto');
+
+    let mainphoto_width = mainphoto.naturalWidth;
+    let mainphoto_height = mainphoto.naturalHeight;
+
+    console.log(mainphoto_width, 'mainphoto_width');
+    console.log(mainphoto_height, 'mainphoto_height');
+    //for class name - get orientation
+    if(mainphoto_width > mainphoto_height) {
+    //  orientation = 'landscape';
+        //thumbheight = '100px';
+    // console.log(orientation);
+        var landscapemainphoto = 'landscape-desktop';
+       //return landscapemainphoto;
+    }
+    else if (mainphoto_height > mainphoto_width) {
+        var landscapemainphoto = 'portrait-desktop';
+      //  return landscapemainphoto;
+    }  /**/
+//${getImgOrientReturnClass(landscapemainphoto)}
+/*     mainphoto.className = `mainphoto `;
+    console.log(mainphoto, 'imgObject');
+    console.log(landscapemainphoto,'landscapemainphoto');
+   parentdiv.appendChild(mainphoto);
+
+} */
+
+//FirstSlide();
+
+
+//here for clicks works

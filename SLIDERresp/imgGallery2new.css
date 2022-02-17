@@ -1,0 +1,209 @@
+:root{
+    --width: 800px;
+    --height: 466px;
+    --imgwidth: 560px;
+    /* ratio 3:2 for landscape  */
+    /* --imgwidth: calc(var(--width) - 10px);
+   --imgheight: calc(var(--height) - 10px);  */
+   /* --imgwidth: 450px;
+   --imgheight: 300px;  */
+}
+body {
+    margin: 0;
+}
+
+/* DEFAULT MOBILE SIZE VALUES */
+.slideOuterContainer {
+    max-width: var(--width);
+}
+.gallerycontainer {
+    display: grid;
+  /*   max-height: 500px;
+    width: 560px; */
+    /* overflow: hidden; */
+    
+}
+
+.mainphotodiv {
+    grid-row: 1/2;
+    grid-column: 1 / -1;
+    position: relative;
+
+}
+
+.mainphoto {
+    /* width: var(--width);
+    height: var(--height); */
+   /*  width: 100%;
+    max-height: 400px; */
+   /*  height: 100%; */
+   /*  margin: auto; */
+   
+   /* width: auto; */
+  
+   transition: display 2s;
+  /*  max-width: 560px;
+   height: 400px; */
+   border-radius: 5px;
+}
+
+.thumbcontainer {
+    grid-row: 2/3;
+    grid-column: 1 / -1;
+    width: auto;
+    display: flex;
+    height: 100px;
+  /*   flex-wrap: wrap; */
+ 
+    z-index:20;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 5px;
+    max-width: var(--width);
+    position: relative;
+}
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+/* .imgclass {
+    width: 100px;
+} */
+.thumb { 
+    border-radius: 5px;
+}
+.thumb-portrait {
+    width: 75px;
+    height: 100px;
+   
+}
+.thumb-landscape {
+    width: 200px;
+    height: 100px;
+    
+}
+.landscape-desktop {
+    
+   /*  height: 400px;
+    width: 560px; */
+    width: 100%;
+   /*  object-fit: cover; */
+}
+.portrait-desktop {
+   /*  width: 400px; */
+    /* height: 100%; */
+    /* object-fit: fill; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 4px;
+    width: auto;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+    }
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+
+    @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+
+#buttonsdiv1 {
+    position: absolute;
+    bottom: 0%;
+   /*  left: 50%; */
+    /* left: calc((var(--width) / 2)  - 70px); */
+    left: 50%;
+    margin-left: -69px;
+   /*  background-color: gray; */
+   /*  width: 75px; */
+    padding: 5px;
+    display: flex;
+    width: 112px;
+  
+}
+
+
+#pausediv {
+   /*  position: absolute;
+    top: 0%;
+    left: 0%; */
+    color: white;
+    font-size: 30px;
+   /*  padding: 5px; */
+  
+    /* background-color: yellow; */
+}
+#playdiv{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 5px;
+    display: block;
+}
+.rangeSliderdiv{
+   padding-top: 5px;
+   padding-left: 5px;
+}
+
+#buttonleftdiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    height: 100%;
+    width: 50px;
+    /* filter: brightness(0.5); */
+    background-color: gray;
+    opacity: 0;
+    z-index: 3;
+}
+#buttonrightdiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    height: 100%;
+    width: 50px;
+    /* filter: brightness(0.5); */
+    background-color: gray;
+    opacity: 0;
+    z-index: 3;
+}
+
+#buttonNext {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 40px;
+    margin-right: 10px;
+  
+}
+
+#buttonPrevious {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.hide {
+    visibility: hidden;
+    /* display: none; */
+}
+

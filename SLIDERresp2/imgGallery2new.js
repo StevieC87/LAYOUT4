@@ -1,9 +1,5 @@
-
-
 const myImages = [
     "./images/dummy2/1.jpg",
-   /*  "./images/dummy/2.jpg", */
-    
     "./images/dummy2/3.jpg",
     "./images/dummy2/4.jpg",
     "./images/dummy2/5.jpg",
@@ -12,9 +8,6 @@ const myImages = [
     "./images/dummy2/10.jpg",
     "./images/dummy2/7.jpg",
     "./images/dummy2/8.jpg",
-   
-
-    
 ];
 const totalImages = myImages.length;
 const totalImagesIndex = totalImages -1;
@@ -106,6 +99,69 @@ const getImgOrientReturnClass = (imgObject) => {
 const resizeimgOnwindowResize = () => {
     
 } */
+
+const Slider1stImage = () => {
+
+    let parentdiv = document.querySelector('#mainphotodiv');
+    let currentMainphoto = document.querySelector('.mainphoto'); 
+    let currentMainphotoID = currentMainphoto.id.slice(3);
+    let currentThumbnail = document.querySelector(`#thumb${currentMainphotoID}`); 
+    console.log(currentThumbnail,'currentThumbnail');
+   // currentMainphoto.style.display = 'none';  
+    let mainphoto = document.createElement('img');
+    mainphoto.id = `img${0}`;
+    mainphoto.src = myImages[0];
+    
+
+
+    console.log(mainphoto.src, 'mainphoto.src');
+
+    //orientation
+    var mainphoto_width;
+    var mainphoto_height;
+    setTimeout(function(){ 
+        //had to use setTimeout, otherwise, the first time it loads on fresh browser, it will say undefined when trying to get mainphoto_width and height for the orientation
+        var mainphoto_width = mainphoto.naturalWidth;
+        var mainphoto_height = mainphoto.naturalHeight;
+        console.log(mainphoto_width, 'delay');
+        
+        var landscapemainphoto;
+        //for class name - get orientation
+        if(mainphoto_width > mainphoto_height) {
+        //  orientation = 'landscape';
+            //thumbheight = '100px';
+        // console.log(orientation);
+            var landscapemainphoto = 'landscape-desktop';
+           
+        }
+        else if (mainphoto_height > mainphoto_width) {
+            var landscapemainphoto = 'portrait-desktop';
+    }
+        let orientation = landscapemainphoto;
+    
+        //
+        mainphoto.className = `mainphoto ${orientation} fade`;
+        console.log(mainphoto, 'first maIN PGOTO');
+        let screenwidth = screen.width;
+        let availablewidth = parentdiv.offsetWidth;
+        if(availablewidth < 700) {
+            var heighta = availablewidth * 0.667;
+        }
+       else {
+           var heighta = 700 * 0.667;
+       }
+       mainphoto.height = heighta;
+       // parentdiv.appendChild(mainphoto);
+       parentdiv.replaceChild(mainphoto,currentMainphoto);
+    }, 5);
+   // let mainphoto_width = mainphoto.naturalWidth;
+    console.log(mainphoto_width,'mainphoto_width');
+   
+  //  let mainphoto_height = mainphoto.naturalHeight;
+    console.log(mainphoto_height, 'mainphoto_height');
+  
+}
+Slider1stImage();
 const Slider = (photoindex) => { 
   //  alert(photoindex);
     let parentdiv = document.querySelector('#mainphotodiv');
@@ -117,10 +173,11 @@ const Slider = (photoindex) => {
     let mainphoto = document.createElement('img');
     mainphoto.id = `img${photoindex}`;
     mainphoto.src = myImages[photoindex];
+    
 
-    let orientation = getImgOrientReturnClass(mainphoto)
+    let orientation = getImgOrientReturnClass(mainphoto);
     mainphoto.className = `mainphoto ${orientation} fade`;
-
+    console.log(mainphoto, 'first maIN PGOTO');
     let screenwidth = screen.width;
     let availablewidth = parentdiv.offsetWidth;
     console.log(screenwidth, 'screenwidth');
@@ -192,7 +249,7 @@ const Slider = (photoindex) => {
 
    // scrollthumb.scrollIntoView();
 }
-Slider(0);
+// Slider(0);
 
 const parentdiv = document.querySelector('.thumbcontainer');
 const pausebutton = document.querySelector('#pausediv');

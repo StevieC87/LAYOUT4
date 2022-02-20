@@ -17,7 +17,8 @@ const totalImagesIndex = totalImages -1; //get index of last image
  let currentSlide;  //set index of current child
 //slider variables
 let parentdiv = document.querySelector('#mainphotodiv');
-let currentphoto = document.querySelector('.mainphoto');
+// let currentphoto = document.querySelector('.mainphoto');
+let currentphoto = document.querySelector(`img${currentSlide}`);
 let currentMainphoto = document.querySelector('.mainphoto'); 
 //thumbnail variables
 let parentdivthumb = document.querySelector('.thumbcontainer');
@@ -41,102 +42,104 @@ const getImgOrientReturnClass = (imgObject) => {
 }
 //FUNCTION TO CREATE IMAGE , AND GIVE IT ID OF E.G. IMG3, using index 
 const createImg = (index, idprefix,height = '') => {
-    let img2 = document.createElement('img');
-    img2.id = idprefix + index; // concatenate  e.g. img3 
-    img2.src = `${myImages[index]}`;  //get url for image src from array
-    let orientation = getImgOrientReturnClass(img2);//calls orientation function to return the class name for this image;
-    img2.className = `thumb ${orientation}`;
-    if(!height) {
-        img2.height = height;
-    }
+    
 
     
     return img2;
 }
 
-//FUNCTION TO CREATE THUMBNAILS
-
-//FUNCTION TO CREATE FIRST IMAGE ON FIRST LOAD 
-const Slider1stImage = () => {
+function thumbnails(imgsarray) {
+    let orientation;
+    let thumbheight;
+    let thumbwidth;
+    var orientation_cssclass;
+  //  let parentdivthumb = document.querySelector('.thumbcontainer');
+   //LOOP OVER IMAGES ARRAY, CREATE THUMBNAIL IMAGES
+    myImages.forEach((element, index) => {
+            //Create image object for thumbnail, and add url src from index , create id with name of index    
+            let img2 = document.createElement('img');
+            img2.id = 'thumb' + index; // concatenate  e.g. img3 
+            img2.src = `${myImages[index]}`;  //get url for image src from array
+            let orientation = getImgOrientReturnClass(img2);//calls orientation function to return the class name for this image;
+            img2.className = `thumb ${orientation}`;
+            parentdivthumb.appendChild(img2);
+        });
     
-    let mainphoto = document.createElement('img'); 
-    mainphoto.id = 'img' + 0; // concatenate  e.g. img3 
-    mainphoto.src = `${myImages[0]}`;  //get url for image src from array
-    console.log(mainphoto, 'img2');
+}
+thumbnails(myImages);
+
+const allimages = () => {
+    myImages.forEach((element, index) => {
+        //Create image object for thumbnail, and add url src from index , create id with name of index             
+     // let img2 = createImg(index, 'thumb', 100);
+     const startdelay = setTimeout(() => {
+     //   const parentdiv2 = document.querySelector('#parentdiv2');
+        const parentdiv2 = document.querySelector('#mainphotodiv2');
+        let img2 = document.createElement('img');
+        img2.id = 'img' + index; // concatenate  e.g. img3 
+        img2.src = `${myImages[index]}`;  //get url for image src from array
+
+        let orientation = getImgOrientReturnClass(img2);//calls orientation function to return 
+      let iffirst;
+       if(index === 0) {
+        classvisible = 'visible';
+        currentSlide = 0;
+       }
+       else {
+        classvisible = 'hidden';
    
-    setTimeout(() => {
-        let orientation = getImgOrientReturnClass(mainphoto);//calls orientation function to return the class name for this image;
-        console.log(orientation, 'orientation !!!!!!!!!!!!');
-        mainphoto.className = `mainphoto ${orientation}`;
-        
-        let availablewidth = parentdiv.offsetWidth; 
-        let heighta;
-        //get css variable max-width
-        let getcssmaxwidth = getComputedStyle(document.documentElement)
-            .getPropertyValue('--width');
-        let csswidthclean = getcssmaxwidth.slice(0,4);
-        let cssmaxwidth = csswidthclean*1;  //turn it into integer
-        //SET HEIGHT OF IMAGE BASED ON AVAILABLE WINDOW WIDTH and max-width CSS
-        if(availablewidth >= cssmaxwidth) { //if available window width of cssmax-width or more
-            let heighta1 = cssmaxwidth-100 // (so if max-width: 800px, height: 700px * 0.67)
-            heighta = heighta1 * 0.667;
-            console.log(heighta, 'heighta'); //set img height 2/3 of max-width
+       }
+        img2.className = `mainphoto ${orientation} mainphoto2 ${classvisible}`;
+
+        let screenwidth = screen.width;
+        let availablewidth = parentdiv.offsetWidth;
+        if(availablewidth < 700) {
+            var heighta = availablewidth * 0.667;
         }
-        else if(availablewidth < cssmaxwidth) {
-            heighta = availablewidth * 0.667; //set img height to 2/3 of screenwidth
+        else {
+        var heighta = 700 * 0.667;
         }
-        mainphoto.height = heighta; //set height of img
-        parentdiv.replaceChild(mainphoto,currentMainphoto);
-    }, 50);
-    currentSlide = 0;
-   }
-Slider1stImage();
+
+        parentdiv2.style.height = `${heighta}px` ;
+        img2.height = heighta;
+
+      parentdiv2.appendChild(img2);
+       
+     } 
+     , 200);        
+    });
+    
+}
+allimages()
 
 //FUNCTION THAT CHANGES THE IMAGE, BASED ON THE INDEX PROVIDED
 const Slider = (photoindex) => { 
     //function Slider(photoindex) {
   //  alert(photoindex);
   
-    let currentMainphoto = document.querySelector('.mainphoto'); 
-    let currentMainphotoID = currentMainphoto.id.slice(3);
+   // let currentMainphoto = document.querySelector('.visible'); 
+   let currentphoto1 = document.querySelector(`#img${currentSlide}`); 
+   console.log(currentphoto1,'currentphoto1currentphoto1');
+   let nextphoto = document.querySelector(`#img${photoindex}`);
+   console.log(nextphoto, 'NEXTPHOTO******************');
+    
+   currentphoto1.classList.remove('visible');
+   currentphoto1.classList.add('hidden');
+   
+   nextphoto.classList.remove('hidden');
+   nextphoto.classList.add('visible');
+  
+   // alert(currentphoto1.id);
+    //console.log(currentphoto1, 'currentphoto1');
+    //console.log(nextphoto, 'nextphoto');
+  // currentphoto1.classList.add('hidden');
+
+  //  let currentMainphotoID = currentMainphoto.id.slice(3);
    // let currentThumbnail = document.querySelector(`#thumb${currentMainphotoID}`); 
-   let currentThumbnail = document.querySelector(`#thumb${currentSlide}`); 
-   console.log(currentThumbnail, 'currentThumbnail');
-   console.log(currentSlide, 'currentSlide');
-    //*** REPLACE THIS WITH VARIABLE ***/
-    
-    //console.log(currentThumbnail,'currentThumbnail');
-   // currentMainphoto.style.display = 'none';  
+    let currentThumbnail = document.querySelector(`#thumb${currentSlide}`); 
 
-   //INSTEAD OF ALL THIS - JUST CHANGE THE Z-INDEX OF THE IMAGE MAYBE
-    let mainphoto = document.createElement('img');
-    mainphoto.id = `img${photoindex}`;
-    mainphoto.src = myImages[photoindex];
-    
-
-    let orientation = getImgOrientReturnClass(mainphoto);
-    mainphoto.className = `mainphoto ${orientation} fade`;
-    let screenwidth = screen.width;
-    let availablewidth = parentdiv.offsetWidth;
-
-    if(availablewidth < 700) {
-        var heighta = availablewidth * 0.667;
-    }
-    else {
-       var heighta = 700 * 0.667;
-    }
-  /*  if(orientation == 'portrait-desktop') {
-       
-   } */
-    mainphoto.height = heighta;
-    // parentdiv.appendChild(mainphoto);
-    parentdiv.replaceChild(mainphoto,currentMainphoto);
-    var scrollthumb = document.getElementById("img7");
     var thumbcontainer1 = document.getElementById("thumb_container");
-    console.log(thumbcontainer1, 'thumbcontainer1');
-
-
-
+    //console.log(thumbcontainer1, 'thumbcontainer1');
     let idthumb = `thumb${photoindex}`;
     let new_thumbnail = document.querySelector(`#thumb${photoindex}`);    
     console.log(currentThumbnail, 'CURRENT THUMBNAIL******');
@@ -161,109 +164,61 @@ const Slider = (photoindex) => {
             thumbG.scrollLeft = 0;
         }
     }
-    //DEPENDS IF IT'S AUTOSLIDER 
-    //IF IT'S THUMBNAIL - WE GET NEXT THUMBNAIL - BY THE ONE WE CLICKIGN ON
-    //IF IT'S NEXT
-   /* setTimeout(() => { 
-
-    
-   } ); */
-   //  new_thumbnail.classList.add('thumbfocus');
-    
-  
-//    console.log(new_thumbnail_leftpx,'new_thumbnail_leftpx');
-   //first get offset (position of thumbnail inside the thing)
-   //let nextimg_thumbnail = document.querySelector('.thumb');
-   //console.log(nextimg_thumbnail,'nextimg_thumbnail');
-   //let positioninside = nextimg_thumbnail.offsetLeft;
-   //console.log(positioninside, 'offsetleft');
-   
     currentSlide = photoindex;
     console.log(currentSlide, 'COUUUUUNTER');
 }
+
  //Slider(0);
-
-
 const pausebutton = document.querySelector('#pausediv');
 const playbutton = document.querySelector('#playdiv');
 const rangeslider = document.querySelector('#rangeSlider');
-const button_right_div = document.querySelector('#buttonrightdiv');
 const button_left_div = document.querySelector('#buttonleftdiv');
 let speed;
 
-
 /*-------------------- EVENT LISTENERS START HERE ---------------------- */
 
-//AUTOMATIC SLIDER FUNCTION  - WITH currentSlide FOR ARRAY ETC
-function autoslider() {
-  //  var autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
-}
-//FUNCTION: PRESS THUMBNAIL
-
-
-function autoslide() {
-    //will be triggered by setInterval
-      //const currentMainphoto = document.querySelector('.mainphoto');
-      //get current id from imgid
-       
-      //  let current_photo_index = currentMainphoto.id.slice(3); 
-    //  let current_photo_index_int = current_photo_index*1;
-     // var new_photo_index = 0;
-    
-      let totalimages = myImages.length;
-      totalImagesIndex
-      let totalimagesAdjusted = totalImagesIndex; //last index has -1 value from total array length
-      console.log(totalimagesAdjusted,'totalimagesAdjusted');
-      let new_photo_index;
-    if (currentSlide === totalimagesAdjusted) {
-       new_photo_index = 0;
-       console.log(new_photo_index,'new_photo_index1');
-      }
-      else {
-        new_photo_index = currentSlide + 1; 
-        console.log(new_photo_index, 'new_photo_index2');
-      } 
-      Slider(new_photo_index);
-     // console.log(new_photo_index);
-}
-function thumbnailPress(event) {
-    let idclean = event.target.id.slice(5); 
-   //make sure click on image - not if click on margin by mistake
-   if(event.target.nodeName == 'IMG')  {
-       // changeSlide(idclean);
-       Slider(idclean);
-   }
-}
-
+ //   currentSlide = 0;
   
 //  EVENT LISTENER - THUMBNAIL PHOTO PRESS
 let thumbnail_click = parentdivthumb.addEventListener('click', function(event)
     {
-        thumbnailPress(event);
+        if(event.target.nodeName == 'IMG')  {
+            // changeSlide(idclean);
+              let idclean = event.target.id.slice(5); 
+            Slider(idclean);
+            console.log(idclean, 'idcleanidcleanidclean');
+        }
+
     })
 //EVENT LISTENER - NEXT , PREVIOUS PHOTO ARROW 
+//clieck on next button
+currentSlide = 0;
+const button_right_div = document.querySelector('#buttonrightdiv');
 let click_next = button_right_div.addEventListener('click', function(event)
 {
-    let nextimg;
+    let nextslide;
+    console.log(currentSlide, 'currentSlide %%%%%%%%%%%%%%%%%%' );
     if(currentSlide == totalImagesIndex) {
-        nextimg = 0;
+        nextslide = 0;
     }
-        // else if(currentphoto_id < totalImagesIndex){
     else{
-        nextimg = ++currentSlide;
+        nextslide = currentSlide*1 +1;
+        console.log('nextslide CLICKNEXT added', nextslide);
     }
-    Slider(nextimg);
+    console.log(nextslide, 'nextslide @@@@@@@@@@@@@@@@@@');
+    Slider(nextslide);
 });
+
 let click_back = button_left_div.addEventListener('click', function(event)
 {
-    let nextimg;
+    let nextslide;
     if(currentSlide == 0) {
-        nextimg = totalImagesIndex;
+        nextslide = totalImagesIndex;
     }
     else {
-        nextimg = --currentSlide;
+        nextslide = currentSlide - 1;
     }
-    Slider(nextimg);
+    Slider(nextslide);
 });
 //EVENT LISTENER - SLIDER RANGE - SLIDER SPEED
 let rangeevent = rangeslider.addEventListener('input', function(event){
@@ -291,8 +246,10 @@ let rangeevent = rangeslider.addEventListener('input', function(event){
 
 });
  let intervalAutoslideID; 
+
+//**** SET INTERVAL HERE ******* */
 if(!intervalAutoslideID) {
-    intervalAutoslideID = setInterval(autoslide, 5000, 'autoslide');
+  //  intervalAutoslideID = setInterval(autoslide, 5000, 'autoslide');
 } 
 //PAUSE CLICK  EVENT LISTENER 
 let pauseclick = pausebutton.addEventListener('click', function(event)
@@ -331,26 +288,79 @@ let playclick = playbutton.addEventListener('click', function (event)
 
 
 
-let autoslideInterval2;
 
-function thumbnails(imgsarray) {
-    let orientation;
-    let thumbheight;
-    let thumbwidth;
-    var orientation_cssclass;
-  //  let parentdivthumb = document.querySelector('.thumbcontainer');
-   //LOOP OVER IMAGES ARRAY, CREATE THUMBNAIL IMAGES
-    myImages.forEach((element, index) => {
-            //Create image object for thumbnail, and add url src from index , create id with name of index             
-          let img2 = createImg(index, 'thumb', 100);
-           
-          parentdivthumb.appendChild(img2);
-        });
+//AUTOMATIC SLIDER FUNCTION  - WITH currentSlide FOR ARRAY ETC
+function autoslider() {
+    //  var autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
+  }
+  //FUNCTION: PRESS THUMBNAIL
+  
+  
+  function autoslide() {
+      //will be triggered by setInterval
+        //const currentMainphoto = document.querySelector('.mainphoto');
+        //get current id from imgid
+         
+        //  let current_photo_index = currentMainphoto.id.slice(3); 
+      //  let current_photo_index_int = current_photo_index*1;
+       // var new_photo_index = 0;
+      
+        let totalimages = myImages.length;
+        totalImagesIndex
+        let totalimagesAdjusted = totalImagesIndex; //last index has -1 value from total array length
+        console.log(totalimagesAdjusted,'totalimagesAdjusted');
+        let new_photo_index;
+      if (currentSlide === totalimagesAdjusted) {
+         new_photo_index = 0;
+         console.log(new_photo_index,'new_photo_index1');
+        }
+        else {
+          new_photo_index = currentSlide + 1; 
+          console.log(new_photo_index, 'new_photo_index2');
+        } 
+        Slider(new_photo_index);
+       // console.log(new_photo_index);
+  }
+
+
+  /* //FUNCTION TO CREATE THUMBNAILS
+
+//FUNCTION TO CREATE FIRST IMAGE ON FIRST LOAD 
+const Slider1stImage = () => {
     
-}
-thumbnails(myImages);
-
-
+    let mainphoto = document.createElement('img'); 
+    mainphoto.id = 'img' + 0; // concatenate  e.g. img3 
+    mainphoto.src = `${myImages[0]}`;  //get url for image src from array
+    console.log(mainphoto, 'img2');
+   
+    setTimeout(() => {
+        let orientation = getImgOrientReturnClass(mainphoto);//calls orientation function to return the class name for this image;
+        console.log(orientation, 'orientation !!!!!!!!!!!!');
+        mainphoto.className = `mainphoto ${orientation}`;
+        
+        let availablewidth = parentdiv.offsetWidth; 
+        let heighta;
+        //get css variable max-width
+        let getcssmaxwidth = getComputedStyle(document.documentElement)
+            .getPropertyValue('--width');
+        let csswidthclean = getcssmaxwidth.slice(0,4);
+        let cssmaxwidth = csswidthclean*1;  //turn it into integer
+        //SET HEIGHT OF IMAGE BASED ON AVAILABLE WINDOW WIDTH and max-width CSS
+        if(availablewidth >= cssmaxwidth) { //if available window width of cssmax-width or more
+            let heighta1 = cssmaxwidth-100 // (so if max-width: 800px, height: 700px * 0.67)
+            heighta = heighta1 * 0.667;
+            console.log(heighta, 'heighta'); //set img height 2/3 of max-width
+        }
+        else if(availablewidth < cssmaxwidth) {
+            heighta = availablewidth * 0.667; //set img height to 2/3 of screenwidth
+        }
+        mainphoto.height = heighta; //set height of img
+        parentdiv.replaceChild(mainphoto,currentMainphoto);
+    }, 50);
+    currentSlide = 0;
+   }
+// Slider1stImage();
+ */
 /*     function getOrientation (img) {
                     
 
@@ -460,4 +470,22 @@ thumbnails(myImages);
       Slider(new_photo_index);
    
   }
+ */
+
+/* currentSlide = 0;
+let click_next = button_right_div.addEventListener('click', function(event)
+{
+    let nextimg;
+ 
+    console.log(currentSlide, 'currentSlide');
+    if(currentSlide == totalImagesIndex) {
+        nextimg = 0;
+    }
+        // else if(currentphoto_id < totalImagesIndex){
+    else{
+        nextimg = ++currentSlide;
+    }
+    console.log(nextimg, 'nextimg');
+    Slider(nextimg);
+});
  */

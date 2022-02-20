@@ -62,6 +62,28 @@ function thumbnails(imgsarray) {
 thumbnails(myImages);
 
 const allimages = () => {
+
+    
+    let screenwidth = screen.width;
+    let screenheight = screen.height;
+    let widthnew;
+    let availablewidth = parentdiv.offsetWidth;
+    //get css variable max-width
+    let getcssmaxwidth = getComputedStyle(document.documentElement)
+    .getPropertyValue('--width');
+    let csswidthclean = getcssmaxwidth.slice(0,4);
+    let cssmaxwidth = csswidthclean*1;  //turn it into integer
+
+    console.log(screenwidth, 'availablewidth');
+    console.log(screenwidth, 'screenwidth');
+    console.log(screenheight, 'screenheight');
+
+    /* if(availablewidth < 700) {
+        var heighta = screenwidth * 0.667;
+        console.log('availablewidth < 700');
+
+    } */
+  
     myImages.forEach((element, index) => {
         //Create image object for thumbnail, and add url src from index , create id with name of index             
      // let img2 = createImg(index, 'thumb', 100);
@@ -86,40 +108,116 @@ const allimages = () => {
        }
         img2.className = `mainphoto ${orientation} mainphoto2 ${classvisible}`;
 
-        let screenwidth = screen.width;
-        let availablewidth = parentdiv.offsetWidth;
         if(availablewidth < 700) {
-            var heighta = availablewidth * 0.667;
-        }
-        else {
-        var heighta = 700 * 0.667;
-        }
-
-        parentdiv2.style.height = `${heighta}px` ;
-        img2.style.height = `${heighta}px`;
-
-        if(orientation == 'portrait-desktop') {
-            //imgObject.naturalWidth;
-            //let imgportraitwidth = img2.naturalWidth;
+            var heighta = availablewidth * 0.677;
+            var widtha = availablewidth;
             
-            let newa = heighta * 0.67;
-            let newhalf = newa / 2;
-            console.log(newhalf, 'NEWHAAAAAAALF');
+            if(orientation == 'portrait-desktop') {
+              //  alert(orientation);
+              var heighta = availablewidth * 0.677;
+              var widtha = heighta * 0.677;
+              let imgportraithalf = widtha/2;
+              let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
+              img2.style.left = cssclassnewleft;
 
-           let cssclassnewleft = `calc(50% - ${newhalf}px)`;
-           img2.style.left = cssclassnewleft;
-   
+            }
+        }
+        /*  if(availablewidth < 700 && screenheight < screenwidth) {
+           // var widtha = screenheight * 1.33;
+           var widtha = availablewidth;
+           var heighta = availablewidth * 0.67;
+          // var widtha = screenheight * 1.33;;
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight < screenwidth');
+        }
+        else if(availablewidth < 700 && screenheight > screenwidth) {
+          //  -100
+            var heighta = availablewidth * 0.677;
+            var widtha = availablewidth;
+            
+            if(orientation == 'portrait-desktop') {
+              //  alert(orientation);
+              var heighta = availablewidth * 0.677;
+              var widtha = '';
 
-         /*    console.log('imgportraitwidth',imgportraitwidth);
-            let imgportraithalf = imgportraitwidth/2;
-            console.log('imgportraithalf',imgportraithalf);
-           let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
-           img2.style.left = cssclassnewleft;
-    */
-          // img2.height = 'fd';
-           
-         }
-
+            }
+    //TRY WITH CSS INSTEAD
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight > screenwidth');
+    
+        } */
+        else if(availablewidth > 700) {
+            console.log('availablewidth > 700');
+            if(availablewidth >= cssmaxwidth) {
+                console.log(' if(availablewidth >= cssmaxwidth)');
+                var widtha = 790;
+                var heighta = 790 * 0.67 -100;
+            //    var heighta = getcssmaxwidth * 0.667;       
+                 }
+            else {
+                console.log('else');
+                var widtha = availablewidth;
+                //var heighta = availablewidth * 0.66;
+                var heighta =  availablewidth * 0.67 - 100;
+            }
+            if(orientation == 'portrait-desktop') {
+                //  alert(orientation);
+               //  var heighta = availablewidth * 0.6 -5;
+               var heighta = widtha * 0.667 -100;
+                var widtha = heighta * 0.6;
+                let imgportraithalf = widtha/2;
+                let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
+                img2.style.left = cssclassnewleft;
+  
+              }
+        }
+   /*      else if(availablewidth > 700 && screenheight < screenwidth) {
+            if(availablewidth >= cssmaxwidth) {
+                var widtha = 790;
+                var heighta = widtha * 0.67 - 100;
+            }
+            else {
+                var widtha = availablewidth;
+                var heighta = availablewidth * 0.67 - 100;
+            }
+        //  var widtha = 750;
+           // var heighta = widtha * 0.67;
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight < screenwidth');
+            }
+        else if(availablewidth > 700 && screenheight > screenwidth) {
+            if(availablewidth >= cssmaxwidth) {
+                var widtha = 790;
+                var heighta = widtha * 0.67 - 100;
+            }
+            else {
+                var widtha = availablewidth;
+                var heighta = availablewidth * 0.67 - 100;
+            }
+        //  var widtha = 750;
+           // var heighta = widtha * 0.67;
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight > screenwidth');
+        } */
+       /*  else if(availablewidth > 700) {
+        
+    
+    
+        } */
+        /* else {
+        var heighta = 700 * 0.667;
+        console.log(heighta,'heighta = 700 * 0.667');
+        } */
+        parentdiv2.style.height = `${heighta}px`;
+        parentdiv2.style.width = `${widtha}px`;
+        img2.style.height = `${heighta}px`;
+     //   if(maxwidtha) { img2.style.maxWidth = '800px';}
+        img2.classList.add('.mainphotofullsize');
+        img2.style.width = `${widtha}px`;
+        
+        document.querySelector('.slideOuterContainer').style.height = `${heighta + 100}px`;
+        document.querySelector('.slideOuterContainer').style.width = `${widtha}px`;
+        
 
       parentdiv2.appendChild(img2);
   
@@ -150,13 +248,6 @@ const Slider = (photoindex) => {
    nextphoto.classList.remove('hidden');
    nextphoto.classList.add('visible');
   
-   // alert(currentphoto1.id);
-    //console.log(currentphoto1, 'currentphoto1');
-    //console.log(nextphoto, 'nextphoto');
-  // currentphoto1.classList.add('hidden');
-
-  //  let currentMainphotoID = currentMainphoto.id.slice(3);
-   // let currentThumbnail = document.querySelector(`#thumb${currentMainphotoID}`); 
     let currentThumbnail = document.querySelector(`#thumb${currentSlide}`); 
 
     var thumbcontainer1 = document.getElementById("thumb_container");
@@ -189,7 +280,6 @@ const Slider = (photoindex) => {
     console.log(currentSlide, 'COUUUUUNTER');
 }
 
- //Slider(0);
 const pausebutton = document.querySelector('#pausediv');
 const playbutton = document.querySelector('#playdiv');
 const rangeslider = document.querySelector('#rangeSlider');
@@ -258,9 +348,9 @@ let rangeevent = rangeslider.addEventListener('input', function(event){
     if(!intervalAutoslideID) {
         let classif = playbutton.getAttribute("class");
         if 
-       (classif !== 'hide'){
-            pausebutton.classList.remove('hide');
-            playbutton.classList.add('hide');
+       (classif !== 'hidden'){
+            pausebutton.classList.remove('hidden');
+            playbutton.classList.add('hidden');
            }
         intervalAutoslideID = setInterval(autoslide, speed, 'autoslide');
     }
@@ -270,7 +360,7 @@ let rangeevent = rangeslider.addEventListener('input', function(event){
 
 //**** SET INTERVAL HERE ******* */
 if(!intervalAutoslideID) {
-  //  intervalAutoslideID = setInterval(autoslide, 5000, 'autoslide');
+    intervalAutoslideID = setInterval(autoslide, 5000, 'autoslide');
 } 
 //PAUSE CLICK  EVENT LISTENER 
 let pauseclick = pausebutton.addEventListener('click', function(event)
@@ -278,8 +368,8 @@ let pauseclick = pausebutton.addEventListener('click', function(event)
    // console.log(autoslideInterval, 'BEFORE');
     clearInterval(intervalAutoslideID);
     intervalAutoslideID = null;
-    playbutton.classList.toggle('hide');
-    pausebutton.classList.toggle('hide');
+    playbutton.classList.toggle('hidden');
+    pausebutton.classList.toggle('hidden');
     //playbutton.classList.add('show');
     //pausebutton.classList.add('hide');
 
@@ -289,12 +379,25 @@ let pauseclick = pausebutton.addEventListener('click', function(event)
 //PLAY CLICK EVENT LISTENER
 let playclick = playbutton.addEventListener('click', function (event)
 {
+    let defaultspeed = 5000;
+    let speed;
+    let sliderspeed = document.querySelector('#rangeSlider').value;
+    if(sliderspeed == 1) {
+        speed = 6000;
+    }
+    else if  (sliderspeed == 2) {
+        speed = 4000;
+    }
+    else if (sliderspeed == 3) {
+        speed = 2000;
+    }
+    
     if(!intervalAutoslideID) {
-        intervalAutoslideID = setInterval(autoslide, 5000, 'autoslide');
+        intervalAutoslideID = setInterval(autoslide, speed, 'autoslide');
     }
     console.log(intervalAutoslideID,'interval id2');
-    playbutton.classList.toggle('hide');
-    pausebutton.classList.toggle('hide');
+    playbutton.classList.toggle('hidden');
+    pausebutton.classList.toggle('hidden');
     // alert('play');
    /*  playclickcounter++;
     console.log(isEven(playclickcounter));
@@ -308,15 +411,6 @@ let playclick = playbutton.addEventListener('click', function (event)
 
 
 
-
-
-//AUTOMATIC SLIDER FUNCTION  - WITH currentSlide FOR ARRAY ETC
-function autoslider() {
-    //  var autoslideInterval = setInterval(autoslide, 5000, 'autoslide');
-  }
-  //FUNCTION: PRESS THUMBNAIL
-  
-  
   function autoslide() {
       //will be triggered by setInterval
         //const currentMainphoto = document.querySelector('.mainphoto');
@@ -336,177 +430,38 @@ function autoslider() {
          console.log(new_photo_index,'new_photo_index1');
         }
         else {
-          new_photo_index = currentSlide + 1; 
+          new_photo_index = currentSlide*1 + 1; 
           console.log(new_photo_index, 'new_photo_index2');
         } 
         Slider(new_photo_index);
        // console.log(new_photo_index);
   }
 
+     //if however window height is less than that height we set, then the height of the image must be the height of the window - 100 for thumbnails
 
-  /* //FUNCTION TO CREATE THUMBNAILS
-
-//FUNCTION TO CREATE FIRST IMAGE ON FIRST LOAD 
-const Slider1stImage = () => {
-    
-    let mainphoto = document.createElement('img'); 
-    mainphoto.id = 'img' + 0; // concatenate  e.g. img3 
-    mainphoto.src = `${myImages[0]}`;  //get url for image src from array
-    console.log(mainphoto, 'img2');
-   
-    setTimeout(() => {
-        let orientation = getImgOrientReturnClass(mainphoto);//calls orientation function to return the class name for this image;
-        console.log(orientation, 'orientation !!!!!!!!!!!!');
-        mainphoto.className = `mainphoto ${orientation}`;
-        
-        let availablewidth = parentdiv.offsetWidth; 
-        let heighta;
-        //get css variable max-width
-        let getcssmaxwidth = getComputedStyle(document.documentElement)
-            .getPropertyValue('--width');
-        let csswidthclean = getcssmaxwidth.slice(0,4);
-        let cssmaxwidth = csswidthclean*1;  //turn it into integer
-        //SET HEIGHT OF IMAGE BASED ON AVAILABLE WINDOW WIDTH and max-width CSS
-        if(availablewidth >= cssmaxwidth) { //if available window width of cssmax-width or more
-            let heighta1 = cssmaxwidth-100 // (so if max-width: 800px, height: 700px * 0.67)
-            heighta = heighta1 * 0.667;
-            console.log(heighta, 'heighta'); //set img height 2/3 of max-width
-        }
-        else if(availablewidth < cssmaxwidth) {
-            heighta = availablewidth * 0.667; //set img height to 2/3 of screenwidth
-        }
-        mainphoto.height = heighta; //set height of img
-        parentdiv.replaceChild(mainphoto,currentMainphoto);
-    }, 50);
-    currentSlide = 0;
-   }
-// Slider1stImage();
- */
-/*     function getOrientation (img) {
-                    
-
-    } */
-
-      /*  let img_width = img2.naturalWidth;
-            let img_height = img2.naturalHeight
-          */
-          /*   //for class name - get orientation
-            if(img_width > img_height) {
-                orientation = 'landscape';
-                thumbheight = '100px';
-            // thumbwidth = '100px';
-            //so if orientation portrait
-            var orientation_cssclass = 'thumb-landscape';
-            }
-            else if (img_height > img_width) {
-                orientation = 'portrait';
-            // thumbheight = '100px';
-            thumbwidth = '100px';
-            var orientation_cssclass = 'thumb-portrait';
-            }
-            console.log(orientation_cssclass);
-
-            img2.className = `thumb ${orientation_cssclass}`; */
-
-
-            /* /*  let img2 = document.createElement('img');
-            img2.id = `thumb${index}`;
-            img2.src = `${myImages[index]}`;
-           
-            let orientation1 = getImgOrientReturnClass(img2);
-         
-            img2.className = `thumb ${orientation1}`; */ 
-
-             /* let currentMainphotoID = currentMainphoto.id.slice(3);
-    let currentThumbnail = document.querySelector(`#thumb${currentMainphotoID}`); 
- //   console.log(currentMainphoto,'currentThumbnail');
-   // currentMainphoto.style.display = 'none';  
-     let mainphoto = document.createElement('img');
-    mainphoto.id = `img${0}`;
-    mainphoto.src = myImages[0];
-    console.log(mainphoto.src, 'mainphoto.src');
- */
-
-
-
-    
-
-    /*  if(availablewidth < cssmaxwidth) {
-        //if window width less than 700px, height of image will always be 2/3rds of window width
-        var heighta = availablewidth * 0.667;
-     }
-     else if(availablewidth >= cssmaxwidth) {
-            var heighta = cssmaxwidth * 0.667;
-            //  var heighta = 467;
-            //otherwise, if e.g. full screen, the height is fixed to 2/3 of max-width
-     }
-     else {
-        var heighta = cssmaxwidth * 0.667;
-     } */
 
      
+      // img2.style. = `${widtha}px`;
+        
+
+      /*   if(orientation == 'portrait-desktop') {
+            //imgObject.naturalWidth;
+            //let imgportraitwidth = img2.naturalWidth;
             
-           /*  if(orientation === 'landscape-desktop') {
-            //height should be 2/3rds of width
-            if(availablewidth >= cssmaxwidth) { //if available window width of cssmax-width or more
-                var heighta1 = cssmaxwidth-100 // (so if max-width: 800px, height: 700px * 0.67)
-                var heighta = heighta1 * 0.667;
-                console.log(heighta, 'heighta'); //set img height 2/3 of max-width
-            }
-            else if(availablewidth < cssmaxwidth) {
-                var heighta = availablewidth * 0.667; //set img height to 2/3 of screenwidth
-            }
+            let newa = heighta * 0.67;
+            let newhalf = newa / 2;
+            console.log(newhalf, 'NEWHAAAAAAALF');
 
-        }
-        else if(orientation === 'portrait-desktop') {
-            if(availablewidth >= cssmaxwidth) { //and available window width of max-width or more
-            var heighta1 = cssmaxwidth-100 // (so if max-width: 800px, height: 700px * 0.67)
-            var heighta = heighta1 * 0.667; //set img height to maximum - 100px of height, for the thumbnails        
-            }
-            else if(availablewidth < cssmaxwidth) {
-                var heighta = availablewidth * 0.667;
-            }
-        } */
-
-        /* function autoslide1() {
-    //will be triggered by setInterval
-      //const currentMainphoto = document.querySelector('.mainphoto');
-      //get current id from imgid
-      let current_photo_index = currentMainphoto.id.slice(3); 
-      let current_photo_index_int = current_photo_index*1;
-     // var new_photo_index = 0;
-      console.log(current_photo_index_int,'current index integer');
-      let totalimages = myImages.length;
-      let totalimagesAdjusted = totalimages - 1; //last index has -1 value from total array length
-      console.log(totalimagesAdjusted,'totalimagesAdjusted');
-    if (current_photo_index_int === totalimagesAdjusted) {
-       var new_photo_index = 0;
-       console.log(new_photo_index,'new_photo_index1');
-      }
-      else {
-       // new_photo_index++;
-        var new_photo_index = current_photo_index_int + 1; 
-        console.log(new_photo_index, 'new_photo_index2');
-      } 
-      Slider(new_photo_index);
+           let cssclassnewleft = `calc(50% - ${newhalf}px)`;
+           img2.style.left = cssclassnewleft; */
    
-  }
- */
 
-/* currentSlide = 0;
-let click_next = button_right_div.addEventListener('click', function(event)
-{
-    let nextimg;
- 
-    console.log(currentSlide, 'currentSlide');
-    if(currentSlide == totalImagesIndex) {
-        nextimg = 0;
-    }
-        // else if(currentphoto_id < totalImagesIndex){
-    else{
-        nextimg = ++currentSlide;
-    }
-    console.log(nextimg, 'nextimg');
-    Slider(nextimg);
-});
- */
+         /*    console.log('imgportraitwidth',imgportraitwidth);
+            let imgportraithalf = imgportraitwidth/2;
+            console.log('imgportraithalf',imgportraithalf);
+           let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
+           img2.style.left = cssclassnewleft;
+    */
+          // img2.height = 'fd';
+           
+        /*  } */

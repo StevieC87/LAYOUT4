@@ -40,13 +40,6 @@ const getImgOrientReturnClass = (imgObject) => {
         return landscapemainphoto;
 }
 }
-//FUNCTION TO CREATE IMAGE , AND GIVE IT ID OF E.G. IMG3, using index 
-const createImg = (index, idprefix,height = '') => {
-    
-
-    
-    return img2;
-}
 
 function thumbnails(imgsarray) {
     let orientation;
@@ -81,6 +74,8 @@ const allimages = () => {
 
         let orientation = getImgOrientReturnClass(img2);//calls orientation function to return 
       let iffirst;
+      
+     
        if(index === 0) {
         classvisible = 'visible';
         currentSlide = 0;
@@ -101,9 +96,33 @@ const allimages = () => {
         }
 
         parentdiv2.style.height = `${heighta}px` ;
-        img2.height = heighta;
+        img2.style.height = `${heighta}px`;
+
+        if(orientation == 'portrait-desktop') {
+            //imgObject.naturalWidth;
+            //let imgportraitwidth = img2.naturalWidth;
+            
+            let newa = heighta * 0.67;
+            let newhalf = newa / 2;
+            console.log(newhalf, 'NEWHAAAAAAALF');
+
+           let cssclassnewleft = `calc(50% - ${newhalf}px)`;
+           img2.style.left = cssclassnewleft;
+   
+
+         /*    console.log('imgportraitwidth',imgportraitwidth);
+            let imgportraithalf = imgportraitwidth/2;
+            console.log('imgportraithalf',imgportraithalf);
+           let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
+           img2.style.left = cssclassnewleft;
+    */
+          // img2.height = 'fd';
+           
+         }
+
 
       parentdiv2.appendChild(img2);
+  
        
      } 
      , 200);        
@@ -125,7 +144,9 @@ const Slider = (photoindex) => {
     
    currentphoto1.classList.remove('visible');
    currentphoto1.classList.add('hidden');
-   
+    
+   currentphoto1.classList.remove('fade');
+   nextphoto.classList.add('fade');
    nextphoto.classList.remove('hidden');
    nextphoto.classList.add('visible');
   

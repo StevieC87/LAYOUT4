@@ -61,9 +61,8 @@ function thumbnails(imgsarray) {
 }
 thumbnails(myImages);
 
+//FUNCTION CREATE IMAGES IN THE BEGINNING
 const allimages = () => {
-
-    
     let screenwidth = screen.width;
     let screenheight = screen.height;
     let widthnew;
@@ -74,16 +73,15 @@ const allimages = () => {
     let csswidthclean = getcssmaxwidth.slice(0,4);
     let cssmaxwidth = csswidthclean*1;  //turn it into integer
 
-    console.log(screenwidth, 'availablewidth');
-    console.log(screenwidth, 'screenwidth');
-    console.log(screenheight, 'screenheight');
+   //console.log(screenwidth, 'availablewidth');
+    //console.log(screenwidth, 'screenwidth');
+    //console.log(screenheight, 'screenheight');
 
     /* if(availablewidth < 700) {
         var heighta = screenwidth * 0.667;
         console.log('availablewidth < 700');
 
     } */
-  
     myImages.forEach((element, index) => {
         //Create image object for thumbnail, and add url src from index , create id with name of index             
      // let img2 = createImg(index, 'thumb', 100);
@@ -95,9 +93,7 @@ const allimages = () => {
         img2.src = `${myImages[index]}`;  //get url for image src from array
 
         let orientation = getImgOrientReturnClass(img2);//calls orientation function to return 
-      let iffirst;
-      
-     
+      let iffirst;     
        if(index === 0) {
         classvisible = 'visible';
         currentSlide = 0;
@@ -171,43 +167,7 @@ const allimages = () => {
   
               }
         }
-   /*      else if(availablewidth > 700 && screenheight < screenwidth) {
-            if(availablewidth >= cssmaxwidth) {
-                var widtha = 790;
-                var heighta = widtha * 0.67 - 100;
-            }
-            else {
-                var widtha = availablewidth;
-                var heighta = availablewidth * 0.67 - 100;
-            }
-        //  var widtha = 750;
-           // var heighta = widtha * 0.67;
-            console.log('widtha', widtha);
-            console.log('availablewidth < 700 && screenheight < screenwidth');
-            }
-        else if(availablewidth > 700 && screenheight > screenwidth) {
-            if(availablewidth >= cssmaxwidth) {
-                var widtha = 790;
-                var heighta = widtha * 0.67 - 100;
-            }
-            else {
-                var widtha = availablewidth;
-                var heighta = availablewidth * 0.67 - 100;
-            }
-        //  var widtha = 750;
-           // var heighta = widtha * 0.67;
-            console.log('widtha', widtha);
-            console.log('availablewidth < 700 && screenheight > screenwidth');
-        } */
-       /*  else if(availablewidth > 700) {
-        
-    
-    
-        } */
-        /* else {
-        var heighta = 700 * 0.667;
-        console.log(heighta,'heighta = 700 * 0.667');
-        } */
+ 
         parentdiv2.style.height = `${heighta}px`;
         parentdiv2.style.width = `${widtha}px`;
         img2.style.height = `${heighta}px`;
@@ -465,3 +425,41 @@ let playclick = playbutton.addEventListener('click', function (event)
           // img2.height = 'fd';
            
         /*  } */
+
+          /*      else if(availablewidth > 700 && screenheight < screenwidth) {
+            if(availablewidth >= cssmaxwidth) {
+                var widtha = 790;
+                var heighta = widtha * 0.67 - 100;
+            }
+            else {
+                var widtha = availablewidth;
+                var heighta = availablewidth * 0.67 - 100;
+            }
+        //  var widtha = 750;
+           // var heighta = widtha * 0.67;
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight < screenwidth');
+            }
+        else if(availablewidth > 700 && screenheight > screenwidth) {
+            if(availablewidth >= cssmaxwidth) {
+                var widtha = 790;
+                var heighta = widtha * 0.67 - 100;
+            }
+            else {
+                var widtha = availablewidth;
+                var heighta = availablewidth * 0.67 - 100;
+            }
+        //  var widtha = 750;
+           // var heighta = widtha * 0.67;
+            console.log('widtha', widtha);
+            console.log('availablewidth < 700 && screenheight > screenwidth');
+        } */
+       /*  else if(availablewidth > 700) {
+        
+    
+    
+        } */
+        /* else {
+        var heighta = 700 * 0.667;
+        console.log(heighta,'heighta = 700 * 0.667');
+        } */

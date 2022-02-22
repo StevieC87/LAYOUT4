@@ -92,6 +92,8 @@ body {
 } */
 .thumb { 
     border-radius: 5px;
+    width: 100px;
+    height: 75px;
   
 }
 .thumb-portrait {

@@ -117,73 +117,63 @@ function validateemail() {
   const el_emailvalue = el_email.value; 
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; //regexp pattern
   let falsetrue = emailPattern.test(el_emailvalue);
-  if(el_emailvalue.length !== 0)  
+  if(el_emailvalue.length !== 0)  //if value not empty of email input
   { 
-    if(falsetrue === true) {
-      //if validation returns true there's no mistake
-      message = '';
-      validationclass = '';
+    if(falsetrue === true) { //check regexp test result
+      //if test() returns true there's no mistake
+      // validationclass = ''; //clear class
     }
     else if (falsetrue === false) {
-      //if validation returns false there's a mistake
-      el_email.classList.add('red');
-      erroryouremail.textContent = 'Invalid email address';
-      console.log(erroryouremail, 'erroryouremail');
-      console.log('email not good');
+      //if test() returns false there's a mistake
+      el_email.classList.add('red'); //add error styling
+      erroryouremail.textContent = 'Invalid email address';  //add error message
     }
   }
-  else if(el_emailvalue.trim().length === 0){
-    el_email.classList.add('red');
-    erroryouremail.textContent = 'Please fill in email';
+  else if(el_emailvalue.trim().length === 0){ //if email input empty
+    el_email.classList.add('red'); //add error class
+    erroryouremail.textContent = 'Please fill in email'; //add error message
   }
 }
-
 function validateconfirmemail() {
-  const el_emailconfirmvalue = el_emailconfirm.value;
-  const el_emailvalue = el_email.value;
+  const el_emailconfirmvalue = el_emailconfirm.value; //get value of confirmemail input
+  const el_emailvalue = el_email.value; //get value of email input
   let falsetrue;
-  if(el_emailconfirmvalue !== el_emailvalue) {
-    falsetrue = false;
+  if(el_emailconfirmvalue !== el_emailvalue) { 
+    falsetrue = false; //if dont have same value set to false
   }
-  else {
-    falsetrue = true;
+  else { 
+    falsetrue = true; //if identical value set to true
   }
   if(falsetrue === false) {
-    el_emailconfirm.classList.add('red');
-    errorconfirmemail.textContent = "Email doesn't match";
+    el_emailconfirm.classList.add('red'); //apply error stying
+    errorconfirmemail.textContent = "Email doesn't match"; //add error message
   }
  // else if (falsetrue === true) {}
 }
-
 function validatephone() {
-  const el_telvalue = el_tel.value;
-  console.log(el_telvalue, 'tel value');
-  const telregexp = /[^\d+-.() ]/; 
+  const el_telvalue = el_tel.value; //get value of telephone input field
+  const telregexp = /[^\d+-.() ]/;  //set regexp pattern
   let falsetrue = telregexp.test(el_telvalue);
   console.log(falsetrue,'tel');
 
   if(falsetrue === true) {
-    //if validation returns true there's a mistake
+    //if catches forbidden character
     el_tel.classList.add('red');
-    errortelephone.textContent = 'No letters please';
-    console.log('email not good');
-    
+    errortelephone.textContent = 'Invalid input';
   }
   else if (falsetrue === false) {
-    //if validation returns false there's no mistake
-    message = '';
+    //
     validationclass = '';
   }
 }
 function checkifempty(input) {
-
+  //takes input as parameter, 
   let inputid = input.id;
   let errordiv1 = `error${inputid}`;
   let errordivtarget = document.querySelector(`#${errordiv1}`);
-  if(input.value.trim().length === 0) {
-
+  if(input.value.trim().length === 0) { //if field is empty set message
     switch(inputid) {
-      //get name of input and check which one it is
+      //set message depending on which input calls this function
         case 'yourname' : message = 'Please fill in your name';
         break;
         case 'youremail' : message = 'Please fill in your email';
@@ -197,15 +187,12 @@ function checkifempty(input) {
         case 'yourmsg' : message = "Don't forget the message";
         break;
     }            
-    input.classList.add('red');
-
+    input.classList.add('red'); //add error styling
+  } 
+  else {  //if field is not empty
+      input.classList.remove('red'); //remove error styling
+      message = ''; // clear message 
   }
-  else {
-      input.classList.remove('red');
-      message = '';
-  }
-  
-  errordivtarget.textContent = message;
-  //  thisinput.style.border = '2px solid red';
+  errordivtarget.textContent = message; //set error div contents
   
 } 

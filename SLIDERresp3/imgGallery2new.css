@@ -10,7 +10,11 @@
 }
 body {
     margin: 0;
+    
 }
+* {
+    box-sizing: border-box;
+  }
 
 /* DEFAULT MOBILE SIZE VALUES */
 .slideOuterContainer {
@@ -79,6 +83,7 @@ body {
     gap: 5px;
     max-width: var(--width);
     position: relative;
+
 }
 .center-img {
     display: block;
@@ -92,24 +97,30 @@ body {
 } */
 .thumb { 
     border-radius: 5px;
-    width: 100px;
-    height: 75px;
+    margin-top: 5px;
+    background-color: sandybrown;
+    
+  /*   max-width: 100px;
+    height: 100px; */
   
 }
 .thumb-portrait {
     width: 75px;
-    height: 100px;
+    height: 83px;
    
 }
 .thumb-landscape {
-    width: 200px;
-    height: 100px;
+    width: 155px;
+    height: 83px;
     
 }
 
 .thumbfocus {
-    border: 5px solid black;
+   /* border: 5px solid black; */
+ /*   box-shadow:  inset 5em 1em gold; */
+   border: 2px solid aquamarine;
 }
+
 .landscape-desktop {
     
    /*  height: 400px;

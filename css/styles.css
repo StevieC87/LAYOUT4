@@ -342,51 +342,94 @@ background-color: #fff;
   padding: 20px 20px 0px 20px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+ /*  grid-gap: 20px; */
 }
-.yournamediv {
-  grid-row: 1 / 2;
-  grid-column: 1/-1;
+
+
+.inputdiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 10px 10px 0px;  
 }
-.emaildiv {
-  grid-row: 2 / 3;
-  grid-column: 1/-1;
-}
-.textareadiv2 {
-  grid-row: 3 / 4;
-  grid-column: 1/-1;
-}
-.buttondiv {
-  grid-row: 5 / 6;
-  grid-column: 1/-1;
-  width: 102px;
-  justify-self: end;
-}
-.textareadiv2 > textarea {
-  width: 100%;
-  border-radius: 5px;
-  border: 2px solid var(--myblue);
-}
-.centerbtngrid {
-  grid-column: 1/-1;
-  justify-self: end;
+label {
+ 
 }
 input,
 label {
-  display: block;
   width: 100%;
 }
 input {
+ 
+  display: block;
   border-radius: 5px;
   border: 2px solid var(--myblue);
   padding: 10px;
+  width: 100%;
 }
 label {
   padding-bottom: 5px;
   padding-top: 0px;
   color: var(--myblue);
+  display: block;
+}
+.errorBox {
+  width: 100%;
+  height: 20px;
+  color: red;
+  font-size: 0.8em;
+}
+.red {
+  border: 1px red solid;
 }
 
+#yournamediv {
+  grid-row: 1 / 2;
+  grid-column: 1/-1;
+}
+#emaildiv {
+  grid-row: 2 / 3;
+  grid-column: 1/-1;
+}
+#confirmemaildiv {
+  grid-row: 3 / 4;
+  grid-column: 1/-1;
+}
+
+#telephonediv {
+  grid-row: 4 / 5;
+  grid-column: 1/-1;
+}
+#addressdiv {
+  grid-row: 5 / 6;
+  grid-column: 1/-1;
+}
+#textareadiv {
+  grid-row: 6 / 7;
+  grid-column: 1/-1;
+}
+#buttondiv {
+  grid-row: 7 / 8;
+  grid-column: 1/-1;
+  width: 102px;
+  justify-self: end;
+}
+/* #textareadiv > textarea { */
+  textarea {
+    border: 2px solid var(--myblue);
+  }
+
+  #yourmsg{
+  width: 100%;
+  border-radius: 5px;
+ 
+}
+
+
+
+.centerbtngrid {
+  grid-column: 1/-1;
+  justify-self: end;
+}
 .meettheteamprofile {
   justify-self: center;
   align-self: center;
@@ -1188,20 +1231,32 @@ footer {
   .aboutusformgrid2 {
     grid-template-columns: 1fr 1fr;
   }
-  .yournamediv {
+  #yournamediv {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
   }
-  .emaildiv {
+  #emaildiv {
     grid-row: 1 / 2;
     grid-column: 2/3;
   }
-  .textareadiv2 {
+  #confirmemaildiv {
     grid-row: 2 / 3;
+    grid-column: 1/2;
+  }
+  #telephonediv {
+    grid-row: 2 / 3;
+    grid-column: 2/3;
+  }
+  #addressdiv {
+    grid-row: 3 / 4;
     grid-column: 1/-1;
   }
-  .buttondiv {
-    grid-row: 3 / 4;
+  #textareadiv {
+    grid-row: 4 / 5;
+    grid-column: 1/-1;
+  }
+  #buttondiv {
+    grid-row: 5 / 6;
   }
 }
 

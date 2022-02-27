@@ -13,7 +13,7 @@
   <script type="text/javascript" src="components/footer.js" defer></script>
   <script type="text/javascript" src="components/sidemenu.js  " defer></script>
   <script type="text/javascript" src="js/scripts.js" defer></script>
-
+  <script type="text/javascript" src="aboutus2.js" defer></script>
   <style>
     .aboutusformgrid2 {
       display: grid;
@@ -98,33 +98,46 @@
     <section class="contactuswrapper sectionwrapper">
       <div class="contactusinnerwrapper">
         <h3 class="centertext">Contact Us</h3>
-        <form action="">
+        <form action="" name="contactform">
           <div class="aboutusformgrid2">
-            <div class="yournamediv">
+            <div id="yournamediv" class="inputdiv">
               <label for="yourname">Your name:</label>
-              <input type="text" name="yourname" id="yourname">
+              <input class="default" type="text" name="yourname" id="yourname">
+              <div class="errorBox" id="erroryourname"></div>
             </div>
-            <div class="emaildiv">
+            <div id="emaildiv" class="inputdiv">
+        
               <label for="youremail">Your Email address:</label>
               <input type="email" name="youremail" id="youremail">
+              <div class="errorBox" id="erroryouremail"></div>
             </div>
-            <div class="confirmemaildiv">
+           
+            <div id="confirmemaildiv" class="inputdiv">
               <label for="confirmemail">Confirm Email address:</label>
               <input type="email" name="confirmemail" id="confirmemail">
+              <div class="errorBox" id="errorconfirmemail"></div>
             </div>
-            <div class="telephonediv">
+            
+            <div id="telephonediv" class="inputdiv">
               <label for="telephone">Your telephone number:</label>
-              <input type="email" name="telephone" id="telephone">
+              <input type="text" name="telephone" id="telephone">
+              <div class="errorBox" id="errortelephone"></div>
             </div>
-            <div class="addressdiv">
+           
+            <div id="addressdiv" class="inputdiv">
               <label for="telephone">Your Address:</label>
-              <input type="email" name="address" id="address">
+              <input type="text" name="address" id="address">
+              <div class="errorBox" id="erroraddress"></div>
             </div>
-            <div class="textareadiv2">
+            
+            <div id="textareadiv" class="inputdiv">
               <label for="yourmsg">Your Message:</label>
               <textarea name="yourmsg" id="yourmsg" rows="6"></textarea>
+              <div class="errorBox" id="erroryourmsg"></div>
             </div>
-            <div class="buttondiv"><button class="btn submit centerbtngrid">Submit</button></div>
+            <div id="buttondiv" class="">
+              <button class="btn submit centerbtngrid" id="submitbutton">Submit</button>
+            </div>
 
 
           </div>

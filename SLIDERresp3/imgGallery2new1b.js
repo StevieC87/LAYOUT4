@@ -70,54 +70,26 @@ function thumbnails(imgsarray) {
                 //  orientation = 'landscape';
                     //thumbheight = '100px';
                 // console.log(orientation);
-                    orientationt = 'landscape-desktop';
+                    orientationt = 'thumb-landscape';
                    
                 }
                 else if (mainphoto_height > mainphoto_width) {
-                    orientationt = 'portrait-desktop';
-                   
+                    orientationt = 'thumb-portrait';
                 }
+                else {
+                    orientationt = 'even';
+                    }
    
           //  };
             let imgid = 'thumb' + index;
-            /* const slideDynamicnew1 = () => {
-                return `
-                <img id="${imgid}" class="fade imgclass" src="${myImages[index]}">
-                `
-            } */
             let slideDynamicNew  = `<img id="${imgid}" class="thumb ${orientationt}" src="${myImages[index]}">`;
            let divfirst = document.createElement('div');
-         //  let slideDynamicNew  = '<img id="imgid" class="fade imgclass" src="${myImages[index]}">';
            divfirst.innerHTML = slideDynamicNew;
-           //HERE SHOULD APEND
-           //parentdivthumb.innerHTML = slideDynamicNew;
             parentdivthumb.appendChild(divfirst);
-            // img = null/
     });
     
 };
-                        //get url for image src from array
-                /*   if (img.naturalWidth > img.naturalHeight) {
-                    orientation = 'landscape';
-                    } else if (img.naturalWidth < img.naturalHeight) {
-                    orientation = 'portrait';
-                    } else {
-                    orientation = 'even';
-                    }
-                    document.body.innerHTML += '<img src="' + img.src + '"/><h1>' + orientation + '</h1>';
-
-                    }
-                    */
-                            //   img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/flower-300x259.jpg";
-
-           
-          //  let orientation = getImgOrientReturnClass(img2);//calls orientation function to return the class name for this image;
-         //  img2.className = `thumb ${orientation}`;
-         //   parentdivthumb.appendChild(img2);
-
-       
-
-           
+                  
 thumbnails(myImages);
 
 //FUNCTION CREATE IMAGES IN THE BEGINNING
@@ -519,6 +491,27 @@ let playclick = playbutton.addEventListener('click', function (event)
     
         } */
         /* else {
+
+
+            
         var heighta = 700 * 0.667;
         console.log(heighta,'heighta = 700 * 0.667');
         } */
+                     //get url for image src from array
+                /*   if (img.naturalWidth > img.naturalHeight) {
+                    orientation = 'landscape';
+                    } else if (img.naturalWidth < img.naturalHeight) {
+                    orientation = 'portrait';
+                    } else {
+                    orientation = 'even';
+                    }
+                    document.body.innerHTML += '<img src="' + img.src + '"/><h1>' + orientation + '</h1>';
+
+                    }
+                    */
+                            //   img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/flower-300x259.jpg";
+
+           
+          //  let orientation = getImgOrientReturnClass(img2);//calls orientation function to return the class name for this image;
+         //  img2.className = `thumb ${orientation}`;
+         //   parentdivthumb.appendChild(img2);

@@ -25,15 +25,10 @@ const elnamevalue = elname.value;
 
 let errordivname = document.querySelector(`#erroryourname`);
 
-function checknotempty() {
-
-
-}
-
-
 /********************* EVENT LISTENERS *********************/
-//When user types , remove error message
-//attach event listener to document, then check if it's from the input fields
+/*-----  ON TYPE -----*/
+  //When user types , remove error message
+  //attach event listener to document, then check if it's from the input fields
 document.addEventListener('keydown', (event) => {
   let input = event.target; //get input field
   let inputid = event.target.id; //get input field id  (e.g. 'yourname', 'youremail')
@@ -45,7 +40,8 @@ document.addEventListener('keydown', (event) => {
     input.classList.remove('red'); //remove red border 
   }
 });
-//On focusout run validation on the field
+/*-----  FOCUS OUT -----*/
+  //On focusout run validation on the field
 document.addEventListener('focusout', (event) => {
   let input = event.target; //get input field we are focusing out from
   let inputid = event.target.id; //get its id
@@ -79,26 +75,19 @@ document.addEventListener('focusout', (event) => {
     }
   }
 });
-//On click submit, does validation of every field
+/*-----  ON SUBMIT -----*/
+  //On click submit, does validation of every field
 submitButton.addEventListener('click', (event) => {
   //LOOPS THROUGH FIELDS TO SEE IF ANY EMPTY
-  for (i = 0; i < formEls.length; i++) {
-    let thisinput = formEls[i]; //current input field
-    let thisinputname = formEls[i].name; // its name
-    let errordiv1 = `error${thisinputname}`; //create id of div to display error message
-    let errordivtarget = document.querySelector(`#${errordiv1}`); //get div to display error message
-    let message;
-    
-    //only apply code to the input types we want
+  for (i = 0; i < formEls.length; i++) {    
+    //only apply code to the input types we want (input and textarea)
       if (
         formEls[i].nodeName === "INPUT" || formEls[i].nodeName === "TEXTAREA"
         ) { 
-          checkifempty(formEls[i]);
+          checkifempty(formEls[i]); //call validation function to check if empty, and displays error message 
       }
-    
-    
     }
- 
+  //call validation functions on fields
   validatename();
   validateemail();
   validateconfirmemail();
@@ -109,32 +98,26 @@ submitButton.addEventListener('click', (event) => {
 
 /********************* THE VALIDATION FUNCTIONS *********************/
 function validatename() {
-
-  const elname = forma.yourname;
-  const elnamevalue = elname.value;
-  const alphabetic = /[^a-z \-]/i;
-  let falsetrue = alphabetic.test(elnamevalue);
+  const elnamevalue = elname.value; //get value of 'name' field
+  const alphabetic = /[^a-z \-]/i; //regexp pattern
+  let falsetrue = alphabetic.test(elnamevalue); 
   
-  if(falsetrue === false) 
-   //if function returns false, so NO mistake
+  if(falsetrue === false)  // if false: no mistake, clear error msg if exists
     {
       message = '';
       validationclass = '';
     }
-  else if(falsetrue === true) 
-   //if function returns true then MISTAKE in validation
+  else if(falsetrue === true)  //if true: mistake, display error msg
   {
-    console.log('namevalidation  true');
-   // message = 'Only alphanumeric characters please';
-    el_name.classList.add('red');
+    el_name.classList.add('red'); 
     errordivname.textContent = 'Only alphabetical characters please';
   }
 }
 function validateemail() {
-  const el_emailvalue = el_email.value;
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const el_emailvalue = el_email.value; 
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; //regexp pattern
   let falsetrue = emailPattern.test(el_emailvalue);
-  if(el_emailvalue !== '') 
+  if(el_emailvalue.length !== 0)  
   { 
     if(falsetrue === true) {
       //if validation returns true there's no mistake
@@ -156,7 +139,6 @@ function validateemail() {
 }
 
 function validateconfirmemail() {
-  
   const el_emailconfirmvalue = el_emailconfirm.value;
   const el_emailvalue = el_email.value;
   let falsetrue;
@@ -193,8 +175,6 @@ function validatephone() {
     validationclass = '';
   }
 }
-
-
 function checkifempty(input) {
 
   let inputid = input.id;

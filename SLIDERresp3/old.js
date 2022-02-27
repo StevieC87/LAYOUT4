@@ -1,5 +1,60 @@
 
 
+//function for when resize window, adapt image and div dimensions
+
+/* window.onresize = resizefunction;
+function resizefunction() {
+    let windowwidth = window.innerWidth;
+    console.log(windowwidth, 'windowwidth');
+    let windowheight = window.innerHeight;
+
+    let getcssmaxwidth = getComputedStyle(document.documentElement)
+    .getPropertyValue('--width'); //e.g. 800px
+    let csswidthclean = getcssmaxwidth.slice(0,3); //remove px from the end
+    let cssmaxwidth = csswidthclean*1;  //convert into integer
+    //resize images - if we are less than the maximum width
+    if(window.innerWidth < cssmaxwidth) {
+        let images = document.querySelectorAll('.mainphoto');
+        images.forEach(function(image) {
+            //deleteUser(image);
+       // console.log(image, 'HELLO');
+           // 
+            let height;
+            let width;
+         //   photoparentdiv.style.height =    
+         //   var height = 790 * 0.67 -100;  
+            
+            if (image.classList.contains('portrait')) 
+            {
+                height = windowwidth * 0.677;
+                width = height * 0.677;
+             
+            }
+            else if (image.classList.contains('landscape'))  {  //landscape
+                height = windowwidth * 0.677;
+                width = windowwidth;
+                
+            }
+            photoparentdiv.style.height = `${height}px`;
+            photoparentdiv.style.width = `${width}px`;
+            image.style.height = `${height}px`;
+                image.style.width = `${width}px`;
+
+        });
+    }
+    else {
+
+    }
+
+} */
+
+
+
+
+
+
+
+
   /* //FUNCTION TO CREATE THUMBNAILS
 
 //FUNCTION TO CREATE FIRST IMAGE ON FIRST LOAD 

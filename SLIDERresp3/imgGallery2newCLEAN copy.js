@@ -11,37 +11,45 @@ const myImages = [
 "./images/dummy2/6.jpg",
 "./images/dummy2/7.jpg"
 ];
-//GET TOTAL NUMBER OF IMAGES  
-const totalImages = myImages.length; // total images
-const totalImagesIndex = totalImages -1; //get index of last image
-let currentSlide;  //set index of current child
-//slider variables
+//get total number of images
+const totalImages = myImages.length;
+//get index of last image
+const totalImagesIndex = totalImages -1;
+//create counter variable
+let currentSlide; 
+
+//grab elements 
 let parentdiv = document.querySelector('#mainphotodiv');
-// let currentphoto = document.querySelector('.mainphoto');
 let currentphoto = document.querySelector(`img${currentSlide}`);
 let currentMainphoto = document.querySelector('.mainphoto'); 
-//thumbnail variables
 let parentdivthumb = document.querySelector('.thumbcontainer');
-//RETURNS IMAGE ORIENTATION CSS CLASS NAME, if we give it image object when creating it
+//more elements for event listeners
+const pausebutton = document.querySelector('#pausediv');
+const playbutton = document.querySelector('#playdiv');
+const rangeslider = document.querySelector('#rangeSlider');
+const button_back_div = document.querySelector('#buttonleftdiv');
+const button_next_div = document.querySelector('#buttonrightdiv');
+let speed; //create variable for slider speed
+
+
+/****************** FUNCTION RETURN ORIENTATION OF IMAGE **********************/ 
 const getImgOrientReturnClass = (imgObject) => {
-let mainphoto_width = imgObject.naturalWidth;
-let mainphoto_height = imgObject.naturalHeight;
-var landscapemainphoto;
-//for class name - get orientation
-if(mainphoto_width > mainphoto_height) {
-//  orientation = 'landscape';
-//thumbheight = '100px';
-// console.log(orientation);
-var landscapemainphoto = 'landscape';
-return landscapemainphoto;
+    let mainphoto_width = imgObject.naturalWidth;
+    let mainphoto_height = imgObject.naturalHeight;
+    var landscapemainphoto;
+    //for class name - get orientation
+    if(mainphoto_width > mainphoto_height) {
+    //  orientation = 'landscape';
+    //thumbheight = '100px';
+    // console.log(orientation);
+    var landscapemainphoto = 'landscape';
+    return landscapemainphoto;
+    }
+    else if (mainphoto_height > mainphoto_width) {
+    var landscapemainphoto = 'portrait';
+    return landscapemainphoto;
+    }
 }
-else if (mainphoto_height > mainphoto_width) {
-var landscapemainphoto = 'portrait';
-return landscapemainphoto;
-}
-}
-
-
 /****************** CREATE THUMBNAILS FROM ARRAY **********************/ 
 function thumbnails(imgsarray) {
     //LOOP OVER IMAGES ARRAY, CREATE THUMBNAIL IMAGES
@@ -154,27 +162,30 @@ const allimages = () => {
 allimages();
 /****************** SLIDE IMAGE BASED ON INDEX PROVIDED **********************/ 
 const Slider = (photoindex) => { 
+    //get current photo
     let currentphoto1 = document.querySelector(`#img${currentSlide}`); 
+    //get new photo
     let nextphoto = document.querySelector(`#img${photoindex}`);
 
+    //hide current photo using css + fade effect
     currentphoto1.classList.remove('visible');
     currentphoto1.classList.add('hidden');
     currentphoto1.classList.remove('fade');
+
+    //make visible new photo + fade effect
     nextphoto.classList.add('fade');
     nextphoto.classList.remove('hidden');
     nextphoto.classList.add('visible');
-
-   
-    //remove focus class on current thumbnail - before we change image 
+''
+    //remove 'focus' class on thumbnail of current picture
     let currentThumbnail = document.querySelector(`#thumb${currentSlide}`); 
     currentThumbnail.classList.remove('thumbfocus');
 
-    //add focus class to new thumbnail - of image we change to
+    //add 'focus' class to thumbnail - of image we change to
     let new_thumbnail = document.querySelector(`#thumb${photoindex}`);    
     new_thumbnail.classList.add('thumbfocus');
     
-    
-    //SET UP SCROLLING in thumbnail container
+        //SET UP SCROLLING in thumbnail container
     //get width of thumbnail container
     let thumbG = document.querySelector('.thumbcontainer'); //get thumb container
     let thumb_container_width = thumbG.offsetWidth; 
@@ -193,19 +204,11 @@ const Slider = (photoindex) => {
     currentSlide = photoindex;
 }
 
-const pausebutton = document.querySelector('#pausediv');
-const playbutton = document.querySelector('#playdiv');
-const rangeslider = document.querySelector('#rangeSlider');
-const button_back_div = document.querySelector('#buttonleftdiv');
-const button_next_div = document.querySelector('#buttonrightdiv');
-let speed;
-
-/*-------------------- EVENT LISTENERS START HERE ---------------------- */
 
 /*********** THUMBNAIL CLICK - EVENT LISTENER ****************/ 
-//we put event listener on container div of thumbnails
 let thumbnail_click = parentdivthumb.addEventListener('click', function(event)
 {
+    //we put event listener on container div of thumbnails
     //we check user clicked on an image, not e.g. on margin
     if(event.target.nodeName == 'IMG')  {
         //get image's id, that we clicked on, to pass to slider function as parameter
@@ -214,9 +217,6 @@ let thumbnail_click = parentdivthumb.addEventListener('click', function(event)
     }   
 
 })
-//EVENT LISTENER - NEXT , PREVIOUS PHOTO ARROW 
-currentSlide = 0;
-
 /*********** NEXT BUTTON - EVENT LISTENER ****************/ 
 let click_next = button_next_div.addEventListener('click', function(event)
 {

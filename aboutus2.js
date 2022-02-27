@@ -89,56 +89,84 @@ document.addEventListener('focusout', (event) => {
 //COPY
 function validatename() {
 
-  if(namevalidation() === false) 
+  const elname = forma.yourname;
+  const elnamevalue = elname.value;
+  const alphabetic = /[^a-z \-]/i;
+  let falsetrue = alphabetic.test(elnamevalue);
+  
+  if(falsetrue === false) 
    //if function returns false, so NO mistake
     {
       message = '';
       validationclass = '';
     }
-  else if(namevalidation() === true) 
+  else if(falsetrue === true) 
    //if function returns true then MISTAKE in validation
   {
     console.log('namevalidation  true');
    // message = 'Only alphanumeric characters please';
     el_name.classList.add('red');
-   errordivname.textContent = 'Only alphabetical characters please';
+    errordivname.textContent = 'Only alphabetical characters please';
   }
 }
 function validateemail() {
-  if(emailvalidation() === true) {
-    //if validation returns true there's no mistake
-    message = '';
-    validationclass = '';
+  const el_emailvalue = el_email.value;
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  let falsetrue = emailPattern.test(el_emailvalue);
+  if(el_emailvalue !== '') 
+  { 
+    if(falsetrue === true) {
+      //if validation returns true there's no mistake
+      message = '';
+      validationclass = '';
+    }
+    else if (falsetrue === false) {
+      //if validation returns false there's a mistake
+      el_email.classList.add('red');
+      erroryouremail.textContent = 'Invalid email address';
+      console.log(erroryouremail, 'erroryouremail');
+      console.log('email not good');
+    }
   }
-  else if (emailvalidation() === false) {
-    //if validation returns false there's a mistake
+  else {
     el_email.classList.add('red');
-    erroryouremail.textContent = 'Invalid email address';
-    console.log(erroryouremail, 'erroryouremail');
-    console.log('email not good');
+    erroryouremail.textContent = 'Please fill in email';
   }
 }
 
 function validateconfirmemail() {
-  if(confirmemailvalidation() === false) {
+  
+  const el_emailconfirmvalue = el_emailconfirm.value;
+  const el_emailvalue = el_email.value;
+  let falsetrue;
+  if(el_emailconfirmvalue !== el_emailvalue) {
+    falsetrue = false;
+  }
+  else {
+    falsetrue = true;
+  }
+  if(falsetrue === false) {
     el_emailconfirm.classList.add('red');
     errorconfirmemail.textContent = "Email doesn't match";
-  //  console.log('email not good');
   }
-  else if (confirmemailvalidation() === true) {
-   
-  }
+ // else if (falsetrue === true) {}
 }
 
 function validatephone() {
-  if(telValidation() === true) {
+  const el_telvalue = el_tel.value;
+  console.log(el_telvalue, 'tel value');
+  const telregexp = /[^\d+-.() ]/; 
+  let falsetrue = telregexp.test(el_telvalue);
+  console.log(falsetrue,'tel');
+
+  if(falsetrue === true) {
     //if validation returns true there's a mistake
     el_tel.classList.add('red');
-    errortelephone.textContent = 'Invalid phone';
+    errortelephone.textContent = 'No letters please';
     console.log('email not good');
     
   }
-  else if (telValidation() === false) {
+  else if (falsetrue === false) {
     //if validation returns false there's no mistake
     message = '';
     validationclass = '';
@@ -248,48 +276,3 @@ submitButton.addEventListener('click', (event) => {
   validatephone();
   event.preventDefault();
 })
-
-function namevalidation() {
-  const elname = forma.yourname;
-  const elnamevalue = elname.value;
-  const alphabetic = /[^a-z \-]/i;
-  let falsetrue = alphabetic.test(elnamevalue);
-   //false if it doesn't match bad characters
-   //true if there's a mistake
-  console.log(falsetrue);
-  return falsetrue;
-}
-
-
-function emailvalidation() {
-  const el_emailvalue = el_email.value;
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  let falsetrue = emailPattern.test(el_emailvalue);
-  console.log(el_emailvalue,'el_emailvalue');
- // console.log(falsetrue);
-  return falsetrue;
-}
-function confirmemailvalidation() {
-  const el_emailconfirmvalue = el_emailconfirm.value;
-  const el_emailvalue = el_email.value;
-  if(el_emailconfirmvalue !== el_emailvalue) {
-    return false;
-  }
-  else {
-    return true;
-  }
-}
-
-function telValidation() {
-  const el_telvalue = el_tel.value;
-  console.log(el_telvalue, 'tel value');
-  const telregexp = /[^\d+-.() ]/; 
-  let falsetrue = telregexp.test(el_telvalue);
-  console.log(falsetrue,'tel');
-  return falsetrue;
-}
-
-function removemsg() {
-
-}
- 

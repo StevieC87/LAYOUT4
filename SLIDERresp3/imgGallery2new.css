@@ -1,7 +1,7 @@
 :root{
-    --width: 800px;
-    --height: 636px;
-    --imgwidth: 560px;
+    --width:800px;
+    --height:636px;
+    --imgwidth:560px;
     /* ratio 3:2 for landscape  */
     /* --imgwidth: calc(var(--width) - 10px);
    --imgheight: calc(var(--height) - 10px);  */

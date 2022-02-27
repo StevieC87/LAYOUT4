@@ -1,76 +1,70 @@
-
-
-
-const submitButton = document.querySelector('#submitbutton');
+//form
 const form = document.forms['contactform'];
+
+// form elements
 let formEls = form.elements;
-//console.log(form);
+//input fields
 const el_name = form.elements['yourname'];
 const el_tel = form.elements['telephone'];
 const el_email = form.elements['youremail'];
 const el_emailconfirm = form.elements['confirmemail'];
 const el_address = form.elements['address'];
 const el_notes = form.elements['yourmsg'];
+//submit button 
+const submitButton = document.querySelector('#submitbutton');
 
-
+/********** DONT USE THIS FOR NOW ***************/
 //GET FORM ELEMENTS WITH DECONSTRUCT
 const myform = document.forms;
 const [forma] = myform; 
 console.log(forma.yourname);
-
 const elname = forma.yourname;
 const elnamevalue = elname.value;
+/******************** END ************************/
+
 
 let errordivname = document.querySelector(`#erroryourname`);
-//console.log(el_name);
-//console.log(form);
+
+function checknotempty() {
 
 
-//WE WANT REAL TIME VALIDATION
-//first we build validation - then we can apply it real time or not etc
+}
 
-//remove error message as user types on keyboard
+
+/********************* EVENT LISTENERS *********************/
+//When user types , remove error message
+//attach event listener to document, then check if it's from the input fields
 document.addEventListener('keydown', (event) => {
-  console.log(event.target, 'EVENT TARGET');
-  console.log(event.target.tagName);
-  let input = event.target;
-  let inputid = event.target.id;
-  // console.log(inputid);
+  let input = event.target; //get input field
+  let inputid = event.target.id; //get input field id  (e.g. 'yourname', 'youremail')
   let inputtagname = event.target.tagName;  //e.g. input or textarea
+  
   if(inputtagname === 'INPUT' || inputtagname === 'TEXTAREA') {
-    //console.log('SUCCESS');
-    let errorbox = document.querySelector(`#error${inputid}`);
-    console.log(errorbox, 'ERRORBOX');
-    errorbox.textContent = '';
-    input.classList.remove('red');
+    let errorbox = document.querySelector(`#error${inputid}`);  //get div to display error for this input (e.g. '#erroryourname' , '#erroryouremail')
+    errorbox.textContent = ''; //remove error message
+    input.classList.remove('red'); //remove red border 
   }
 });
-
-
-//run validation on focusout
+//On focusout run validation on the field
 document.addEventListener('focusout', (event) => {
-  //console.log(event.target, 'EVENT TARGET');
-  //console.log(event.target.tagName);
-  let input = event.target;
-  let inputid = event.target.id;
+  let input = event.target; //get input field we are focusing out from
+  let inputid = event.target.id; //get its id
   let inputtagname = event.target.tagName;  //e.g. input or textarea
   let thisinputname;
   if(inputtagname === 'INPUT' || inputtagname === 'TEXTAREA') {
-    
+    //run validation functions for that field
     switch (inputid) {
       case 'yourname':
-        checkifempty(input)  
-        validatename();
-       // checkifempty(input);
+        checkifempty(input); // check not empty
+        validatename(); // validate input value
       break;
       case 'youremail':
         checkifempty(input)  
         validateemail()
       break;
       case 'confirmemail':
-      //  console.log('confirm');
-      checkifempty(input);  
-      validateconfirmemail();
+        checkifempty(input);  
+        validateconfirmemail();
       break;
       case 'telephone':
         checkifempty(input);  
@@ -85,8 +79,35 @@ document.addEventListener('focusout', (event) => {
     }
   }
 });
+//On click submit, does validation of every field
+submitButton.addEventListener('click', (event) => {
+  //LOOPS THROUGH FIELDS TO SEE IF ANY EMPTY
+  for (i = 0; i < formEls.length; i++) {
+    let thisinput = formEls[i]; //current input field
+    let thisinputname = formEls[i].name; // its name
+    let errordiv1 = `error${thisinputname}`; //create id of div to display error message
+    let errordivtarget = document.querySelector(`#${errordiv1}`); //get div to display error message
+    let message;
+    
+    //only apply code to the input types we want
+      if (
+        formEls[i].nodeName === "INPUT" || formEls[i].nodeName === "TEXTAREA"
+        ) { 
+          checkifempty(formEls[i]);
+      }
+    
+    
+    }
+ 
+  validatename();
+  validateemail();
+  validateconfirmemail();
+  validatephone();
+  event.preventDefault();
+})
 
-//COPY
+
+/********************* THE VALIDATION FUNCTIONS *********************/
 function validatename() {
 
   const elname = forma.yourname;
@@ -128,7 +149,7 @@ function validateemail() {
       console.log('email not good');
     }
   }
-  else {
+  else if(el_emailvalue.trim().length === 0){
     el_email.classList.add('red');
     erroryouremail.textContent = 'Please fill in email';
   }
@@ -208,71 +229,3 @@ function checkifempty(input) {
   //  thisinput.style.border = '2px solid red';
   
 } 
-
-//SUBMIT EVENT LISTENER
-submitButton.addEventListener('click', (event) => {
-  let errordivname = document.querySelector(`#erroryourname`);
-  const form = document.forms['contactform'];
-  let formEls = form.elements;
-  const el_name = form.elements['yourname'];
-  const el_email = form.elements['youremail'];
-  let test = document.querySelector('.yourname');
-  let message;
-  let validationerror;
-  let validationclass;
-  
-  //LOOPS THROUGH FIELDS TO SEE IF ANY EMPTY
-  for (i = 0; i < formEls.length; i++) {
-
-    let thisinput = formEls[i];
-    /*  console.log(thisinput, 'thisinput!!!!!!!!!!'); */
-    let thisinputname = formEls[i].name;
-    //choose this input type's error div to show message
-    let errordiv1 = `error${thisinputname}`;
-    let errordivtarget = document.querySelector(`#${errordiv1}`);
-    let message;
-    
-    //make sure we have type of input 
-      if (formEls[i].nodeName === "INPUT" && formEls[i].type === "text" || formEls[i].type === "textarea" || formEls[i].type === 'email') {
-    
-    
-          if(formEls[i].value.trim().length === 0) {
-
-            switch(thisinputname) {
-              //get name of input and check which one it is
-                case 'yourname' : message = 'Please fill in your name';
-                break;
-                case 'youremail' : message = 'Please fill in your email';
-                break;
-                case 'confirmemail' : message = 'Please confirm your email';
-                break;
-                case 'telephone' : message = 'Please fill in your telephone number';
-                break;
-                case 'address' : message = 'Please fill in your address';
-                break;
-                case 'yourmsg' : message = "Don't forget the message";
-                break;
-            }            
-            thisinput.classList.add('red');
-
-          }
-          else {
-              thisinput.classList.remove('red');
-              message = '';
-          }
-          
-          errordivtarget.textContent = message;
-          //  thisinput.style.border = '2px solid red';
-          
-            
-      }
-    
-    
-    }
- 
-  validatename();
-  validateemail();
-  validateconfirmemail();
-  validatephone();
-  event.preventDefault();
-})

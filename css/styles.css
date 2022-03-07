@@ -62,7 +62,8 @@ h3 {
   color: var(--myblue);
 }
 h4 {
-  font-size: 26px;
+  font-size: 22px;
+  color: var(--myblue);
 }
 h5 {
   font-size: 20px;
@@ -317,6 +318,8 @@ background-color: #fff;
   text-align: center;
   color: var(--myblueh1);
   width: 100%;
+/*   padding-bottom: 20px; */
+  padding: 20px 0 20px 0;
 }
 .meettheteamh2 > h2 {
   color: inherit;
@@ -327,6 +330,19 @@ background-color: #fff;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
+}
+.aboutusname {
+  padding-bottom: 0;
+  padding-top: 0;
+  /* display: inline; */
+}
+.aboutusjobtitle {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-family: PoppinsLight;
+  display: block;
 }
 .contactuswrapper {
   padding: 80px 0 80px 0;
@@ -453,6 +469,39 @@ label {
   max-width: 500px;
   padding-top: 10px;
 }
+/* SVG ANIMATION  */
+
+
+
+.svgshield {
+  animation: spin 3s infinite linear;
+  transform-origin: center;
+ 
+  
+}
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to { 
+    transform: rotateY(180deg);
+  }
+}
+
+.svggear {
+  animation: wheel 3s infinite linear;
+  transform-origin: center;
+  
+}
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to { 
+    transform: rotateZ(360deg);
+  
+  }
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  CLASSES FOR CASE STUDIES PAGE
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -483,7 +532,10 @@ label {
  /*  background-color: #fcf6f2; */
  background-color: #F9F9F2;
 }
-
+.casestudy1txt {
+  padding-left: 20px;
+  padding-top: 10px;
+}
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  CLASSES FOR PRICING PAGE
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -1014,10 +1066,18 @@ background-color: var(--myblue);
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
                     FOOTER
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.svgdiv {
+  width: 45px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+
 .footerwrapper {
   /* this is the inner div that serves as a grid with equal columns as container */
   display: grid;
-   grid-gap: 0.2rem;
+  grid-gap: 0.2rem;
+  
 
 }
 .footergriditem2, .footergriditem4 {
@@ -1069,7 +1129,7 @@ footer {
 }
 /* CASE STUDIES MEDIA QUERIES  */
 
-@media (min-width: 500px) {
+@media (min-width: 780px) {
   .casestudiesinnerwrapper {
     grid-template-columns: 1fr 1fr;
     /*  padding: 20px 20px 0 20px; */
@@ -1327,7 +1387,7 @@ footer {
 @media (min-width: 700px) {
  
   .footerwrapper {
-    grid-template-columns: 226px 200px 1fr;
+    grid-template-columns: 226px 200px 250px 200px;
     width: 1200px;
     /*  0.2fr 0.2fr 0.2fr */
   }

@@ -1,0 +1,14 @@
+{
+    "Staff": [
+        {
+            "name": "Matias",
+            "description": "Matias started coding WalkiesPro in order to manage his dog walking business. A few years later he created WalkiesPro and released it to the world!",
+            "photo": "images/photos/boss.jpg"
+        },
+        {
+            "name": "Felix and Marcus",
+            "description": "Felix and Marcus are front and backend developers, respectively. They maintain and update the software and add new features according to customer needs",
+            "photo": "images/photos/staff.jpg"
+        }
+    ]
+}

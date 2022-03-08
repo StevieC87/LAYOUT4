@@ -8,16 +8,17 @@
   <title>WalkiesPro Dog Walking Software</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css" />
-
+  <link rel="stylesheet" href="css/imgGallery.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/fontawesome/all.css">
     <script type="text/javascript" src="components/navbar.js" defer></script>
     <script type="text/javascript" src="components/footer.js" defer></script>
   
     <script type="text/javascript" src="components/sidemenu.js  " defer></script>
     <script type="text/javascript" src="js/scripts.js" defer></script>
-
-
+    <script type="text/javascript" src="js/imgGallery.js" defer></script>
+    
   <style></style>
 </head>
 
@@ -101,9 +102,46 @@
           <h3>Reviews</h3>
           <span>Some of our customers opinions</span>
         </div>
-        <div class="imagegallery">
+      <!--   <div class="imagegallery">
           <img src="images/3.png" alt="" width="250px">
-        </div>
+        </div> -->
+        <div class="slideOuterContainer">
+          <div class="gallerycontainer">
+              <div class="mainphotodiv" id="mainphotodiv">
+                  <div class="mainphotodiv2" id="mainphotodiv2"></div>
+  
+                  <div id="buttonsdiv1">
+                      <div id="pausediv">
+                          <i class="fa-solid fa-pause"></i>
+                      </div>
+                      <div id="playdiv" class="hidden">
+                          <i id="playicon" class="fa-solid fa-play"></i>
+                      </div>
+                      <div id="rangeSliderdiv" class="rangeSliderdiv">
+                          <label for="speed"></label>
+                          <input id="rangeSlider" type="range" min="1" max="3" value="2">
+                      </div>
+                  </div>
+  
+                  <div id="buttonleftdiv"></div>
+                  <div id="buttonrightdiv"></div>
+  
+                  <i id="buttonNext" class="fa-solid fa-chevron-right"></i>
+                  <i id="buttonPrevious" class="fa-solid fa-chevron-left"></i>
+              </div>
+  
+  
+          </div>
+          <div class="thumbcontainer" id="thumb_container">
+              <!-- thumbnails go here -->
+          </div>
+  
+      </div>
+      </div>
+
+
+
+
       </div>
 
 

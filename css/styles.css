@@ -638,7 +638,7 @@ background-color: var(--mybackgroundBeige2);
 }
 
 .imagegalleryinnerwrapper {
-  grid-template-columns: 1fr;
+  grid-template-columns: 700px;
   display: grid;
   justify-content: center;
 }

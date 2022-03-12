@@ -1,5 +1,7 @@
 '*~' 
 /.history/*
+/.tmp.driveupload/*
+
 .tmp.driveupload/10001
 .tmp.driveupload/10001
 .tmp.driveupload/10003

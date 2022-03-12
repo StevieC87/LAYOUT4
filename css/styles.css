@@ -12,6 +12,7 @@
   --mypurple2: #842585;
   --myblack: #383838;
   /* --secondary2: #8A2BE2; */
+ 
 }
 
 html,
@@ -22,6 +23,7 @@ body {
   margin: auto;
   background: var(--mybackgroundBeige1);
   scroll-behavior: smooth;
+
    
 }
 .body2 {

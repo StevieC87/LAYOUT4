@@ -1,16 +1,14 @@
 //ARRAY OF IMAGES
 const myImages = [
 
-    "images/dummy2/1.jpg",
-    "images/dummy2/2.jpg",
-    "images/dummy2/3.jpg",
-    "images/dummy2/4.jpg",
-    "images/dummy2/5.jpg",
-    "images/dummy2/8.jpg",
-    "images/dummy2/9.jpg",
-    "images/dummy2/10.jpg",
-    "images/dummy2/6.jpg",
-    "images/dummy2/7.jpg"
+    "images/testimonials/1.jpg",
+    "images/testimonials/2.jpg",
+    "images/testimonials/3.jpg",
+    "images/testimonials/4.jpg",
+    "images/testimonials/5.jpg",
+    "images/testimonials/8.jpg",
+    "images/testimonials/6.jpg",
+    "images/testimonials/7.jpg"
 ];
 //get total number of images
 const totalImages = myImages.length;
@@ -109,10 +107,10 @@ const allimages = () => {
 
             }
             //create image class
-            img.className = `mainphoto ${orientation} mainphoto2 ${classvisible}`;
+            img.className = `centerimg mainphoto ${orientation} mainphoto2 ${classvisible}`;
 
 
-            if (availablewidth < cssmaxwidth) {
+         /*    if (availablewidth < cssmaxwidth) {
 
 
                 height = availablewidth * 0.677;
@@ -136,15 +134,17 @@ const allimages = () => {
                     img.style.left = cssclassnewleft;
 
                 }
-            }
+            } */
+            height = 250;
+            width = 400;
             photoparentdiv.style.height = `${height}px`;
             photoparentdiv.style.width = `${width}px`;
             img.style.height = `${height}px`;
             img.classList.add('mainphotofullsize');
             img.style.width = `${width}px`;
 
-            document.querySelector('.slideOuterContainer').style.height = `${height + 100}px`;
-            document.querySelector('.slideOuterContainer').style.width = `${width}px`;
+           // document.querySelector('.slideOuterContainer').style.height = `${height + 100}px`;
+           // document.querySelector('.slideOuterContainer').style.width = `${width}px`;
             photoparentdiv.appendChild(img);
         }
             , 200);

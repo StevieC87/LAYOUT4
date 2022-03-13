@@ -23,7 +23,7 @@ body {
   margin: auto;
   background: var(--mybackgroundBeige1);
   scroll-behavior: smooth;
-
+  overflow-x: hidden;
    
 }
 .body2 {
@@ -82,10 +82,13 @@ h6 {
       /*  ---------------  SECTION1 HEADER  --------------- */
       .newfrontpageheader {
         align-self: center;
+      
       }
+     
       .section1outerwrapper {
         display: grid;
         justify-content: center;
+        padding: 0 0px 0 10px;
         /* height: 100vh; */
       }
       .featuresnew {
@@ -113,6 +116,7 @@ h6 {
         display: grid;
         justify-content: center;
         align-self: center;
+        position: relative;
         /* grid-area: image;
         grid-column: 2 / 3;
         grid-row: 1 / 3; */
@@ -128,6 +132,23 @@ h6 {
         order: 2;
       }
       /* --------------- FRONT PAGE SECTION2  --------------- */
+
+     /*  #laptopimg {
+        animation-name: laptop;
+        animation-duration: 1s;
+        position: absolute;
+        top: -100px;
+      
+      }
+      @keyframes laptop {
+        from {
+          right: -450px;
+        }
+        to {
+          right: 0px;
+         
+        }
+      } */
 
       .section2wrapper {
         width: 100%;
@@ -149,9 +170,89 @@ h6 {
 
       }
       .tabletimg {
+       
         max-width: 350px;
         padding: 20px;
+
       }
+      
+
+   /*    #tablet {
+        animation-name: tablet;
+        animation-duration: 1s;
+       
+      }
+      @keyframes tablet {
+        0% {
+          transform: translateX(-450px);
+        }
+        50% {
+        
+         
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      } */
+
+      .animationclassfortablet1 {
+        animation-name: tablet1;
+        animation-duration: 1s;
+       
+      }
+      
+      @keyframes tablet1 {
+        0% {
+          transform: translateX(-450px);
+        }
+        50% {
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+
+    /*   #tablet2 { */
+      .animationclassfortablet2 {
+        animation-name: tablet2;
+        animation-duration: 1s;
+       
+      }
+      
+      @keyframes tablet2 {
+        0% {
+          transform: translateX(450px);
+        }
+        50% {
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+      .animationclassforMOBILE {
+        animation-name: mobile;
+        animation-duration: 1s;
+       
+      }
+      
+      @keyframes mobile {
+        0% {
+          transform: translateX(-450px);
+        }
+        50% {
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+
+    
+     
+      /* position: absolute; */
+
+     
       .frontfeatures2 {
       /*   background-color: #fcf6f2; */
         margin-bottom: 60px;
@@ -633,32 +734,7 @@ background-color: var(--mybackgroundBeige2);
   margin-top: 60px;
 }
 
-.imagegallerywrapper {
-  width: 100%;
-  background-color: #f9f9f2;
-  display: grid;
-  justify-content: center;
-}
 
-.imagegalleryinnerwrapper {
-  grid-template-columns: 700px;
-  display: grid;
-  justify-content: center;
-}
-
-.imagegallery {
-  align-self: center;
-  justify-self: center;
-}
-.centerGRIDself {
-  align-self: center;
-  justify-self: center;
-}
-.reviewsdiv {
-  margin-top: 20px;
-  margin-bottom: 70px;
-  /*  justify-self: center; */
-}
 
 .card {
   transition: 0.3s;
@@ -1143,6 +1219,8 @@ footer {
   .casestudy1img {
     grid-column: 1 / 2;
   }
+
+  
 }
 
 
@@ -1155,6 +1233,12 @@ footer {
     grid-template-columns: 2fr 1fr;
   }
   /* FRONT PAGE STUFF */
+
+    .slideOuterContainer {
+      box-shadow: 5px 5px 15px gray;
+    }
+ 
+
    .home-features-grid-1 {
     grid-template-columns: 1fr 2fr;
   }
@@ -1232,7 +1316,61 @@ footer {
   }
 }
 @media (max-width: 750px) {
+  .featuresimgnew {
+    height: 300px;
+    position: relative;
+  }
+  
+  #laptopimg {
+    animation-name: laptop;
+    animation-duration: 1s;
+  /*   position: absolute;
+    top: 0px; */
+  
+  }
+  @keyframes laptop {
+    from {
+      transform: translateX(450px);
+      opacity: 0;
+
+    /*   right: -450px; */
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+
+     
+    }
+  }
+}
+@media (min-width: 751px) {
+ 
+  .newfrontpageheader {
+    padding-left: 20px;
+  }
+  #laptopimg {
+    animation-name: laptop;
+    animation-duration: 1s;
+    position: absolute;
+    top: -100px;
+   
+  }
+  @keyframes laptop {
+    from {
+      right: -450px;
+      opacity: 0;
+    }
+    to {
+      right: 0px;
+      opacity: 1;
+    }
+  }
+ 
+}
+
+@media (max-width: 750px) {
   /* FRONT PAGE RELATED */
+
   .featuresnew {
     display: grid;
     max-width: 1200px;
@@ -1390,7 +1528,9 @@ footer {
 @media (min-width: 700px) {
  
   .footerwrapper {
-    grid-template-columns: 226px 200px 250px 200px;
+  /*   grid-template-columns: 226px 200px 250px 200px; */
+ 
+  grid-template-columns:  1fr 1fr 1fr 1fr;
     width: 1200px;
     /*  0.2fr 0.2fr 0.2fr */
   }

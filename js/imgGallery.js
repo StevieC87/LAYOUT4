@@ -19,6 +19,7 @@ let currentSlide;
 
 //grab elements 
 const parentdiv = document.querySelector('#mainphotodiv');
+// const parentdiv = document.querySelector('#mainphotodiv2');
 let currentphoto = document.querySelector(`img${currentSlide}`);
 let currentMainphoto = document.querySelector('.mainphoto');
 const parentdivthumb = document.querySelector('.thumbcontainer');
@@ -74,6 +75,7 @@ thumbnails(myImages);
 const allimages = () => {
 
     //get width of div around img, to get width of available window space
+    let screenWidth = screen.width;
     let availablewidth = parentdiv.offsetWidth;
     //console.log(availablewidth, 'availablewidth');
     //get max-width we have set as variable in css stylesheet
@@ -89,6 +91,8 @@ const allimages = () => {
         const startdelay = setTimeout(() => {
             let height;
             let width;
+            let heightdiv;
+            let widthdiv;
             //create div element to append the image to
             //create image object to get orientation
             let img = document.createElement('img');
@@ -135,8 +139,39 @@ const allimages = () => {
 
                 }
             } */
-            height = 250;
-            width = 400;
+            console.log(screenWidth);
+            if(screenWidth < 520) { 
+            //we set max width 400, if above, then it's fixed at 400
+                console.log(screenWidth, 'getcssmaxwidth 400');
+                width = screenWidth - 50;
+                height = width * 0.62;
+                console.log(width,'width');
+               //for outer div
+                widthdiv = screenWidth;
+                heightdiv = widthdiv * 0.62;
+            } 
+            else if( screenWidth >= 520) {
+                height = 250;
+                 width = 400;
+               /*   widthdiv = screenWidth;
+                 heightdiv = widthdiv * 0.62; */
+                 console.log(screenWidth, '>400');
+            }
+            else {
+                height = 250;
+                 width = 500;
+                 console.log('else');
+            }
+            
+            //we set max width 400, if above, then it's fixed at 400
+            //if width less than 400, then we do it the width of the window
+            let outerdiv = document.querySelector('#mainphotodiv');
+            let outerouterdiv = document.querySelector('.slideOuterContainer');
+            let thumcontainerdiv = document.querySelector('#thumb_container');
+            thumcontainerdiv.width = `${widthdiv}px`;
+
+           
+            outerouterdiv.style.width = `${widthdiv}px`;
             photoparentdiv.style.height = `${height}px`;
             photoparentdiv.style.width = `${width}px`;
             img.style.height = `${height}px`;

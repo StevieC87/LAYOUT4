@@ -95,9 +95,9 @@ h6 {
         display: grid;
         max-width: 1200px;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas:
+       /*  grid-template-areas:
           'title image'
-          'aaa aaa'
+          'aaa aaa' */
         /*   'text image'; */
       }
       .featuressurround {
@@ -1317,15 +1317,14 @@ footer {
 }
 @media (max-width: 750px) {
   .featuresimgnew {
-    height: 300px;
-    position: relative;
+  /*   height: 300px;
+    position: relative; */
   }
   
   #laptopimg {
     animation-name: laptop;
     animation-duration: 1s;
-  /*   position: absolute;
-    top: 0px; */
+
   
   }
   @keyframes laptop {
@@ -1351,8 +1350,7 @@ footer {
   #laptopimg {
     animation-name: laptop;
     animation-duration: 1s;
-    position: absolute;
-    top: -100px;
+
    
   }
   @keyframes laptop {
@@ -1375,10 +1373,9 @@ footer {
     display: grid;
     max-width: 1200px;
     grid-template-columns: 1fr;
-    grid-template-areas:
+    /* grid-template-areas:
       'title title'
-      'text text'
-      'image image';
+      'image image'; */
   }
   .featurestitlenew {
     grid-area: title;
@@ -1389,7 +1386,7 @@ footer {
   }
   .featuresimgnew {
     grid-column: 1 / -1;
-    grid-row: 3/ 4;
+    grid-row: 2/ 3;
   }
   .featurestextnew {
     grid-area: text;

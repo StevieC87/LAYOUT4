@@ -26,13 +26,7 @@ body {
   overflow-x: hidden;
    
 }
-.body2 {
-  background: var(--mybackgroundBeige1);
-}
-.body3 {
-  background: var(--mybackgroundBeige1);
-  /* F6EFE8 E3BEC6  E7FBBE  FFEDDB*/
-}
+
 
 *,
 *:before,
@@ -89,16 +83,13 @@ h6 {
         display: grid;
         justify-content: center;
         padding: 0 0px 0 10px;
-        /* height: 100vh; */
+
       }
       .featuresnew {
         display: grid;
         max-width: 1200px;
         grid-template-columns: 1fr 1fr;
-       /*  grid-template-areas:
-          'title image'
-          'aaa aaa' */
-        /*   'text image'; */
+
       }
       .featuressurround {
 
@@ -247,19 +238,11 @@ h6 {
         }
       }
 
-
-    
-     
-      /* position: absolute; */
-
-     
       .frontfeatures2 {
-      /*   background-color: #fcf6f2; */
         margin-bottom: 60px;
         max-width: 1200px;
       }
       .frontfeatures3 {
-        /* background-color: #f1faf9; */
         margin-bottom: 60px;
         padding-bottom: 20px;
         max-width: 1200px;
@@ -408,6 +391,7 @@ h6 {
   justify-self: center;
   font-size: 1rem;
   padding-top: 30px;
+  text-align: center;
 }
 .meettheteamwrapper {
   width: 100%;
@@ -686,8 +670,9 @@ label {
 
 .pricelist {
   list-style-type: none;
-  padding-top: 0px;
+  padding-top: 10px;
   margin-block-start: 0em;
+
 }
 .pricelist li {
   padding-left: 10px;
@@ -1348,18 +1333,16 @@ footer {
     padding-left: 20px;
   }
   #laptopimg {
-    animation-name: laptop;
-    animation-duration: 1s;
-
-   
+    animation-name: laptopbig;
+    animation-duration: 1s;   
   }
-  @keyframes laptop {
+  @keyframes laptopbig {
     from {
-      right: -450px;
+      transform: translateX(450px);
       opacity: 0;
     }
     to {
-      right: 0px;
+      transform: translateX(0px);
       opacity: 1;
     }
   }
@@ -1373,9 +1356,7 @@ footer {
     display: grid;
     max-width: 1200px;
     grid-template-columns: 1fr;
-    /* grid-template-areas:
-      'title title'
-      'image image'; */
+ 
   }
   .featurestitlenew {
     grid-area: title;
@@ -1476,7 +1457,7 @@ footer {
    
  }
  .footergriditem3 {
-   grid-row: 4/5;    
+   grid-row: 5/6;    
    justify-self: center;
  }
  .footergriditem4 {
@@ -1487,6 +1468,11 @@ footer {
 
  .footerlinkstitle {
   text-align: center;
+ }
+ .shield { 
+  grid-row: 4/5;    
+  grid-column: 1 / -1;
+  justify-self: center;
  }
    
  }
@@ -1511,7 +1497,7 @@ footer {
 
 }
 .footergriditem3 {
-  grid-row: 2/ 3;    
+  grid-row: 3/4;    
   grid-column: 1 / -1;
   justify-self: center;
 }
@@ -1519,7 +1505,11 @@ footer {
   grid-row: 1 / 2;    
   grid-column: 3 / 4;
 }
- 
+ .shield { 
+  grid-row: 2/3;    
+  grid-column: 1 / -1;
+  justify-self: center;
+ }
   
 }
 @media (min-width: 700px) {

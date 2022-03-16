@@ -14,29 +14,23 @@
   <script type="text/javascript" src="components/sidemenu.js  " defer></script>
   <script type="text/javascript" src="js/scripts.js" defer></script>
   <script type="text/javascript" src="js/frontpage.js" defer></script>
-  <style>
-
-  /*   body {} */
-  </style>
+  
 </head>
 
 <body>
 
-  <!-- IN FRONT PAGE MAKE BACKGROUND COLOR - OTHERWISE LEAVE WHITE DEFAULT -->
-
-
     <div class="containernew">
-    <!-- nav bar-->
+    <!-- nav bar (loads via JS from components/navbar.js) -->
     <div class="navwrapper">
-    <nav-bar></nav-bar>
-  </div>
+      <nav-bar></nav-bar>
+    </div>
     <!------------------ SECTION1 HEADER --------------------->
     <section id="laptoptop" class="section1outerwrapper ">
       <div class="featuresnew">
         <div class="newfrontpageheader">
           <h1 class="featurestitlenew">Dog Walking Business Software</h1>
           <div class="featurestextnew">
-           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis laboriosam officia cum sapiente dolorum. Ad a eum quisquam, obcaecati nesciunt dicta ab nam voluptatum explicabo perspiciatis ipsam, magni harum molestiae.
+          Power your business with WalkiesPro! Our software suite gives you all the tools you need to manage, improve and grow your business.  
           </div>
         </div>
         <div class="featuresimgnew">
@@ -50,7 +44,7 @@
     <section class="section2wrapper sectionwrapperFW">
       <div class="section2innerwrapper">
         <!-- FEATURES SECTION 1  : SCHEDULING SECTION -->
-        <div style="width: 100%;">
+        <div>
         <div class="home-features-grid-1 frontfeatures1">
           <!-- img div -->
           <div class="centerhorizvert  home-features-1-imgdiv">
@@ -62,33 +56,29 @@
           </div>
           <!-- text div -->
           <div class="home-features-1-textdiv">
-            <p class="section2txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid eveniet quia,
-              temporibus recusandae officia exercitationem ullam magni quisquam similique, porro rem architecto nulla?
-              Alias, soluta. Ea nemo quam non nihil! </p>
+            <p class="section2txt">With all our scheduling features, running a pet care business has never been easier. Eliminate human error and impress your customers with your professionalism and reliability. </p>
           </div>
-        </div>
-      </div><!--  background-color: #f9f9f2; -->
-        <!-- FEATURES SECTION 2  : CUSTOMER MNGMENT SECTION -->
-        <div style="width: 100%;">
-        <div class="home-features-grid-2 frontfeatures2">
-          <!-- img div -->
-          <div class="home-features-2-imgdiv centerhorizvert">
-            <img id="tablet2" src="images/tablet2.png" class="responsiveimg tabletimg" alt="Screenshot of app on mobile" />
-          </div>
-          <!-- title div -->
-          <div class="home-features-2-titlediv ">
-            <h3 class="centertext ">Customer Management</h3>
-          </div>
-          <!-- text div -->
-          <div class="home-features-2-textdiv">
-            <p class="section2txt"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, placeat.
-              Praesentium fugit quo totam
-              nemo atque, quasi cumque autem! Impedit.</p>
-          </div>
-
-
         </div>
       </div>
+        <!-- FEATURES SECTION 2  : CUSTOMER MNGMENT SECTION -->
+        <div style="width: 100%;">
+          <div class="home-features-grid-2 frontfeatures2">
+            <!-- img div -->
+            <div class="home-features-2-imgdiv centerhorizvert">
+              <img id="tablet2" src="images/tablet2.png" class="responsiveimg tabletimg" alt="Screenshot of app on tablet" />
+            </div>
+            <!-- title div -->
+            <div class="home-features-2-titlediv ">
+              <h3 class="centertext ">Customer Management</h3>
+            </div>
+            <!-- text div -->
+            <div class="home-features-2-textdiv">
+              <p class="section2txt">Use WalkiesPro to manage all your customer data and relationships and deliver first-class customer experience!</p>
+            </div>
+
+
+          </div>
+        </div>
         <!-- FEATURES SECTION 3  : FINANCIAL MNGMENT SECTION -->
         <div class="home-features-grid-1 frontfeatures3">
           <!-- img div -->
@@ -101,12 +91,9 @@
           </div>
           <!-- text div -->
           <div class="home-features-1-textdiv">
-            <p class="section2txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur nobis
-              perferendis voluptate ab quas
-              iure exercitationem facere sequi ex sed.</p>
+            <p class="section2txt">Automate all of your accounting and financial management tasks. Use accurate real-time data, and make better decisions. </p>
           </div>
-          <!--  <div class="allfeatures"><button class="btn btnfill btnXL">All Features</button></div> -->
-          <!-- <div class="allfeatures"> -->
+          <!-- BUTTON 'all features' -->
           <div class="home-features-button">
             <button onclick="window.location.href='features.html';" class="btn btnfill  btnXL">All
               Features</button>
@@ -116,46 +103,21 @@
       </div>
     </section>
     <!------------------ QUOTE SECTION --------------------->
-   
-
+    <!-- this is the angled line above the quote -->
     <div class="skew-c-QuoteWrap"></div>
+    <!-- the quote -->
     <section class="quotewrapper">
       <div>
         <h3 class="centertext">Take your business to the next level!</h3>
       </div>
-      </section>
-   <!--  <div class="skew-c-QuoteWrap2"></div> -->
-   
+    </section>
     <!------------------ FOOTER --------------------->
-  <!--   <div class="skew-cc-Footer"></div> -->
-    <footer-component>
-      
-    </footer-component>
+    <footer-component></footer-component>
   </div>
-  <!-- end container -->
 
   <!------------------ SIDE MENU --------------------->
   <side-menu></side-menu>
-
   
 </body>
-<script>
 
-  //change background on this page only
-  /* let it = document.querySelector('body');
-  it.className = "body2"; */
-
-  /* let nava = document.querySelector('.navwrapper'); */
- /*  console.log(nava); */
-  //try with just variable first
- /*  let navaInner = nava.innerHTML;
-  let navaInner2 = navhtml;
-  console.log(navaInner2);
-  nava.appendChild(nava); */
-/* 
-  let testwrapper = document.querySelector('.navwrapper');
-  let newtext = 'hello';
-  testwrapper.appendChild(newtext); */
-
-</script>
 </html>

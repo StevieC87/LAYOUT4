@@ -38,7 +38,7 @@ class Footer extends HTMLElement {
           <svg width="44" height="58" viewBox="0 0 44 58" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="svgshield" d="M22 0C22 0 15.333 8 0 8V27.085C0 37.051 4.328 46.662 12.164 52.82C14.937 55 18.208 56.875 22 58C25.792 56.875 29.062 55 31.836 52.82C39.672 46.662 44 37.051 44 27.085V8C28.667 8 22 0 22 0Z" fill="#88C057"/>
           </div>
-        <div style="font-size: 10px; text-align: center">Protected by SafeProtect</div>
+        <div style="color:white; font-size: 10px; text-align: center">Protected by SafeProtect™</div>
       </div>
       <div class="footergriditem3 beigetext smallfont">Copyright © 2022 WalkiesPro. All rights reserved.</div>
     </div>

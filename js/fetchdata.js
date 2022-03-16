@@ -3,6 +3,15 @@ const staffFunction = (data = []) => {
     
     data['Staff'].forEach(element => {
     
+        //Create alt text for images, depending on which photo it is
+        let imgalt = '';
+        if(element.name === 'Matias') {
+            imgalt  = 'Photo of Matias, company founder';
+        }
+        else if (element.name === 'Felix and Marcus') {
+            imgalt  = 'Photo of Felix and Marcus, company staff';
+        }
+      
         //create outer container
         let profileouterdiv = document.createElement("div"); //
         profileouterdiv.className="meettheteamprofile";
@@ -13,6 +22,7 @@ const staffFunction = (data = []) => {
         let imageelement = document.createElement("img");
         imageelement.src= element.photo;
         imageelement.className= 'centerimg responsiveimg';
+        imageelement.alt = imgalt;
         imageprofilediv.appendChild(imageelement);
 
         //create div for all text elements

@@ -13,8 +13,8 @@
   <script type="text/javascript" src="components/footer.js" defer></script>
   <script type="text/javascript" src="components/sidemenu.js  " defer></script>
   <script type="text/javascript" src="js/scripts.js" defer></script>
-  <script type="text/javascript" src="js/aboutus1.js" defer></script>
-  <script type="text/javascript" src="js/aboutus2.js" defer></script>
+  <script type="text/javascript" src="js/formvalidation.js" defer></script>
+  <script type="text/javascript" src="js/fetchdata.js" defer></script>
   <style>
     .aboutusformgrid2 {
       display: grid;
@@ -62,46 +62,16 @@
       </div>
 
 
-<!--  -->
     </section>
-    <div class="skew-c"></div>
-    <!------------------ MEET THE TEAM --------------------->
-    <section class="meettheteamwrapper sectionwrapper secondaryBackgroundColor">
-      <div class="meettheteamh2">
-        <h3> Meet the team! </h3>
-      </div>
-
-      <div class="meetteamprofiles" id="profilescontainer">
-
-
-       <!--  <div class="meettheteamprofile">
-          <div class="meetTeamTrofileTitle">
-           
-          </div>
-          <div class="imageprofile">
-            <img src="images/photos/boss.jpg" width="450px" alt="" class="centerimg responsiveimg">
-          </div>
-          
-          <div class="profiletext">
-            <h4 class="centertext aboutusname">Matias</h4>
-          <span class="aboutusjobtitle">Founder, Owner of Walkies Inc</span>
-            Matias started coding WalkiesPro in order to manage his dog walking business. A few years later he created WalkiesPro and released it to the world!</div>
-
+      <div class="skew-c"></div>
+      <!------------------ MEET THE TEAM --------------------->
+      <section class="meettheteamwrapper sectionwrapper secondaryBackgroundColor">
+        <div class="meettheteamh2">
+          <h3> Meet the team! </h3>
         </div>
-        <div class="meettheteamprofile">
-          <div class="meetTeamTrofileTitle">
-           
-          </div>
-          <div class="imageprofile">
-            <img class="centerimg responsiveimg" src="images/photos/staff.jpg" width="450px" alt="">
-          </div>
-         
-          <div class="profiletext paddingtxt">
-            <h4 class="centertext aboutusname">Felix and Marcus</h4>
-            <span class="aboutusjobtitle">Software Engineers</span>
-            Felix and Marcus are front and backend developers, respectively. They maintain and update the software and add new features according to customer needs</div>
-        </div> -->
-      </div>
+
+        <div class="meetteamprofiles" id="profilescontainer">
+        </div>
     </section>
     
     <!------------------ CONTACT US SECTION --------------------->
@@ -149,30 +119,19 @@
             <div id="buttondiv" class="">
               <button class="btn submit centerbtngrid" id="submitbutton">Submit</button>
             </div>
-
-
           </div>
         </form>
       </div>
     </section>
-   <!--  <div class="skew-c-QuoteWrap2"></div> -->
     <!------------------ FOOTER --------------------->
     <footer-component>    </footer-component>
   </div>
-  <!-- end container -->
 
   <!------------------ SIDE MENU --------------------->
   <side-menu></side-menu>
 
 
-  <script>
-    /* HERE TO STOP SUBMIT BUTTON REFRESH ON CLICK (IN ABOUTUS PAGE)*/
-      const submit1 = document.querySelector("form");
-        submit1.addEventListener("submit", function(event) {
-          event.preventDefault();
-      }, true);
-
-  </script>
+ 
 </body>
 
 </html>

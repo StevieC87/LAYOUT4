@@ -2,8 +2,6 @@ class Navbar extends HTMLElement {
   constructor() {
     super();
   }
-
-
 connectedCallback() {
   this.innerHTML = `
   <nav id="navbar" class="paddingspecial">
@@ -27,12 +25,7 @@ connectedCallback() {
   <!-- </div> -->
   </nav>
   `;
-  const template = document.createElement('template');
-  
-  template.innerHTML = `
-    <h1>Hello, World!</h1>
-    <p>And all who inhabit it</p>
-  `;
+ 
 }
 }
 customElements.define('nav-bar', Navbar);

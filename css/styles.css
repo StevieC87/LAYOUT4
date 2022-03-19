@@ -26,21 +26,6 @@ body {
   box-sizing: inherit;
 }
 
-input[type="range"] {
- 
-  background: #000;
-
-  }
-  input[type="range"]:focus,
-  input[type="range"]:active{
-  border: 0;
-  outline: none;
-  }
-input[type="range"]::-webkit-slider-thumb {
-  background-color: #000;
-}
-
-
 h1,
 h2,
 h3,
@@ -75,8 +60,7 @@ h6 {
   font-size: 18px;
 }
 
-  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *                 FRONT PAGE STUFF 
-      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  /* * * * *              FRONT PAGE STUFF   * * * * * * * * * * * * * * * * */
       /*  ---------------  SECTION1 HEADER  --------------- */
       .newfrontpageheader {
         align-self: center;
@@ -96,28 +80,6 @@ h6 {
         
       }
 
-  
-     
-  
-      /* --------------- FRONT PAGE SECTION2  --------------- */
-
-     /*  #laptopimg {
-        animation-name: laptop;
-        animation-duration: 1s;
-        position: absolute;
-        top: -100px;
-      
-      }
-      @keyframes laptop {
-        from {
-          right: -450px;
-        }
-        to {
-          right: 0px;
-         
-        }
-      } */
-
       .section2wrapper {
         padding: 40px 0px 0px 0px;
         width: 100%;
@@ -136,25 +98,6 @@ h6 {
 
       }
       
-
-   /*    #tablet {
-        animation-name: tablet;
-        animation-duration: 1s;
-       
-      }
-      @keyframes tablet {
-        0% {
-          transform: translateX(-450px);
-        }
-        50% {
-        
-         
-        }
-        100% {
-          transform: translateX(0px);
-        }
-      } */
-
       .animationclassfortablet1 {
         animation-name: tablet1;
         animation-duration: 1s;
@@ -721,13 +664,7 @@ UTILITY CLASSES
   left:0px;
   background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--mybackgroundBeige2) 50%);
 }
-.skew-c-white{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to right bottom, white 49%, var(--mybackgroundBeige1) 50%);
-}
+
 .skew-cc{
   width:100%;
   height:50px;
@@ -742,55 +679,18 @@ UTILITY CLASSES
   left:0px;
   background: linear-gradient(to right bottom, var(--mybackgroundBeige2) 49%, var(--mybackgroundBeige1) 50%);
 }
-.skew-cc-white{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, white 50%);
-  
-}
-/* ANGLED CSS */
-.skew-cc-Footer{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, #4A154B 50%), linear-gradient(-50deg, var(--mybackgroundBeige1) 16px, #000 0);
-}
+
 
 /*-------------------------*/
 /* SKEW COUNTER CLOCKWISE  */
 /*-------------------------*/
-.skew-c-Footer{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--myblue) 50%);
-}
+
 .skew-c-QuoteWrap{
   width:100%;
   height:50px;
   position:absolute;
   left:0px;
   background: linear-gradient(to left top, var(--mybackgroundBeige1)  49%, var(--mybackgroundBeige2) 50%);
-}
-.skew-c-QuoteWrap2{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to left bottom, var(--mybackgroundBeige1) 49%, var(--myblue) 50%);
-  /* background: linear-gradient(to left top, white 49%, #4A154B 50%); */
-  /* var(--mybackgroundBeige1) */
-}
-.skew-cc-QuoteWrap{
-  width:100%;
-  height:50px;
-  position:absolute;
-  left:0px;
-  background: linear-gradient(to right bottom, var(--mybackgroundBeige1) 49%, #4A154B 50%), linear-gradient(-50deg, var(--mybackgroundBeige1) 16px, #000 0);
 }
 
 /* END OF ANGLED CSS */

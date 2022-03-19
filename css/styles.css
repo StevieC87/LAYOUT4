@@ -26,6 +26,21 @@ body {
   box-sizing: inherit;
 }
 
+input[type="range"] {
+ 
+  background: #000;
+
+  }
+  input[type="range"]:focus,
+  input[type="range"]:active{
+  border: 0;
+  outline: none;
+  }
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #000;
+}
+
+
 h1,
 h2,
 h3,

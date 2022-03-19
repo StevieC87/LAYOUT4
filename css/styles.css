@@ -272,15 +272,11 @@ h6 {
       .featuresgrid {
         display: grid;
         justify-content: center;
-      }
-      .featuresh1 {
-        display: grid;
-        justify-content: center;
-        text-align: center;
+        height: 250px;
       }
       .featurestext {
         max-width: 700px;
-        text-align: justify;
+        text-align: center;
       }
       .features_grid_container {
         max-width: 1200px;
@@ -298,10 +294,7 @@ h6 {
         background-color: var(--mybackgroundBeige2);
         display: grid;
         justify-content: center;
-        grid-template-columns: 1fr 2fr 1fr;
         padding-bottom: 40px;
-        /* background-color: #F6EFE8; */
-      /*   background-color: #f9f9f2; */
       }
       .h3titlecenter {
         justify-self: center;
@@ -343,17 +336,10 @@ h6 {
   display: grid;
   padding: 40px 0 40px 0;
 }
-.headertitle {
-  grid-template-columns: 1fr;
-  align-self: center;
-  justify-self: center;
-}
+
 .headertextunder {
   max-width: 800px;
-  grid-template-columns: 1fr;
-  align-self: center;
   justify-self: center;
-  font-size: 1rem;
   padding-top: 30px;
   text-align: center;
 }
@@ -361,9 +347,6 @@ h6 {
   width: 100%;
   display: grid;
   justify-content: center;
- /*  background-color: #f6f7fe; */
-/*  background-color: var(--mybackgroundBeige2); */
-background-color: #fff;
 }
 .meettheteamh2 {
   text-align: center;
@@ -426,7 +409,7 @@ label {
   width: 100%;
 }
 input {
- 
+  font-size: 18px;
   display: block;
   border-radius: 5px;
   border: 1px solid var(--myblue);
@@ -486,6 +469,7 @@ label {
     border: 1px solid var(--myblue);
     background-color: var(--mybackgroundBeige2);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
   }
 
   #yourmsg{
@@ -563,6 +547,7 @@ label {
 .casestudieswrapper {
   display: flex;
   justify-content: center;
+  background-color: #F9F9F2;
 }
 
 .casestudiesinnerwrapper {
@@ -570,26 +555,16 @@ label {
   max-width: 800px;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
   
 }
-.csinnerwrapTOP {
-  margin-top: 40px;
-}
-.casestudy2 { 
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-.bgrcolor1 {
-  /* background-color: #f6f7fe; */
-  background-color: #F9F9F2;
-}
-.bgrcolor2 {
- /*  background-color: #fcf6f2; */
- background-color: #F9F9F2;
-}
+
+
+
 .casestudy1txt {
   padding-left: 20px;
   padding-top: 10px;
+  max-width: 500px;
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  CLASSES FOR PRICING PAGE
@@ -703,6 +678,9 @@ UTILITY CLASSES
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /* this hides elements , only screen readers can read them */
+.margin40 {
+  margin-top: 40px;
+}
 .visuallyhidden {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -873,11 +851,6 @@ UTILITY CLASSES
 .sectionwrapper {
   padding: 40px 20px 40px 20px;
 }
-
-.sectionwrapperfeatures1 {
-  height: 250px;
-}
-
 
 .centertext {
   text-align: center;
@@ -1177,7 +1150,7 @@ footer {
 @media (min-width: 780px) {
   .casestudiesinnerwrapper {
     grid-template-columns: 1fr 1fr;
-    /*  padding: 20px 20px 0 20px; */
+   
   }
   .casestudy1title {
     grid-column: 2 / 3;

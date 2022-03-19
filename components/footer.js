@@ -26,11 +26,14 @@ class Footer extends HTMLElement {
       <div class="footergriditem4">
         <div><b class="beigetext footerlinkstitle">Contact us</b></div>
         <div class="beigetext contacttext" style="font-size: 12px">
-            <span>Email: info@walkiespro.com</span>
+          <span class="visuallyhidden">Email Address</span>
+          <span><i  aria-hidden="true" title="Email" class="fa-solid fa-at"></i> info@walkiespro.com</span>
             <br>
-            <span> Address: 36428 Feeney Mill Suite 561, West Aileenton</span>
+            <span class="visuallyhidden">Physical Address</span>
+            <span><i class="fa-solid fa-location-arrow"></i> 36428 Feeney Mill Suite 561, West Aileenton</span>
             <br>
-            <span>Phone:	(783) 638-9917</span>
+            <span class="visuallyhidden">Telephone Number</span>
+            <span><i class="fa-solid fa-phone"></i>	(783) 638-9917</span>
         </div>
       </div>
       <div class="shield">

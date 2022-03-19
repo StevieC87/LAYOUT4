@@ -50,7 +50,7 @@ observer3.observe(document.querySelector("#mobile"));
 
 // changeoutdivlaptopheight();
 //window.addEventListener('resize', changeoutdivlaptopheight);
-function changeoutdivlaptopheight() {
+/* function changeoutdivlaptopheight() {
   let width = window.innerWidth;
   let heighta;
   let heightnew;
@@ -71,4 +71,4 @@ outerimgdiv.style.height = `${heightnew}px`;
   
   console.log(outerimgdiv,'newheight');
 }
-
+ */

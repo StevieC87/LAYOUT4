@@ -4,14 +4,7 @@
   --mybackgroundBeige1: #F6EFE8;
   --mybackgroundBeige2: #F9F9F2;
   --mybackgroundBeige3deep: #FFEDDB;
-  --secondarycolor1: #00C9AF;
-  --primaryTextColor: #569ad7;
-  --primaryTextColor2: #00C9AF;
-  --secondary2: #3e79bc;
-  --mypurple: #4A154B;
-  --mypurple2: #842585;
   --myblack: #383838;
-  /* --secondary2: #8A2BE2; */
  
 }
 
@@ -24,7 +17,6 @@ body {
   background: var(--mybackgroundBeige1);
   scroll-behavior: smooth;
   overflow-x: hidden;
-   
 }
 
 
@@ -68,9 +60,6 @@ h6 {
   font-size: 18px;
 }
 
-.containernew {
-  width: 100%;
-}
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *                 FRONT PAGE STUFF 
       * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
       /*  ---------------  SECTION1 HEADER  --------------- */
@@ -89,39 +78,12 @@ h6 {
         display: grid;
         max-width: 1200px;
         grid-template-columns: 1fr 1fr;
-
-      }
-      .featuressurround {
-
-
-      }
-      .featurestitlenew {
-        grid-area: title;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        order: 1;
-        justify-self: center;
-        align-self: center;
-      }
-      .featuresimgnew {
-        display: grid;
-        justify-content: center;
-        align-self: center;
-        position: relative;
-        /* grid-area: image;
-        grid-column: 2 / 3;
-        grid-row: 1 / 3; */
-       /*  grid-area: image;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2; */
+        
       }
 
-      .featurestextnew {
-        grid-area: text;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        order: 2;
-      }
+  
+     
+  
       /* --------------- FRONT PAGE SECTION2  --------------- */
 
      /*  #laptopimg {
@@ -142,24 +104,16 @@ h6 {
       } */
 
       .section2wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: center;
         padding: 40px 0px 0px 0px;
-      }
-
-      .section2innerwrapper {
         width: 100%;
         /* max-width: 1200px; */
          background-color: #f9f9f2;
       }
-
-      .frontfeatures1 {
-       /*  background-color: #f9f9f2; */
-        margin-bottom: 60px;
+      .frontfeatures {
         max-width: 1200px;
-
       }
+
+  
       .tabletimg {
        
         max-width: 350px;
@@ -238,15 +192,6 @@ h6 {
         }
       }
 
-      .frontfeatures2 {
-        margin-bottom: 60px;
-        max-width: 1200px;
-      }
-      .frontfeatures3 {
-        margin-bottom: 60px;
-        padding-bottom: 20px;
-        max-width: 1200px;
-      }
 
       .section2txt {
         padding: 0 20px 0 20px;
@@ -302,6 +247,25 @@ h6 {
         grid-column: 1 / -1;
         justify-self: center;
         padding-top: 30px;
+      }
+
+      @media (max-width: 750px) {
+        /* FRONT PAGE RELATED */
+      
+        .featuresnew {
+          display: grid;
+          max-width: 1200px;
+          grid-template-columns: 1fr;
+       
+        }
+      
+      
+        .featuresimgnew {
+          grid-column: 1 / -1;
+          grid-row: 2/ 3;
+        }
+     
+        /*END OF FRONT PAGE RELATED */
       }
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *              CLASSES FOR FEATURES PAGE
       * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -465,9 +429,10 @@ input {
  
   display: block;
   border-radius: 5px;
-  border: 2px solid var(--myblue);
+  border: 1px solid var(--myblue);
   padding: 10px;
   width: 100%;
+  background-color: var(--mybackgroundBeige2);
 }
 label {
   padding-bottom: 5px;
@@ -518,7 +483,9 @@ label {
 }
 /* #textareadiv > textarea { */
   textarea {
-    border: 2px solid var(--myblue);
+    border: 1px solid var(--myblue);
+    background-color: var(--mybackgroundBeige2);
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   #yourmsg{
@@ -734,6 +701,20 @@ background-color: var(--mybackgroundBeige2);
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 UTILITY CLASSES 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* this hides elements , only screen readers can read them */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+}
 .secondaryBackgroundColor {
   background-color: #F9F9F2;
 
@@ -976,8 +957,8 @@ nav-bar {
   width: 100%;
 }
 .navwrapper {
-  display: flex;
-  justify-content: center;
+/*   display: flex;
+  justify-content: center; */
  
 }
 nav {
@@ -1274,15 +1255,15 @@ footer {
   /* HIDE NAV LI WHEN SMALL SCREEN */
   
  .navwrapper {
-  align-content:space-between;
-  justify-content:space-between
+/*   align-content:space-between;
+  justify-content:space-between */
  }
   .navlist {
     visibility: hidden;
     display: none;
   }
   .hamburger-menu {
-    visibility: visible;
+   /*  visibility: visible; */
   }
 
   /* ADVANCED SCHEDULING DIV - flip order: image last */
@@ -1301,10 +1282,7 @@ footer {
   }
 }
 @media (max-width: 750px) {
-  .featuresimgnew {
-  /*   height: 300px;
-    position: relative; */
-  }
+ 
   
   #laptopimg {
     animation-name: laptop;
@@ -1349,33 +1327,7 @@ footer {
  
 }
 
-@media (max-width: 750px) {
-  /* FRONT PAGE RELATED */
 
-  .featuresnew {
-    display: grid;
-    max-width: 1200px;
-    grid-template-columns: 1fr;
- 
-  }
-  .featurestitlenew {
-    grid-area: title;
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    justify-self: center;
-    align-self: center;
-  }
-  .featuresimgnew {
-    grid-column: 1 / -1;
-    grid-row: 2/ 3;
-  }
-  .featurestextnew {
-    grid-area: text;
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-  }
-  /*END OF FRONT PAGE RELATED */
-}
 @media (max-width: 510px) {
   h1 {
     font-size: 1.5em;

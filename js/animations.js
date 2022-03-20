@@ -1,7 +1,7 @@
 
 //SEE IF SCROLLED INTO VIEW - THEN ANIMATE 
-let tabletimg2 = document.querySelector('#tablet2');
 let tabletimg1 = document.querySelector('#tablet');
+let tabletimg2 = document.querySelector('#tablet2');
 let mobileimg = document.querySelector('#mobile');
 let imgfromtop = tabletimg2.getBoundingClientRect().top;
 

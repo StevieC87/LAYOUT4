@@ -11,7 +11,7 @@ class Navbar extends HTMLElement {
     <a href="index.html"><img src="images/logo-transparent.png" alt="logo" /></a>
   </div>
 
-  <div tabindex="0" id="hamburger-menu">
+  <div tabindex="0" id="hamburger-menu" class="hamburger-menu">
 
     <div class="line line-1"></div>
     <div class="line line-2"></div>

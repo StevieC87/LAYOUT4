@@ -92,7 +92,7 @@ submitButton.addEventListener('click', (event) => {
             checkifempty(formEls[i]); //call validation function to check if empty, and displays error message 
 
         }
-        //call validation functions on fields
+        //call validation functions on fieldsf
         validatename();
         validateemail();
         validateconfirmemail();

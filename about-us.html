@@ -10,102 +10,102 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="fonts/fontawesome/all.css">
 
-  <script type="text/javascript" src="components/navbar.js" defer></script>
-  <script type="text/javascript" src="components/footer.js" defer></script>
-  <script type="text/javascript" src="components/sidemenu.js  " defer></script>
-  <script type="text/javascript" src="js/scripts.js" defer></script>
-  <script type="text/javascript" src="js/formvalidation.js" defer></script>
-  <script type="text/javascript" src="js/fetchdata.js" defer></script>
-  
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/sidemenu.js  " defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/formvalidation.js" defer></script>
+  <script src="js/fetchdata.js" defer></script>
+
 
 </head>
 
 <body>
 
-    <div class="navwrapper">
-      <nav-bar></nav-bar>
+
+  <nav-bar></nav-bar>
+
+  <!------------------ OUR STORY --------------------->
+  <section class="headerwrapper sectionwrapper">
+
+    <div class="centertext">
+      <h1>Our Story</h1>
     </div>
-    <!------------------ OUR STORY --------------------->
-    <section class="headerwrapper sectionwrapper">
-
-      <div class="centertext">
-        <h1>Our Story</h1>
-      </div>
-      <div class="headertextunder ">
-       We build software to help dog walking businesses succeed
-      </div>
+    <div class="headertextunder ">
+      We build software to help dog walking businesses succeed
+    </div>
 
 
-    </section>
-      <div class="skew-c"></div>
-      <!------------------ MEET THE TEAM --------------------->
-      <section class="meettheteamwrapper sectionwrapper secondaryBackgroundColor">
-        <div class="meettheteamh2">
-          <h3> Meet the team! </h3>
-        </div>
+  </section>
+  <div class="skew-c"></div>
+  <!------------------ MEET THE TEAM --------------------->
+  <section class="meettheteamwrapper sectionwrapper secondaryBackgroundColor">
+    <div class="meettheteamh2">
+      <h2> Meet the team! </h2>
+    </div>
 
-        <div class="meetteamprofiles" id="profilescontainer">
-        </div>
-    </section>
-    
-    <!------------------ CONTACT US SECTION --------------------->
-    <div class="skew-cc2"></div>
-    <section class="contactuswrapper sectionwrapper">
-      <div class="contactusinnerwrapper">
-        <h3 class="centertext">Contact Us</h3>
-        <form action="" name="contactform">
-          <div class="aboutusformgrid2">
-            <div id="yournamediv" class="inputdiv">
-              <label for="yourname">Your name:</label>
-              <input class="default" type="text" name="yourname" id="yourname">
-              <div class="errorBox" id="erroryourname"></div>
-            </div>
-            <div id="emaildiv" class="inputdiv">
-        
-              <label for="youremail">Your Email address:</label>
-              <input type="email" name="youremail" id="youremail">
-              <div class="errorBox" id="erroryouremail"></div>
-            </div>
-           
-            <div id="confirmemaildiv" class="inputdiv">
-              <label for="confirmemail">Confirm Email address:</label>
-              <input type="email" name="confirmemail" id="confirmemail">
-              <div class="errorBox" id="errorconfirmemail"></div>
-            </div>
-            
-            <div id="telephonediv" class="inputdiv">
-              <label for="telephone">Your telephone number:</label>
-              <input type="text" name="telephone" id="telephone">
-              <div class="errorBox" id="errortelephone"></div>
-            </div>
-           
-            <div id="addressdiv" class="inputdiv">
-              <label for="telephone">Your Address:</label>
-              <input type="text" name="address" id="address">
-              <div class="errorBox" id="erroraddress"></div>
-            </div>
-            
-            <div id="textareadiv" class="inputdiv">
-              <label for="yourmsg">Your Message:</label>
-              <textarea name="yourmsg" id="yourmsg" rows="6"></textarea>
-              <div class="errorBox" id="erroryourmsg"></div>
-            </div>
-            <div id="buttondiv" class="">
-              <button class="btn submit centerbtngrid" id="submitbutton">Submit</button>
-            </div>
+    <div class="meetteamprofiles" id="profilescontainer">
+    </div>
+  </section>
+
+  <!------------------ CONTACT US SECTION --------------------->
+  <div class="skew-cc2"></div>
+  <section class="contactuswrapper sectionwrapper">
+    <div class="contactusinnerwrapper">
+      <h2 class="centertext">Contact Us</h2>
+      <form name="contactform">
+        <div class="aboutusformgrid2">
+          <div id="yournamediv" class="inputdiv">
+            <label for="yourname">Your name:</label>
+            <input class="default" type="text" name="yourname" id="yourname">
+            <div class="errorBox" id="erroryourname"></div>
           </div>
-        </form>
-      </div>
-    </section>
-    <!------------------ FOOTER --------------------->
-    <footer-component>    </footer-component>
-  
+          <div id="emaildiv" class="inputdiv">
+
+            <label for="youremail">Your Email address:</label>
+            <input type="email" name="youremail" id="youremail">
+            <div class="errorBox" id="erroryouremail"></div>
+          </div>
+
+          <div id="confirmemaildiv" class="inputdiv">
+            <label for="confirmemail">Confirm Email address:</label>
+            <input type="email" name="confirmemail" id="confirmemail">
+            <div class="errorBox" id="errorconfirmemail"></div>
+          </div>
+
+          <div id="telephonediv" class="inputdiv">
+            <label for="telephone">Your telephone number:</label>
+            <input type="text" name="telephone" id="telephone">
+            <div class="errorBox" id="errortelephone"></div>
+          </div>
+
+          <div id="addressdiv" class="inputdiv">
+            <label for="address">Your Address:</label>
+            <input type="text" name="address" id="address">
+            <div class="errorBox" id="erroraddress"></div>
+          </div>
+
+          <div id="textareadiv" class="inputdiv">
+            <label for="yourmsg">Your Message:</label>
+            <textarea name="yourmsg" id="yourmsg" rows="6"></textarea>
+            <div class="errorBox" id="erroryourmsg"></div>
+          </div>
+          <div id="buttondiv" class="">
+            <button class="btn submit centerbtngrid" id="submitbutton">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!------------------ FOOTER --------------------->
+  <footer-component> </footer-component>
+
 
   <!------------------ SIDE MENU --------------------->
   <side-menu></side-menu>
 
 
- 
+
 </body>
 
 </html>

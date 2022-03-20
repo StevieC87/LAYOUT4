@@ -17,7 +17,6 @@ const submitButton = document.querySelector('#submitbutton');
 //GET FORM ELEMENTS WITH DECONSTRUCT
 const myform = document.forms;
 const [forma] = myform;
-console.log(forma.yourname);
 const elname = forma.yourname;
 const elnamevalue = elname.value;
 /******************** END ************************/
@@ -161,7 +160,6 @@ function validatephone() {
     const el_telvalue = el_tel.value; //get value of telephone input field
     const telregexp = /[^\d+-.() ]/;  //set regexp pattern
     let falsetrue = telregexp.test(el_telvalue);
-    console.log(falsetrue, 'tel');
 
     if (falsetrue === true) {
         //if catches forbidden character

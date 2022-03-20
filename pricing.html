@@ -10,125 +10,124 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/imgGallery.css" />
 
-    <link rel="stylesheet" href="fonts/fontawesome/all.css">
-    <script type="text/javascript" src="components/navbar.js" defer></script>
-    <script type="text/javascript" src="components/footer.js" defer></script>
-  
-    <script type="text/javascript" src="components/sidemenu.js  " defer></script>
-    <script type="text/javascript" src="js/scripts.js" defer></script>
-    <script type="text/javascript" src="js/imgGallery.js" defer></script>
+  <link rel="stylesheet" href="fonts/fontawesome/all.css">
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+
+  <script src="components/sidemenu.js  " defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/imgGallery.js" defer></script>
 
 </head>
 
 <body>
 
 
-    <!------------------ NAVBAR --------------------->
-    <div class="navwrapper">
-        <nav-bar></nav-bar>
+  <!------------------ NAVBAR --------------------->
+
+  <nav-bar></nav-bar>
+
+  <!-----------------HEADER--------------------->
+  <section class="headerwrapper sectionwrapper">
+
+    <div class="centertext">
+
+      <h1>Our Plans</h1>
     </div>
-    <!-----------------HEADER--------------------->
-    <section class="headerwrapper sectionwrapper">
+    <div class="centertext">
+      Choose the plan that suits you best!
+    </div>
+  </section>
+  <div class="skew-cc"></div>
+  <!------------------ PRICING TABLE --------------------->
+  <section class="pricingouterwrapper sectionwrapper">
+    <div class="pricinginnerwrapper">
+      <div class="pricingcard card">
+        <div class="cardtitle">ESSENTIALS</div>
+        <div class="price">&#8364; 15<span class="miniprice">/mo</span></div>
+        <div class=" centertext poppinslight smallfont ">per user</div>
+        <div class="pricelistdiv poppins">
+          <div class="centertext">What's included:</div>
+          <ul class="pricelist poppins">
+            <li class="elementY">Scheduling</li>
+            <li class="elementY">Customer Management</li>
+            <li class="elementY">Financial Management</li>
+            <li class="elementY">Cancel anytime</li>
+          </ul>
 
-      <div class="centertext">
-
-        <h1>Our Plans</h1>
-      </div>
-      <div class="centertext">
-        Choose the plan that suits you best!
-      </div>
-    </section>
-    <div class="skew-cc"></div>
-    <!------------------ PRICING TABLE --------------------->
-    <section class="pricingouterwrapper sectionwrapper">
-      <div class="pricinginnerwrapper">
-        <div class="pricingcard card">
-          <div class="cardtitle">ESSENTIALS</div>
-          <div class="price">&#8364; 15<span class="miniprice">/mo</span></div>
-          <div class=" centertext poppinslight smallfont ">per user</div>
-          <div class="pricelistdiv poppins">
-            <div class="centertext">What's included:</div>
-            <!--   style="display: block" -->
-            <ul class="pricelist poppins">
-              <li class="elementY">Scheduling</li>
-              <li class="elementY">Customer Management</li>
-              <li class="elementY">Financial Management</li>
-              <!--  <li class="elementx">Customer Portal</li> -->
-              <li class="elementY">Cancel anytime</li>
-            </ul>
-
-          </div>
-          <div class="btnprice">
-            <button class="btn btnfill btnshadow btnaqua">Contact us</button>
-          </div>
         </div>
-        <!-- SECOND CARD PRO PLAN -->
-        <div class="pricingcard card ">
-          <div class="cardtitle">PROFESSIONAL</div>
-          <div class="price">&#8364; 20<span class="miniprice">/mo </span>
-          </div>
-          <div class=" centertext poppinslight smallfont ">per user</div>
-          <div class="pricelistdiv poppins">
-            <div class="centertext">All Essential features, plus:</div>
-            <ul class="pricelist poppins">
-              <li class="elementY">Customer Portal</li>
-              <li class="elementY">Priority Support</li>
-            </ul>
-          </div>
-
-          <div class="btnprice">
-            <button class="btn btnfill btnshadow btnaqua">Contact us</button>
-          </div>
-      </div>
-    </section>
-    <!-- SECTION IMAGE GALLERY REVIEWS  -->
-    <section class="imagegallerywrapper sectionwrapper">
-      <div class="imagegalleryinnerwrapper">
-        <div class="centerGRIDself reviewsdiv centertext">
-          <h3>Reviews</h3>
-          <span>See what our customers think</span>
-        </div>
-        <div class="slideOuterContainer">
-          <div class="gallerycontainer">
-              <div class="mainphotodiv" id="mainphotodiv">
-                  <div class="mainphotodiv2" id="mainphotodiv2"></div>
-                  <div id="buttonsdiv1">
-                      <div id="pausediv">
-                          <i class="fa-solid fa-pause"></i>
-                      </div>
-                      <div id="playdiv" class="hidden">
-                          <i id="playicon" class="fa-solid fa-play"></i>
-                      </div>
-                      <div id="rangeSliderdiv" class="rangeSliderdiv">
-                          <label for="speed"></label>
-                          <input id="rangeSlider" type="range" min="1" max="3" value="2">
-                      </div>
-                  </div>
-
-                  <div id="buttonleftdiv"></div>
-                  <div id="buttonrightdiv"></div>
-                  <i id="buttonNext" class="fa-solid fa-chevron-right"></i>
-                  <i id="buttonPrevious" class="fa-solid fa-chevron-left"></i>
-              </div>
-          </div>
-          <div class="thumbcontainer" id="thumb_container">
-          </div>
+        <div class="btnprice">
+          <button class="btn btnfill btnshadow btnaqua">Contact us</button>
         </div>
       </div>
+      <!-- SECOND CARD PRO PLAN -->
+      <div class="pricingcard card ">
+        <div class="cardtitle">PROFESSIONAL</div>
+        <div class="price">&#8364; 20<span class="miniprice">/mo </span>
+        </div>
+        <div class=" centertext poppinslight smallfont ">per user</div>
+        <div class="pricelistdiv poppins">
+          <div class="centertext">All Essential features, plus:</div>
+          <ul class="pricelist poppins">
+            <li class="elementY">Customer Portal</li>
+            <li class="elementY">Priority Support</li>
+          </ul>
+        </div>
+
+        <div class="btnprice">
+          <button class="btn btnfill btnshadow btnaqua">Contact us</button>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
+  <!-- SECTION IMAGE GALLERY REVIEWS  -->
+  <section class="imagegallerywrapper sectionwrapper">
+    <div class="imagegalleryinnerwrapper">
+      <div class="centerGRIDself reviewsdiv centertext">
+        <h2>Reviews</h2>
+        <span>See what our customers think</span>
+      </div>
 
 
- <!------------------ QUOTE SECTION --------------------->
+      <div class="slideOuterContainer">
+        <div class="mainphotodiv" id="mainphotodiv">
+          <div class="mainphotodiv2" id="mainphotodiv2"></div>
+          <div id="buttonsdiv1">
+            <div id="pausediv">
+              <i class="fa-solid fa-pause"></i>
+            </div>
+            <div id="playdiv" class="hidden">
+              <i id="playicon" class="fa-solid fa-play"></i>
+            </div>
+            <div id="rangeSliderdiv" class="rangeSliderdiv">
+              <label for="rangeSlider"></label>
+              <input id="rangeSlider" name="rangeSlider" type="range" min="1" max="3" value="2">
+            </div>
+          </div>
+          <div id="buttonleftdiv"></div>
+          <div id="buttonrightdiv"></div>
+          <i id="buttonNext" class="fa-solid fa-chevron-right"></i>
+          <i id="buttonPrevious" class="fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div class="thumbcontainer" id="thumb_container">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!------------------ QUOTE SECTION --------------------->
   <div class="skew-c-QuoteWrap"></div>
   <section class="quotewrapper">
     <div>
-      <h3 class="centertext">Business, made simple</h3>
+      <span class="quotetext">Business, made simple</span>
     </div>
   </section>
-    <!------------------ FOOTER --------------------->
-    <footer-component>
-    </footer-component>
+  <!------------------ FOOTER --------------------->
+  <footer-component>
+  </footer-component>
 
 
   <!------------------ SIDE MENU --------------------->

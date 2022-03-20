@@ -9,120 +9,129 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="fonts/fontawesome/all.css">
-  <script type="text/javascript" src="components/navbar.js" defer></script>
-  <script type="text/javascript" src="components/footer.js" defer></script>
-  <script type="text/javascript" src="components/sidemenu.js  " defer></script>
-  <script type="text/javascript" src="js/scripts.js" defer></script>
-  <script type="text/javascript" src="js/frontpage.js" defer></script>
-  
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/sidemenu.js  " defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/animations.js" defer></script>
+
 </head>
 
 <body>
 
- 
-    <!-- nav bar (loads via JS from components/navbar.js) -->
- 
-      <nav-bar></nav-bar>
-     
-   
-    <!------------------ SECTION1 HEADER --------------------->
-    <section class="section1outerwrapper ">
-      <div class="featuresnew">
-        <div class="newfrontpageheader">
-          <h1>Dog Walking Business Software</h1>
-          <div>
-          Power your business with WalkiesPro! Our software suite gives you all the tools you need to manage, improve and grow your business.  
-          </div>
-        </div>
-        <div class="featuresimgnew">
-          <img id="laptopimg" class="imgfill" src="images/laptop.png" alt="Screenshot of app on laptop">
-        </div>
-       
-      </div>
-    </section>
-    <!------------------  SECTION 2 FEATURES  ----------->
-    <!-- 100% surrounding wrapper flex centered-->
-    <section class="section2wrapper">
-      
-        <!-- FEATURES SECTION 1  : SCHEDULING SECTION -->
-      
-        <div class="home-features-grid-1 frontfeatures">
-           <!-- title div -->
-           <div class="home-features-1-titlediv">
-            <h3 class="centertext">Advanced Scheduling</h3>
-          </div>
-          <!-- text div -->
-          <div class="home-features-1-textdiv">
-            <p class="section2txt">With all our scheduling features, running a pet care business has never been easier. Eliminate human error and impress your customers with your professionalism and reliability. </p>
-          </div>
-          <!-- img div -->
-          <div class="centerhorizvert  home-features-1-imgdiv">
-            <img id="tablet" class="responsiveimg tabletimg" src="images/tablet.png" alt="Screenshot of app on tablet" />
-          </div>
-         
-          
-       
-      </div>
-        <!-- FEATURES SECTION 2  : CUSTOMER MNGMENT SECTION -->
-      
-          <div class="home-features-grid-2 frontfeatures">
-             <!-- title div -->
-             <div class="home-features-2-titlediv ">
-              <h3 class="centertext ">Customer Management</h3>
-            </div>
-            <!-- text div -->
-            <div class="home-features-2-textdiv">
-              <p class="section2txt">Use WalkiesPro to manage all your customer data and relationships and deliver first-class customer experience!</p>
-            </div>
-            <!-- img div -->
-            <div class="home-features-2-imgdiv centerhorizvert">
-              <img id="tablet2" src="images/tablet2.png" class="responsiveimg tabletimg" alt="Screenshot of app on tablet" />
-            </div>
-           
+
+  <!-- nav bar (loads via JS from components/navbar.js) -->
+
+  <nav-bar></nav-bar>
 
 
-          </div>
-   
-        <!-- FEATURES SECTION 3  : FINANCIAL MNGMENT SECTION -->
-        <div class="home-features-grid-1 frontfeatures">
-           <!-- title div -->
-           <div class="home-features-1-titlediv">
-            <h3 class="centertext ">Financial Management</h3>
-          </div>
-          <!-- text div -->
-          <div class="home-features-1-textdiv">
-            <p class="section2txt">Automate all of your accounting and financial management tasks. Use accurate real-time data, and make better decisions. </p>
-          </div>
-          <!-- img div -->
-          <div class="home-features-1-imgdiv centerhorizvert">
-            <img id="mobile" src="images/mobile.png" width="200px" alt="Another screenshot of app" />
-          </div>
-         
-          <!-- BUTTON 'all features' -->
-          <div class="home-features-button">
-            <button onclick="window.location.href='features.html';" class="btn btnfill  btnXL">All
-              Features</button>
-          </div>
+  <!------------------ SECTION1 HEADER --------------------->
+  <section class="section1outerwrapper ">
+    <div class="featuresnew">
+      <div class="newfrontpageheader">
+        <h1>Dog Walking Business Software</h1>
+        <div>
+          Do you operate a dog walking business? See how WalkiesPro can make your help manage, improve and grow your
+          business. All the tools you need to run an efficient, professional operation.
+
         </div>
-        <!-- allfeaturesbtn2  btnoutline-->
-      
-    </section>
-    <!------------------ QUOTE SECTION --------------------->
-    <!-- this is the angled line above the quote -->
-    <div class="skew-c-QuoteWrap"></div>
-    <!-- the quote -->
-    <section class="quotewrapper">
-      <div>
-        <h3 class="centertext">Take your business to the next level!</h3>
       </div>
-    </section>
-    <!------------------ FOOTER --------------------->
-    <footer-component></footer-component>
- 
+      <div class="featuresimgnew">
+        <img id="laptopimg" class="imgfill" src="images/screenshots/laptop.png" alt="Screenshot of app on laptop">
+      </div>
+
+    </div>
+  </section>
+  <!------------------  SECTION 2 FEATURES  ----------->
+  <!-- 100% surrounding wrapper flex centered-->
+  <section class="section2wrapper">
+
+    <!-- FEATURES SECTION 1  : SCHEDULING SECTION -->
+
+    <div class="home-features-grid-1 frontfeatures">
+      <!-- title div -->
+      <div class="home-features-1-titlediv">
+        <h2 class="centertext">Advanced Scheduling</h2>
+      </div>
+      <!-- text div -->
+      <div class="home-features-1-textdiv">
+        <p class="frontfeaturestext">With all our advanced scheduling features, running a pet care business has never
+          been easier. No more making mistakes or forgetting appointments, because WalkiesPro has got your back. Instead
+          impress your customers with your newfound professionalism and reliability. </p>
+      </div>
+      <!-- img div -->
+      <div class="centerhorizvert  home-features-1-imgdiv">
+        <img id="tablet" class="responsiveimg tabletimg" src="images/screenshots/tablet.png"
+          alt="Screenshot of app on tablet" />
+      </div>
+
+
+
+    </div>
+    <!-- FEATURES SECTION 2  : CUSTOMER MNGMENT SECTION -->
+
+    <div class="home-features-grid-2 frontfeatures">
+      <!-- title div -->
+      <div class="home-features-2-titlediv ">
+        <h2 class="centertext ">Customer Management</h2>
+      </div>
+      <!-- text div -->
+      <div class="home-features-2-textdiv">
+        <p class="frontfeaturestext">We know it's hard to stay organised, so we make sure all your data is accessible,
+          easy to use, so you can deliver a first-class customer experience!</p>
+      </div>
+      <!-- img div -->
+      <div class="home-features-2-imgdiv centerhorizvert">
+        <img id="tablet2" src="images/screenshots/tablet2.png" class="responsiveimg tabletimg"
+          alt="Screenshot of app on tablet" />
+      </div>
+
+
+
+    </div>
+
+    <!-- FEATURES SECTION 3  : FINANCIAL MNGMENT SECTION -->
+    <div class="home-features-grid-1 frontfeatures">
+      <!-- title div -->
+      <div class="home-features-1-titlediv">
+        <h2 class="centertext ">Financial Management</h2>
+      </div>
+      <!-- text div -->
+      <div class="home-features-1-textdiv">
+        <p class="frontfeaturestext">No need to be an expert to keep your finances organised. Automate all of your
+          accounting and financial tasks using accurate
+          real-time data, make better decisions, and keep your finger on the pulse of your business!. </p>
+      </div>
+      <!-- img div -->
+      <div class="home-features-1-imgdiv centerhorizvert">
+        <img id="mobile" src="images/screenshots/mobile.png" width="200" alt="Another screenshot of app" />
+      </div>
+
+      <!-- BUTTON 'all features' -->
+      <div class="home-features-button">
+        <button onclick="window.location.href='features.html';" class="btn btnfill  btnXL">All
+          Features</button>
+      </div>
+    </div>
+    <!-- allfeaturesbtn2  btnoutline-->
+
+  </section>
+  <!------------------ QUOTE SECTION --------------------->
+  <!-- this is the angled line above the quote -->
+  <div class="skew-c-QuoteWrap"></div>
+  <!-- the quote -->
+  <section class="quotewrapper">
+    <div>
+      <span class="quotetext">Take your business to the next level!</span>
+    </div>
+  </section>
+  <!------------------ FOOTER --------------------->
+  <footer-component></footer-component>
+
 
   <!------------------ SIDE MENU --------------------->
   <side-menu></side-menu>
-  
+
 </body>
 
 </html>

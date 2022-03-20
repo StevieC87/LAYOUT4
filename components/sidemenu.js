@@ -1,9 +1,8 @@
 class SideMenu extends HTMLElement {
-    constructor() {
-      super();
-    }
-  
-  
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.innerHTML = `
     <div id="menuhidden" class="menuhidden hiddenright">
@@ -18,8 +17,6 @@ class SideMenu extends HTMLElement {
     </div>
   </div>
     `;
-   
   }
-  }
-  customElements.define('side-menu', SideMenu);
-  //class="activeSidebarLi" 
+}
+customElements.define('side-menu', SideMenu);

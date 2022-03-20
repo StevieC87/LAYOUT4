@@ -1,6 +1,5 @@
 //ARRAY OF IMAGES
 const myImages = [
-
     "images/testimonials/1.jpg",
     "images/testimonials/2.jpg",
     "images/testimonials/3.jpg",
@@ -18,7 +17,7 @@ const totalImagesIndex = totalImages - 1;
 let currentSlide;
 
 //grab elements 
-const parentdiv = document.querySelector('#mainphotodiv');
+const parentdiv = document.querySelector('.slideOuterContainer');
 // const parentdiv = document.querySelector('#mainphotodiv2');
 let currentphoto = document.querySelector(`img${currentSlide}`);
 let currentMainphoto = document.querySelector('.mainphoto');
@@ -34,39 +33,18 @@ let speed; //create variable for slider speed
 
 
 /****************** FUNCTION RETURN ORIENTATION OF IMAGE **********************/
-const getImgOrientReturnClass = (imgObject) => {
-    let mainphoto_width = imgObject.naturalWidth;
-    let mainphoto_height = imgObject.naturalHeight;
-    let landscapemainphoto;
-    //for class name - get orientation
-    if (mainphoto_width > mainphoto_height) {
-        //  orientation = 'landscape';
-        //thumbheight = '100px';
-        // console.log(orientation);
-        landscapemainphoto = 'landscape';
-        return landscapemainphoto;
-    }
-    else if (mainphoto_height > mainphoto_width) {
-        landscapemainphoto = 'portrait';
-        return landscapemainphoto;
-    }
-};
+
 /****************** CREATE THUMBNAILS FROM ARRAY **********************/
 function thumbnails(imgsarray) {
     //LOOP OVER IMAGES ARRAY, CREATE THUMBNAIL IMAGES
     myImages.forEach((element, index) => {
 
-
         let imgid = 'thumb' + index; //create new imgid 
-        let slideDynamicNew = `<img id="${imgid}" class="thumb " src="${myImages[index]}">`; //create img with template literal
+        let slideDynamicNew = `<img id="${imgid}" class="thumb " alt="slideshow thumbnail" src="${myImages[index]}">`; //create img with template literal
         //create     div to put new img as innerHTML, then append it thumbnail container
-
-
-
         let divfirst = document.createElement('div');
         divfirst.innerHTML = slideDynamicNew;
         parentdivthumb.appendChild(divfirst);
-
     });
 };
 thumbnails(myImages);
@@ -80,7 +58,7 @@ const allimages = () => {
     //console.log(availablewidth, 'availablewidth');
     //get max-width we have set as variable in css stylesheet
     let getcssmaxwidth = getComputedStyle(document.documentElement)
-        .getPropertyValue('--width'); //e.g. 800px
+        .getPropertyValue('--width'); //e.g. 400px
     let csswidthclean = getcssmaxwidth.slice(0, 3); //remove px from the end
     let cssmaxwidth = csswidthclean * 1;  //convert into integer
 
@@ -98,8 +76,9 @@ const allimages = () => {
             let img = document.createElement('img');
             img.id = 'img' + index; // concatenate for image id  e.g. img3 
             img.src = `${myImages[index]}`;  //get url for image src from array
+            img.alt = 'Image of slideshow of review'
             //pass img as parameter to orientation function
-            let orientation = getImgOrientReturnClass(img);//calls orientation function to return  
+            //  let orientation = getImgOrientReturnClass(img);//calls orientation function to return  
 
             //if it's the first image in the array, set it to visible and set currentSlide to 0
             if (index === 0) {
@@ -111,75 +90,40 @@ const allimages = () => {
 
             }
             //create image class
-            img.className = `centerimg mainphoto ${orientation} mainphoto2 ${classvisible}`;
+            img.className = `mainphoto ${classvisible}`;
 
-
-         /*    if (availablewidth < cssmaxwidth) {
-
-
-                height = availablewidth * 0.677;
-                width = availablewidth;
-                if (orientation == 'portrait') {
-                    height = availablewidth * 0.677;
-                    width = height * 0.677;
-                    let imgportraithalf = width / 2;
-                    let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
-                    img.style.left = cssclassnewleft;
-                }
-            }
-            else if (availablewidth >= cssmaxwidth) {
-                width = 790;
-                height = 790 * 0.67 - 100;
-                if (orientation == 'portrait') {
-                    height = width * 0.667 - 100;
-                    width = height * 0.6;
-                    let imgportraithalf = width / 2;
-                    let cssclassnewleft = `calc(50% - ${imgportraithalf}px)`;
-                    img.style.left = cssclassnewleft;
-
-                }
-            } */
-            console.log(screenWidth);
-            if(screenWidth < 520) { 
-            //we set max width 400, if above, then it's fixed at 400
-                console.log(screenWidth, 'getcssmaxwidth 400');
+            if (screenWidth < 520) {
                 width = screenWidth - 50;
                 height = width * 0.62;
-                console.log(width,'width');
-               //for outer div
+                //for outer div
                 widthdiv = screenWidth;
                 heightdiv = widthdiv * 0.62;
-            } 
-            else if( screenWidth >= 520) {
+            }
+            else if (screenWidth >= 520) {
                 height = 250;
-                 width = 400;
-               /*   widthdiv = screenWidth;
-                 heightdiv = widthdiv * 0.62; */
-                 console.log(screenWidth, '>400');
+                width = 400;
             }
             else {
                 height = 250;
-                 width = 500;
-                 console.log('else');
+                width = 500;
             }
-            
+
             //we set max width 400, if above, then it's fixed at 400
             //if width less than 400, then we do it the width of the window
-            let outerdiv = document.querySelector('#mainphotodiv');
+            // let outerdiv = document.querySelector('#mainphotodiv');
             let outerouterdiv = document.querySelector('.slideOuterContainer');
             let thumcontainerdiv = document.querySelector('#thumb_container');
             thumcontainerdiv.width = `${widthdiv}px`;
 
-           
+
             outerouterdiv.style.width = `${widthdiv}px`;
             photoparentdiv.style.height = `${height}px`;
             photoparentdiv.style.width = `${width}px`;
             img.style.height = `${height}px`;
-            img.classList.add('mainphotofullsize');
             img.style.width = `${width}px`;
 
-           // document.querySelector('.slideOuterContainer').style.height = `${height + 100}px`;
-           // document.querySelector('.slideOuterContainer').style.width = `${width}px`;
+            // document.querySelector('.slideOuterContainer').style.height = `${height + 100}px`;
+            // document.querySelector('.slideOuterContainer').style.width = `${width}px`;
             photoparentdiv.appendChild(img);
         }
             , 200);

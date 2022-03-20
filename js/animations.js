@@ -6,6 +6,8 @@ let mobileimg = document.querySelector('#mobile');
 let imgfromtop = tabletimg2.getBoundingClientRect().top;
 
 
+//for each image we want to animate, first we check if it visible 
+//when it is visible it adds the css class to animate it
 
 let observer1 = new IntersectionObserver(function (entries) {
   if (entries[0].isIntersecting === true) {

@@ -110,7 +110,7 @@ const allimages = () => {
 
             //we set max width 400, if above, then it's fixed at 400
             //if width less than 400, then we do it the width of the window
-            // let outerdiv = document.querySelector('#mainphotodiv');
+
             let outerouterdiv = document.querySelector('.slideOuterContainer');
             let thumcontainerdiv = document.querySelector('#thumb_container');
             thumcontainerdiv.width = `${widthdiv}px`;
@@ -122,8 +122,7 @@ const allimages = () => {
             img.style.height = `${height}px`;
             img.style.width = `${width}px`;
 
-            // document.querySelector('.slideOuterContainer').style.height = `${height + 100}px`;
-            // document.querySelector('.slideOuterContainer').style.width = `${width}px`;
+
             photoparentdiv.appendChild(img);
         }
             , 200);

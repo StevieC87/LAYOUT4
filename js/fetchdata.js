@@ -1,4 +1,5 @@
 
+//this function takes the fetched data, creates DOM elements for it, and appends it to the page
 const staffFunction = (data = []) => {
 
     data['Staff'].forEach(element => {
@@ -54,6 +55,7 @@ const staffFunction = (data = []) => {
 
 };
 
+//here we fetch the data and call the function above
 const getData = () => {
     const prom = fetch('content/aboutus.json');
     prom
@@ -67,6 +69,5 @@ const getData = () => {
         .catch((error) => console.log({ error }))
         .finally(() => console.log());
 };
-let item;
 
 getData();

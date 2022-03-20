@@ -13,7 +13,6 @@ const el_notes = form.elements['yourmsg'];
 //submit button 
 const submitButton = document.querySelector('#submitbutton');
 
-/********** DONT USE THIS FOR NOW ***************/
 //GET FORM ELEMENTS WITH DECONSTRUCT
 const myform = document.forms;
 const [forma] = myform;
